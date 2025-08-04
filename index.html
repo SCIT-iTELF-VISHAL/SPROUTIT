@@ -329,77 +329,6 @@
       font-weight: 400;
     }
 
-    /* Speakers Grid */
-    .speakers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .speaker-card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 30px;
-      border-radius: 16px;
-      text-align: center;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .speaker-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #00d4ff, #091a7a);
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-
-    .speaker-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .speaker-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 25px 50px rgba(0, 212, 255, 0.15);
-    }
-
-    .speaker-avatar {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, #00d4ff 0%, #091a7a 100%);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 700;
-      font-size: 24px;
-      color: white;
-      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
-    }
-
-    .speaker-card h4 {
-      font-family: 'Orbitron', sans-serif;
-      color: #00d4ff;
-      font-size: 1.3rem;
-      margin-bottom: 15px;
-      font-weight: 600;
-    }
-
-    .speaker-card p {
-      color: #a0a9c0;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
     /* Events Grid */
     .events-grid {
       display: grid;
@@ -496,6 +425,8 @@
       display: flex;
       gap: 30px;
       list-style: none;
+      margin: 0 auto;
+      padding: 0;
     }
 
     .nav-links a {
@@ -507,6 +438,256 @@
 
     .nav-links a:hover {
       color: #00d4ff;
+    }
+
+    /* Roadmap Styles */
+    .roadmap-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+
+    .roadmap-timeline {
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .roadmap-timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #00d4ff 0%, #091a7a 50%, #00d4ff 100%);
+      transform: translateX(-50%);
+      border-radius: 2px;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    }
+
+    .roadmap-item {
+      position: relative;
+      margin-bottom: 80px;
+      width: 45%;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.6s ease;
+    }
+
+    .roadmap-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .roadmap-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+
+    .roadmap-item:nth-child(even) {
+      left: 55%;
+      text-align: left;
+    }
+
+    .roadmap-content {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 16px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .roadmap-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+      border-color: rgba(0, 212, 255, 0.3);
+    }
+
+    .roadmap-content::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+    }
+
+    .roadmap-item:nth-child(odd) .roadmap-content::before {
+      right: -20px;
+      border-left-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .roadmap-item:nth-child(even) .roadmap-content::before {
+      left: -20px;
+      border-right-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .roadmap-date {
+      position: absolute;
+      background: linear-gradient(135deg, #00d4ff 0%, #091a7a 100%);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 20px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+      z-index: 10;
+      top: 20px;
+      white-space: nowrap;
+    }
+
+    .roadmap-item:nth-child(odd) .roadmap-date {
+      right: -80px;
+      left: auto;
+    }
+
+    .roadmap-item:nth-child(even) .roadmap-date {
+      left: -80px;
+      right: auto;
+    }
+
+    .roadmap-title {
+      font-family: 'Orbitron', sans-serif;
+      color: #00d4ff;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .roadmap-description {
+      color: #b0b8d0;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .roadmap-features {
+      list-style: none;
+      padding: 0;
+    }
+
+    .roadmap-features li {
+      color: #a0a9c0;
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .roadmap-features li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #00d4ff;
+      font-weight: bold;
+    }
+
+    /* Investors Section */
+    .investors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .investor-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 16px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .investor-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #00d4ff, #091a7a);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .investor-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .investor-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0, 212, 255, 0.15);
+    }
+
+    .investor-logo {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #00d4ff 0%, #091a7a 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: white;
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+    }
+
+    .investor-card h4 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00d4ff;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .investor-card p {
+      color: #a0a9c0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .investment-amount {
+      background: rgba(0, 212, 255, 0.1);
+      color: #00d4ff;
+      padding: 5px 12px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 15px;
+      display: inline-block;
+    }
+
+    .sponsor-logo {
+      width: 100px;
+      height: 100px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(0, 212, 255, 0.3);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      color: #00d4ff;
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .sponsor-card:hover .sponsor-logo {
+      background: rgba(0, 212, 255, 0.1);
+      border-color: #00d4ff;
+      transform: scale(1.05);
     }
 
     /* Responsive Design */
@@ -524,14 +705,45 @@
         padding: 25px;
       }
 
-      .speakers-grid,
-      .events-grid {
+      .events-grid,
+      .investors-grid {
         grid-template-columns: 1fr;
         gap: 20px;
       }
 
+      .nav-content {
+        flex-direction: column;
+        gap: 20px;
+      }
+
       .nav-links {
-        display: none;
+        gap: 20px;
+      }
+
+      /* Mobile Roadmap Fixes */
+      .roadmap-timeline::before {
+        left: 30px;
+      }
+
+      .roadmap-item {
+        width: calc(100% - 60px);
+        left: 60px !important;
+        text-align: left !important;
+        margin-bottom: 60px;
+      }
+
+      .roadmap-content::before {
+        left: -20px !important;
+        border-right-color: rgba(255, 255, 255, 0.1) !important;
+        border-left-color: transparent !important;
+      }
+
+      .roadmap-date {
+        left: -70px !important;
+        right: auto !important;
+        transform: none !important;
+        font-size: 0.8rem;
+        padding: 8px 12px;
       }
     }
 
@@ -544,8 +756,8 @@
         padding: 20px;
       }
 
-      .speaker-card,
-      .event-card {
+      .event-card,
+      .investor-card {
         padding: 25px;
       }
 
@@ -561,6 +773,11 @@
 
       .loader-progress {
         width: 250px;
+      }
+
+      .nav-links {
+        gap: 15px;
+        font-size: 0.9rem;
       }
     }
 
@@ -683,268 +900,32 @@
       font-weight: 700;
       color: #00d4ff;
     }
-
-    /* Roadmap Styles */
-    .roadmap-container {
-      position: relative;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 0;
+    .logo svg path,
+    .loader-logo svg path,
+    .footer-logo-icon svg path {
+      filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
+      transition: transform .3s ease;
     }
 
-    .roadmap-timeline {
-      position: relative;
-      padding: 0 20px;
+    .logo:hover svg path,
+    .loader-logo:hover svg path,
+    .footer-logo-icon:hover svg path {
+      transform: scale(1.05);
     }
 
-    .roadmap-timeline::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: linear-gradient(180deg, #00d4ff 0%, #091a7a 50%, #00d4ff 100%);
-      transform: translateX(-50%);
-      border-radius: 2px;
-      box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-    }
-
-    .roadmap-item {
-      position: relative;
-      margin-bottom: 60px;
-      width: 45%;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.6s ease;
-    }
-
-    .roadmap-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .roadmap-item:nth-child(odd) {
-      left: 0;
-      text-align: right;
-    }
-
-    .roadmap-item:nth-child(even) {
-      left: 55%;
-      text-align: left;
-    }
-
-    .roadmap-content {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 30px;
-      border-radius: 16px;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    .roadmap-content:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
-      border-color: rgba(0, 212, 255, 0.3);
-    }
-
-    .roadmap-content::before {
-      content: '';
-      position: absolute;
-      top: 30px;
-      width: 0;
-      height: 0;
-      border: 10px solid transparent;
-    }
-
-    .roadmap-item:nth-child(odd) .roadmap-content::before {
-      right: -20px;
-      border-left-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .roadmap-item:nth-child(even) .roadmap-content::before {
-      left: -20px;
-      border-right-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .roadmap-date {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(135deg, #00d4ff 0%, #091a7a 100%);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 600;
-      font-size: 0.9rem;
-      box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
-      z-index: 10;
-    }
-
-    .roadmap-item:nth-child(odd) .roadmap-date {
-      top: 20px;
-      right: -45px;
-    }
-
-    .roadmap-item:nth-child(even) .roadmap-date {
-      top: 20px;
-      left: -45px;
-    }
-
-    .roadmap-title {
-      font-family: 'Orbitron', sans-serif;
-      color: #00d4ff;
-      font-size: 1.4rem;
-      margin-bottom: 15px;
-      font-weight: 600;
-    }
-
-    .roadmap-description {
-      color: #b0b8d0;
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-
-    .roadmap-features {
-      list-style: none;
-      padding: 0;
-    }
-
-    .roadmap-features li {
-      color: #a0a9c0;
-      margin-bottom: 8px;
-      position: relative;
-      padding-left: 20px;
-    }
-
-    .roadmap-features li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: #00d4ff;
-      font-weight: bold;
-    }
-
-    /* Investors Section */
-    .investors-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .investor-card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 30px;
-      border-radius: 16px;
-      text-align: center;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .investor-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #00d4ff, #091a7a);
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-
-    .investor-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .investor-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 25px 50px rgba(0, 212, 255, 0.15);
-    }
-
-    .investor-logo {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, #00d4ff 0%, #091a7a 100%);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 700;
-      font-size: 18px;
-      color: white;
-      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
-    }
-
-    .investor-card h4 {
-      font-family: 'Orbitron', sans-serif;
-      color: #00d4ff;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-
-    .investor-card p {
-      color: #a0a9c0;
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    .investment-amount {
-      background: rgba(0, 212, 255, 0.1);
-      color: #00d4ff;
-      padding: 5px 12px;
-      border-radius: 12px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-top: 15px;
-      display: inline-block;
-    }
-
-    /* Mobile Responsiveness for Roadmap */
-    @media (max-width: 768px) {
-      .roadmap-timeline::before {
-        left: 30px;
-      }
-
-      .roadmap-item {
-        width: calc(100% - 60px);
-        left: 60px !important;
-        text-align: left !important;
-      }
-
-      .roadmap-content::before {
-        left: -20px !important;
-        border-right-color: rgba(255, 255, 255, 0.1) !important;
-        border-left-color: transparent !important;
-      }
-
-      .roadmap-date {
-        left: -50px !important;
-        right: auto !important;
-        transform: none !important;
-      }
-
-      .investors-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-    }
   </style>
 </head>
 <body>
   <!-- Loading Screen -->
   <div class="loader-container" id="loader">
-    <div class="loader-logo">S'IT</div>
+    <div class="loader-logo">
+  <svg viewBox="0 0 64 64" aria-label="tie" width="80" height="80" role="img" style="display:block;">
+    <path d="M32 2 L24 18 L32 24 L40 18 Z" fill="white"/>
+    <path d="M24 18 L28 30 L36 30 L40 18 L32 24 Z" fill="white"/>
+    <path d="M28 30 L28 54 L36 54 L36 30 Z" fill="white"/>
+    <path d="M26 54 L32 62 L38 54 Z" fill="white"/>
+  </svg>
+</div>
     <div class="loader-text">Sprout'IT</div>
     <div class="loader-tagline">Loading Innovation Oasis...</div>
     <div class="loader-progress">
@@ -960,10 +941,10 @@
       <div class="nav-logo">Sprout'IT</div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#speakers">Speakers</a></li>
         <li><a href="#roadmap">Roadmap</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#investors">Investors</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
       </ul>
     </div>
   </nav>
@@ -974,7 +955,15 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <div class="logo">S'IT</div>
+      <div class="logo">
+  <svg viewBox="0 0 64 64" aria-label="tie" width="60" height="60" role="img" style="display:block;">
+    <path d="M32 2 L24 18 L32 24 L40 18 Z" fill="white"/>
+    <path d="M24 18 L28 30 L36 30 L40 18 L32 24 Z" fill="white"/>
+    <path d="M28 30 L28 54 L36 54 L36 30 Z" fill="white"/>
+    <path d="M26 54 L32 62 L38 54 Z" fill="white"/>
+  </svg>
+</div>
+
       <h1>Sprout'IT</h1>
       <p class="tagline">The Innovation Oasis</p>
     </div>
@@ -1084,6 +1073,37 @@
       </div>
     </section>
 
+    <!-- Events Section -->
+    <section class="section" id="events">
+      <h2 class="section-title">Events & Activities</h2>
+      <div class="events-grid">
+        <div class="event-card">
+          <h4>AD MAD</h4>
+          <p>Advertising Campaign Competition – Showcase your creative marketing skills and develop innovative conceptual advertisement scripts and ideas that captivate audiences.</p>
+        </div>
+        
+        <div class="event-card">
+          <h4>Rural Transformation Challenge</h4>
+          <p>Combine and plan innovative solutions using various rural products for effective rural-urban transformation and sustainable development.</p>
+        </div>
+        
+        <div class="event-card">
+          <h4>Documentary & Movie Exhibits</h4>
+          <p>Curated showcases featuring successful entrepreneurs and startups. Get inspired, engage in meaningful discussions, and expand your network.</p>
+        </div>
+        
+        <div class="event-card">
+          <h4>Turnaround Business Challenge</h4>
+          <p>Tackle real-world failed business problems, develop comprehensive turnaround plans, and demonstrate strategic thinking and execution skills.</p>
+        </div>
+        
+        <div class="event-card">
+          <h4>Thinking Cap Competition</h4>
+          <p>Teams get a creative "thinking cap" perspective to design imaginative marketing strategies for fictional companies, inspired by classic Stanford methodologies.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Investors Section -->
     <section class="section" id="investors">
       <h2 class="section-title">Our Investors & Partners</h2>
@@ -1130,70 +1150,46 @@
           <div class="investment-amount">$1M+ Portfolio</div>
         </div>
       </div>
-
-    <!-- Speakers Section -->
-    <section class="section" id="speakers">
-      <h2 class="section-title">Meet The Speakers</h2>
-      <div class="speakers-grid">
-        <div class="speaker-card">
-          <div class="speaker-avatar">AH</div>
-          <h4>Ajit Hatti</h4>
-          <p>Serial inventor and innovator, founder of PureID. Expert in cybersecurity with extensive experience in developing cutting-edge security products over a decade and a half.</p>
-        </div>
-        
-        <div class="speaker-card">
-          <div class="speaker-avatar">JP</div>
-          <h4>Jignesh Patel</h4>
-          <p>Serial entrepreneur with 15+ years of leadership experience. Passionate about technology innovation and social entrepreneurship, driving change across multiple industries.</p>
-        </div>
-        
-        <div class="speaker-card">
-          <div class="speaker-avatar">PJ</div>
-          <h4>Payal Jain</h4>
-          <p>Shark Tank India S2 participant, founder/CEO of Funngro. Brings over 20 years of experience in building successful businesses and mentoring young entrepreneurs.</p>
-        </div>
-        
-        <div class="speaker-card">
-          <div class="speaker-avatar">CP</div>
-          <h4>Chirag Panchal</h4>
-          <p>B.Tech Mechatronics graduate and innovative founder. Recipient of the Leaders in Innovation Fellowship from the Royal Academy, driving technological advancement.</p>
-        </div>
-        
-        <div class="speaker-card">
-          <div class="speaker-avatar">VV</div>
-          <h4>Vikrant Vartak</h4>
-          <p>Author of two influential books, Managing Director at The Senate Business Center, and Founder of Mavens. Expert in business strategy and organizational growth.</p>
-        </div>
-      </div>
     </section>
 
-    <!-- Events Section -->
-    <section class="section" id="events">
-      <h2 class="section-title">Events & Activities</h2>
-      <div class="events-grid">
-        <div class="event-card">
-          <h4>AD MAD</h4>
-          <p>Advertising Campaign Competition – Showcase your creative marketing skills and develop innovative conceptual advertisement scripts and ideas that captivate audiences.</p>
+    <!-- Sponsors Section -->
+    <section class="section" id="sponsors">
+      <h2 class="section-title">Our Sponsors</h2>
+      <div class="investors-grid">
+        <div class="investor-card sponsor-card">
+          <div class="sponsor-logo">MS</div>
+          <h4>Microsoft</h4>
+          <p>Global technology leader providing cloud computing, productivity software, and innovation platforms for entrepreneurs.</p>
         </div>
         
-        <div class="event-card">
-          <h4>Rural Transformation Challenge</h4>
-          <p>Combine and plan innovative solutions using various rural products for effective rural-urban transformation and sustainable development.</p>
+        <div class="investor-card sponsor-card">
+          <div class="sponsor-logo">GO</div>
+          <h4>Google</h4>
+          <p>Multinational technology company supporting startups through Google for Startups and cloud infrastructure.</p>
         </div>
         
-        <div class="event-card">
-          <h4>Documentary & Movie Exhibits</h4>
-          <p>Curated showcases featuring successful entrepreneurs and startups. Get inspired, engage in meaningful discussions, and expand your network.</p>
+        <div class="investor-card sponsor-card">
+          <div class="sponsor-logo">AM</div>
+          <h4>Amazon</h4>
+          <p>E-commerce and cloud computing giant offering AWS credits and business development support for emerging companies.</p>
         </div>
         
-        <div class="event-card">
-          <h4>Turnaround Business Challenge</h4>
-          <p>Tackle real-world failed business problems, develop comprehensive turnaround plans, and demonstrate strategic thinking and execution skills.</p>
+        <div class="investor-card sponsor-card">
+          <div class="sponsor-logo">IB</div>
+          <h4>IBM</h4>
+          <p>Technology and consulting corporation providing AI, cloud, and enterprise solutions for innovative businesses.</p>
         </div>
         
-        <div class="event-card">
-          <h4>Thinking Cap Competition</h4>
-          <p>Teams get a creative "thinking cap" perspective to design imaginative marketing strategies for fictional companies, inspired by classic Stanford methodologies.</p>
+        <div class="investor-card sponsor-card">
+          <div class="sponsor-logo">OR</div>
+          <h4>Oracle</h4>
+          <p>Enterprise software company offering database management, cloud applications, and startup acceleration programs.</p>
+        </div>
+        
+        <div class="investor-card sponsor-card">
+          <div class="sponsor-logo">SA</div>
+          <h4>Salesforce</h4>
+          <p>Customer relationship management platform supporting entrepreneurs with CRM tools and business development resources.</p>
         </div>
       </div>
     </section>
@@ -1204,7 +1200,15 @@
     <div class="footer-content">
       <div class="footer-section">
         <div class="footer-logo">
-          <div class="footer-logo-icon">S'IT</div>
+          <div class="footer-logo-icon">
+  <svg viewBox="0 0 64 64" aria-label="tie" width="40" height="40" role="img" style="display:block;">
+    <path d="M32 2 L24 18 L32 24 L40 18 Z" fill="white"/>
+    <path d="M24 18 L28 30 L36 30 L40 18 L32 24 Z" fill="white"/>
+    <path d="M28 30 L28 54 L36 54 L36 30 Z" fill="white"/>
+    <path d="M26 54 L32 62 L38 54 Z" fill="white"/>
+  </svg>
+</div>
+
           <div class="footer-logo-text">Sprout'IT</div>
         </div>
         <p>The Innovation Oasis where creativity meets ambition. Fostering entrepreneurship and nurturing tomorrow's leaders through innovative programs and competitions.</p>
@@ -1236,7 +1240,7 @@
         <h3>Quick Links</h3>
         <ul>
           <li><a href="#about">About Sprout'IT</a></li>
-          <li><a href="#speakers">Our Speakers</a></li>
+          <li><a href="#roadmap">Event Roadmap</a></li>
           <li><a href="#events">Events & Activities</a></li>
           <li><a href="#">Registration</a></li>
           <li><a href="#">Contact Us</a></li>
@@ -1396,7 +1400,7 @@
     }, observerOptions);
 
     // Observe all cards for animations
-    document.querySelectorAll('.content-card, .speaker-card, .event-card, .investor-card').forEach(card => {
+    document.querySelectorAll('.content-card, .event-card, .investor-card').forEach(card => {
       card.style.opacity = '0';
       card.style.transform = 'translateY(30px)';
       card.style.transition = 'all 0.6s ease';
