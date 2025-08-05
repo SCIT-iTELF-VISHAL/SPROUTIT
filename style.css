@@ -185,7 +185,7 @@ body {
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 60px 40px;
-    border-radius: 24px;
+    border-radius: 12px;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
     animation: heroFloat 6s ease-in-out infinite;
     max-width: 600px;
@@ -898,4 +898,23 @@ body {
     height: 70%;
     object-fit: contain;
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+.symcreidea-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #ff0033 0%, #ff5050 100%);
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(255, 0, 51, 0.4);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.symcreidea-button:hover {
+    background: linear-gradient(135deg, #ff1a4d 0%, #ff6666 100%);
+    transform: translateY(-2px);
 }
