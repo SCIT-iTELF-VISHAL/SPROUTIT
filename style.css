@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -15,6 +14,73 @@ body {
     color: #ffffff;
     overflow-x: hidden;
     line-height: 1.6;
+}
+
+/* Updated iTELF Logo on Top-Right */
+
+.itelf-logo {
+  position: fixed;
+  top: 12px;
+  right: 20px;
+  z-index: 999;
+  width: auto;
+  height: 60px; /* Increased from 40px to 60px */
+  transition: transform 0.3s ease;
+}
+
+.itelf-logo img {
+  height: 100%;
+  width: auto;
+  display: block;
+  max-width: 225px; /* Increased from 150px to 225px */
+  transition: transform 0.3s ease;
+}
+
+.itelf-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .itelf-logo {
+    height: 45px;
+    right: 15px;
+    top: 10px;
+  }
+
+  .itelf-logo img {
+    max-width: 160px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .itelf-logo {
+    height: 36px;
+    right: 10px;
+    top: 8px;
+  }
+
+  .itelf-logo img {
+    max-width: 120px;
+  }
+}
+
+/* Responsive adjustments for iTELF logo */
+@media (max-width: 768px) {
+  .itelf-logo {
+    width: 100px;
+    right: 15px;
+    top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .itelf-logo {
+    width: 80px;
+    right: 10px;
+    top: 8px;
+  }
 }
 
 /* Loading Screen */
@@ -57,16 +123,16 @@ body {
 
 @keyframes loaderPulse {
     0% { 
-    transform: scale(1);
-    box-shadow: 0 0 50px rgba(0, 212, 255, 0.5);
+        transform: scale(1);
+        box-shadow: 0 0 50px rgba(0, 212, 255, 0.5);
     }
     50% { 
-    transform: scale(1.1);
-    box-shadow: 0 0 80px rgba(0, 212, 255, 0.8);
+        transform: scale(1.1);
+        box-shadow: 0 0 80px rgba(0, 212, 255, 0.8);
     }
     100% { 
-    transform: scale(1);
-    box-shadow: 0 0 50px rgba(0, 212, 255, 0.5);
+        transform: scale(1);
+        box-shadow: 0 0 50px rgba(0, 212, 255, 0.5);
     }
 }
 
@@ -97,12 +163,12 @@ body {
 
 @keyframes fadeInUp {
     from {
-    opacity: 0;
-    transform: translateY(20px);
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
-    opacity: 1;
-    transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -185,9 +251,9 @@ body {
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 60px 40px;
-    border-radius: 12px;
+    border-radius: 6px;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-    animation: heroFloat 6s ease-in-out infinite;
+    animation: heroFloat 6s ease-in-out infinite, lightBreath 6s ease-in-out infinite;
     max-width: 600px;
     margin: 0 20px;
 }
@@ -195,6 +261,21 @@ body {
 @keyframes heroFloat {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-15px); }
+}
+
+@keyframes lightBreath {
+  0%, 100% {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(0, 212, 255, 0.05),
+                0 0 40px rgba(0, 212, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(0, 212, 255, 0.4),
+                0 0 70px rgba(0, 212, 255, 0.2);
+    border-color: rgba(0, 212, 255, 0.3);
+  }
 }
 
 .logo {
@@ -379,6 +460,7 @@ body {
 }
 
 /* Navigation */
+
 .nav {
     position: fixed;
     top: 0;
@@ -398,13 +480,14 @@ body {
 }
 
 .nav-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  gap: 40px; /* add spacing between logo and links */
+  padding-right: 180px; /* leave space for iTELF logo */
+
 }
+
 
 .nav-logo {
     font-family: 'Orbitron', sans-serif;
@@ -414,12 +497,12 @@ body {
 }
 
 .nav-links {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin-right: auto; /* PUSHES nav items as far right as possible */
 }
+
 
 .nav-links a {
     color: #a0a9c0;
@@ -431,6 +514,13 @@ body {
 .nav-links a:hover {
     color: #00d4ff;
 }
+
+@media (max-width: 480px) {
+  .nav-links li:last-child {
+    display: none; /* hide Sponsors only on very small screens */
+  }
+}
+
 
 /* Roadmap Styles */
 .roadmap-container {
@@ -536,7 +626,6 @@ body {
     right: -100px;
     transform: translateX(50%);
 }
-
 
 .roadmap-item:nth-child(even) .roadmap-date {
     left: -100px;
@@ -686,91 +775,91 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-content {
-    padding: 40px 20px;
-    margin: 0 10px;
+        padding: 40px 20px;
+        margin: 0 10px;
     }
 
     .section {
-    padding: 60px 0;
+        padding: 60px 0;
     }
 
     .content-card {
-    padding: 25px;
+        padding: 25px;
     }
 
     .events-grid,
     .investors-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .nav-content {
-    flex-direction: column;
-    gap: 20px;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .nav-links {
-    gap: 20px;
+        gap: 20px;
     }
 
     /* Mobile Roadmap Fixes */
     .roadmap-timeline::before {
-    left: 30px;
+        left: 30px;
     }
 
     .roadmap-item {
-    width: calc(100% - 60px);
-    left: 60px !important;
-    text-align: left !important;
-    margin-bottom: 60px;
+        width: calc(100% - 60px);
+        left: 60px !important;
+        text-align: left !important;
+        margin-bottom: 60px;
     }
 
     .roadmap-content::before {
-    left: -20px !important;
-    border-right-color: rgba(255, 255, 255, 0.1) !important;
-    border-left-color: transparent !important;
+        left: -20px !important;
+        border-right-color: rgba(255, 255, 255, 0.1) !important;
+        border-left-color: transparent !important;
     }
 
     .roadmap-date {
-    left: -70px !important;
-    right: auto !important;
-    transform: none !important;
-    font-size: 0.8rem;
-    padding: 8px 12px;
+        left: -70px !important;
+        right: auto !important;
+        transform: none !important;
+        font-size: 0.8rem;
+        padding: 8px 12px;
     }
 }
 
 @media (max-width: 480px) {
     .hero-content {
-    padding: 30px 15px;
+        padding: 30px 15px;
     }
 
     .content-card {
-    padding: 20px;
+        padding: 20px;
     }
 
     .event-card,
     .investor-card {
-    padding: 25px;
+        padding: 25px;
     }
 
     .loader-logo {
-    width: 120px;
-    height: 120px;
-    font-size: 28px;
+        width: 120px;
+        height: 120px;
+        font-size: 28px;
     }
 
     .loader-text {
-    font-size: 2rem;
+        font-size: 2rem;
     }
 
     .loader-progress {
-    width: 250px;
+        width: 250px;
     }
 
     .nav-links {
-    gap: 15px;
-    font-size: 0.9rem;
+        gap: 15px;
+        font-size: 0.9rem;
     }
 }
 
@@ -893,12 +982,14 @@ body {
     font-weight: 700;
     color: #00d4ff;
 }
+
 .tie-logo {
     width: 70%;
     height: 70%;
     object-fit: contain;
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
 }
+
 .symcreidea-button {
     display: inline-block;
     margin-top: 20px;
