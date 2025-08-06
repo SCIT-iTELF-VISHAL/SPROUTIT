@@ -650,6 +650,14 @@ body {
     transform: translateX(50%);
 }
 
+.roadmap-item:nth-child(odd) {
+    left: 0;
+}
+
+.roadmap-item:nth-child(odd) .roadmap-content {
+    text-align: left;
+}
+
 .roadmap-item:nth-child(even) .roadmap-date {
     left: -100px;
     transform: translateX(-50%);
@@ -682,11 +690,13 @@ body {
 }
 
 .roadmap-features li::before {
-    content: 'â†’';
+    content: '➤';
     position: absolute;
     left: 0;
-    color: #00d4ff;
+    color: #0095ff;
     font-weight: bold;
+    font-size: 1rem;
+    text-shadow: 0 0 6px rgba(115, 0, 255, 0.6);
 }
 
 /* Investors Section */
@@ -888,6 +898,11 @@ body {
 
 
 /* Footer */
+
+
+
+
+
 .site-footer {
     background: linear-gradient(178deg, #01030d 0%, #05070d 50%, #04203c 100%);
     padding: 50px 20px 30px;
