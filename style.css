@@ -826,6 +826,8 @@ body {
     text-shadow: 0 0 6px rgba(115, 0, 255, 0.6);
 }
 
+
+
 /* Investors Section */
 
 
@@ -1001,40 +1003,47 @@ body {
 /* ===============================
    Sponsor Section Layout Fix
    =============================== */
+/* Section spacing */
 #sponsors {
-    padding-bottom: 100px; /* space before footer */
+    padding-bottom: 100px;
 }
 
+/* Sponsor grid layout */
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* Tier headings */
 .sponsor-tier-title {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.6rem;
     font-weight: 700;
-    color: #ffffff;
     text-align: center;
     margin: 40px 0 20px 0;
-    text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
 
-#sponsors .investors-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px; /* spacing between cards both vertically & horizontally */
-    margin-bottom: 80px;
-}
+.platinum-title { color: #ff4d4d; text-shadow: 0 0 10px rgba(255, 0, 0, 0.6); }
+.gold-title     { color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6); }
+.silver-title   { color: #c0c0c0; text-shadow: 0 0 10px rgba(192, 192, 192, 0.6); }
+.bronze-title   { color: #cd7f32; text-shadow: 0 0 10px rgba(205, 127, 50, 0.6); }
 
-/* Base sponsor card style */
+/* Base sponsor card */
 .sponsor-card {
     position: relative;
     padding: 30px;
     border-radius: 16px;
     text-align: center;
     transition: all 0.4s ease;
-    max-width: 350px; /* keep all cards same size */
+    max-width: 350px;
     margin: 0 auto;
 }
 
-/* Base sponsor logo size */
-.sponsor-card .sponsor-logo {
+/* Logo box */
+.sponsor-logo {
     width: 120px;
     height: 120px;
     border-radius: 20px;
@@ -1048,11 +1057,7 @@ body {
     transition: all 0.3s ease;
 }
 
-/* ===============================
-   Tier Styles (Glow + Halo)
-   =============================== */
-
-/* Common halo style */
+/* Glow halo */
 .sponsor-card::after {
     content: '';
     position: absolute;
@@ -1066,78 +1071,58 @@ body {
     animation: tierPulse 3s ease-in-out infinite;
 }
 
-/* Platinum (Red) */
+/* Platinum */
 .sponsor-platinum {
     border: 1px solid rgba(255, 0, 0, 0.6);
-    box-shadow: 0 0 25px rgba(255, 0, 0, 0.6),
-                0 0 50px rgba(255, 0, 0, 0.3);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.6), 0 0 50px rgba(255, 0, 0, 0.3);
 }
 .sponsor-platinum .sponsor-logo {
     background: rgba(255, 0, 0, 0.1);
     border: 2px solid rgba(255, 0, 0, 0.6);
     color: #ff4d4d;
 }
-.sponsor-platinum::after {
-    background: rgba(255, 0, 0, 0.25);
-}
+.sponsor-platinum::after { background: rgba(255, 0, 0, 0.25); }
 
 /* Gold */
 .sponsor-gold {
     border: 1px solid rgba(255, 215, 0, 0.6);
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6),
-                0 0 50px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 0 50px rgba(255, 215, 0, 0.3);
 }
 .sponsor-gold .sponsor-logo {
     background: rgba(255, 215, 0, 0.1);
     border: 2px solid rgba(255, 215, 0, 0.6);
     color: #FFD700;
 }
-.sponsor-gold::after {
-    background: rgba(255, 215, 0, 0.25);
-}
+.sponsor-gold::after { background: rgba(255, 215, 0, 0.25); }
 
 /* Silver */
 .sponsor-silver {
     border: 1px solid rgba(192, 192, 192, 0.6);
-    box-shadow: 0 0 25px rgba(192, 192, 192, 0.6),
-                0 0 50px rgba(192, 192, 192, 0.3);
+    box-shadow: 0 0 25px rgba(192, 192, 192, 0.6), 0 0 50px rgba(192, 192, 192, 0.3);
 }
 .sponsor-silver .sponsor-logo {
     background: rgba(192, 192, 192, 0.1);
     border: 2px solid rgba(192, 192, 192, 0.6);
     color: #c0c0c0;
 }
-.sponsor-silver::after {
-    background: rgba(192, 192, 192, 0.25);
-}
+.sponsor-silver::after { background: rgba(192, 192, 192, 0.25); }
 
 /* Bronze */
 .sponsor-bronze {
     border: 1px solid rgba(205, 127, 50, 0.6);
-    box-shadow: 0 0 25px rgba(205, 127, 50, 0.6),
-                0 0 50px rgba(205, 127, 50, 0.3);
+    box-shadow: 0 0 25px rgba(205, 127, 50, 0.6), 0 0 50px rgba(205, 127, 50, 0.3);
 }
 .sponsor-bronze .sponsor-logo {
     background: rgba(205, 127, 50, 0.1);
     border: 2px solid rgba(205, 127, 50, 0.6);
     color: #cd7f32;
 }
-.sponsor-bronze::after {
-    background: rgba(205, 127, 50, 0.25);
-}
+.sponsor-bronze::after { background: rgba(205, 127, 50, 0.25); }
 
-/* ===============================
-   Unified Pulse Animation
-   =============================== */
+/* Pulse animation */
 @keyframes tierPulse {
-    0%, 100% {
-        opacity: 0.6;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.05);
-    }
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
 }
 
 
