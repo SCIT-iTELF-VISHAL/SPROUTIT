@@ -997,31 +997,46 @@ body {
 
 
 
-/* Sponsors Grid Layout */
-.sponsors-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+/* sponsor*/
+/* ===============================
+   Sponsor Section Layout Fix
+   =============================== */
+#sponsors {
+    padding-bottom: 100px; /* space before footer */
 }
 
-/* Base Sponsor Card Style */
-.sponsor-card {
+.sponsor-tier-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
     text-align: center;
-    padding: 25px;
+    margin: 40px 0 20px 0;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+}
+
+#sponsors .investors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px; /* spacing between cards both vertically & horizontally */
+    margin-bottom: 80px;
+}
+
+/* Base sponsor card style */
+.sponsor-card {
+    position: relative;
+    padding: 30px;
     border-radius: 16px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: all 0.4s ease;
+    max-width: 350px; /* keep all cards same size */
+    margin: 0 auto;
 }
 
-.sponsor-card:hover {
-    transform: translateY(-10px);
-}
-
-/* Base Sponsor Logo Style */
-.sponsor-logo {
-    background: rgba(255, 255, 255, 0.05);
+/* Base sponsor logo size */
+.sponsor-card .sponsor-logo {
+    width: 120px;
+    height: 120px;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -1030,83 +1045,106 @@ body {
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
     font-size: 24px;
-    color: #00d4ff;
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
     transition: all 0.3s ease;
-    overflow: hidden;
 }
 
-.sponsor-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+/* ===============================
+   Tier Styles (Glow + Halo)
+   =============================== */
+
+/* Common halo style */
+.sponsor-card::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border-radius: 20px;
+    filter: blur(25px);
+    z-index: -1;
+    animation: tierPulse 3s ease-in-out infinite;
 }
 
-.sponsor-card:hover .sponsor-logo {
-    background: rgba(0, 212, 255, 0.1);
-    border-color: #00d4ff;
-    transform: scale(1.05);
+/* Platinum (Red) */
+.sponsor-platinum {
+    border: 1px solid rgba(255, 0, 0, 0.6);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.6),
+                0 0 50px rgba(255, 0, 0, 0.3);
+}
+.sponsor-platinum .sponsor-logo {
+    background: rgba(255, 0, 0, 0.1);
+    border: 2px solid rgba(255, 0, 0, 0.6);
+    color: #ff4d4d;
+}
+.sponsor-platinum::after {
+    background: rgba(255, 0, 0, 0.25);
 }
 
-/* Tier: Platinum */
-.platinum {
-    background: linear-gradient(135deg, #E5E4E2, #C0C0C0);
-    box-shadow: 0 0 35px rgba(192, 192, 192, 0.9);
-    max-width: 360px;
+/* Gold */
+.sponsor-gold {
+    border: 1px solid rgba(255, 215, 0, 0.6);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6),
+                0 0 50px rgba(255, 215, 0, 0.3);
 }
-.platinum .sponsor-logo {
-    width: 150px;
-    height: 150px;
-    border: 2px solid rgba(229, 228, 226, 0.8);
+.sponsor-gold .sponsor-logo {
+    background: rgba(255, 215, 0, 0.1);
+    border: 2px solid rgba(255, 215, 0, 0.6);
+    color: #FFD700;
 }
-
-/* Tier: Gold */
-.gold {
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    box-shadow: 0 0 28px rgba(255, 215, 0, 0.8);
-    max-width: 320px;
-}
-.gold .sponsor-logo {
-    width: 130px;
-    height: 130px;
-    border: 2px solid rgba(255, 215, 0, 0.8);
+.sponsor-gold::after {
+    background: rgba(255, 215, 0, 0.25);
 }
 
-/* Tier: Silver */
-.silver {
-    background: linear-gradient(135deg, #C0C0C0, #A9A9A9);
-    box-shadow: 0 0 20px rgba(192, 192, 192, 0.7);
-    max-width: 290px;
+/* Silver */
+.sponsor-silver {
+    border: 1px solid rgba(192, 192, 192, 0.6);
+    box-shadow: 0 0 25px rgba(192, 192, 192, 0.6),
+                0 0 50px rgba(192, 192, 192, 0.3);
 }
-.silver .sponsor-logo {
-    width: 110px;
-    height: 110px;
-    border: 2px solid rgba(192, 192, 192, 0.7);
+.sponsor-silver .sponsor-logo {
+    background: rgba(192, 192, 192, 0.1);
+    border: 2px solid rgba(192, 192, 192, 0.6);
+    color: #c0c0c0;
+}
+.sponsor-silver::after {
+    background: rgba(192, 192, 192, 0.25);
 }
 
-/* Tier: Bronze */
-.bronze {
-    background: linear-gradient(135deg, #CD7F32, #8B4513);
-    box-shadow: 0 0 14px rgba(205, 127, 50, 0.6);
-    max-width: 260px;
+/* Bronze */
+.sponsor-bronze {
+    border: 1px solid rgba(205, 127, 50, 0.6);
+    box-shadow: 0 0 25px rgba(205, 127, 50, 0.6),
+                0 0 50px rgba(205, 127, 50, 0.3);
 }
-.bronze .sponsor-logo {
-    width: 95px;
-    height: 95px;
+.sponsor-bronze .sponsor-logo {
+    background: rgba(205, 127, 50, 0.1);
     border: 2px solid rgba(205, 127, 50, 0.6);
+    color: #cd7f32;
+}
+.sponsor-bronze::after {
+    background: rgba(205, 127, 50, 0.25);
 }
 
-/* Neutral (No Glow) */
-.neutral {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    max-width: 240px;
+/* ===============================
+   Unified Pulse Animation
+   =============================== */
+@keyframes tierPulse {
+    0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
 }
-.neutral .sponsor-logo {
-    width: 80px;
-    height: 80px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
+
+
+
+
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -1124,8 +1162,7 @@ body {
     }
 
     .events-grid,
-    .investors-grid,
-    .sponsors-grid {
+    .investors-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
@@ -1176,8 +1213,7 @@ body {
     }
 
     .event-card,
-    .investor-card,
-    .sponsor-card {
+    .investor-card {
         padding: 25px;
     }
 
