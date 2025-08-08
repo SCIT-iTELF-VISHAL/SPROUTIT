@@ -17,103 +17,9 @@ body {
 }
 
 
-/* Updated iTELF Logo on Top-Right */
 
-.itelf-logo {
-  position: fixed;
-  top: 12px;
-  right: 20px;
-  z-index: 999;
-  width: auto;
-  height: 60px; /* Increased from 40px to 60px */
-  transition: transform 0.3s ease;
-}
 
-.itelf-logo img {
-  height: 100%;
-  width: auto;
-  display: block;
-  max-width: 225px; /* Increased from 150px to 225px */
-  transition: transform 0.3s ease;
-}
 
-.itelf-logo:hover {
-  transform: scale(1.05);
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-  .itelf-logo {
-    height: 45px;
-    right: 15px;
-    top: 10px;
-  }
-
-  .itelf-logo img {
-    max-width: 160px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .itelf-logo {
-    height: 36px;
-    right: 10px;
-    top: 8px;
-  }
-
-  .itelf-logo img {
-    max-width: 120px;
-  }
-}
-
-/* Responsive adjustments for iTELF logo */
-@media (max-width: 768px) {
-  .itelf-logo {
-    width: 100px;
-    right: 15px;
-    top: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .itelf-logo {
-    width: 80px;
-    right: 10px;
-    top: 8px;
-  }
-}
-/* Loader Logo Image */
-.loader-logo-img {
-  width: 180px;
-  height: auto;
-  animation: textGlow 2s ease-in-out infinite alternate;
-  filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.5));
-  transition: transform 0.3s ease;
-}
-
-.loader-logo-img:hover {
-  transform: scale(1.05);
-}
-
-/* hero img */
-.hero-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.hero-logo img {
-  width: 180px;
-  height: auto;
-  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.4));
-  animation: logoFloat 6s ease-in-out infinite;
-}
-@keyframes logoFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
 
 
 /* Loading Screen */
@@ -166,6 +72,18 @@ body {
     box-shadow: 0 0 50px rgba(38, 0, 255, 0.5);
 }
 
+.loader-logo-img {
+  width: 300px; /* Increase size here */
+  height: 300px;
+  animation: logoGlow 2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.5));
+  transition: transform 0.3s ease;
+}
+
+.loader-logo-img:hover {
+  transform: scale(1.05);
+}
+
 @keyframes loaderPulse {
     0% { 
         transform: scale(1);
@@ -191,6 +109,11 @@ body {
     background-clip: text;
     margin-bottom: 20px;
     animation: textGlow 2s ease-in-out infinite alternate;
+}
+.loader-text {
+  margin-top: -10px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 @keyframes textGlow {
@@ -261,6 +184,120 @@ body {
 }
 
 
+
+
+@keyframes logoGlow {
+  from { filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3)); }
+  to   { filter: drop-shadow(0 0 25px rgba(0, 212, 255, 0.7)); }
+}
+
+
+
+
+
+
+
+
+
+/* Updated iTELF Logo on Top-Right */
+
+.itelf-logo {
+  position: fixed;
+  top: 12px;
+  right: 20px;
+  z-index: 999;
+  width: auto;
+  height: 60px; /* Increased from 40px to 60px */
+  transition: transform 0.3s ease;
+}
+
+.itelf-logo img {
+  height: 100%;
+  width: auto;
+  display: block;
+  max-width: 225px; /* Increased from 150px to 225px */
+  transition: transform 0.3s ease;
+}
+
+.itelf-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .itelf-logo {
+    height: 45px;
+    right: 15px;
+    top: 10px;
+  }
+
+  .itelf-logo img {
+    max-width: 160px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .itelf-logo {
+    height: 36px;
+    right: 10px;
+    top: 8px;
+  }
+
+  .itelf-logo img {
+    max-width: 120px;
+  }
+}
+
+/* Responsive adjustments for iTELF logo */
+@media (max-width: 768px) {
+  .itelf-logo {
+    width: 100px;
+    right: 15px;
+    top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .itelf-logo {
+    width: 80px;
+    right: 10px;
+    top: 8px;
+  }
+}
+
+
+/* hero img */
+/* Fix: Hero Logo Size Without Breaking Grid */
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px; /* Fixed height */
+  padding: 20px 0;
+}
+
+.hero-logo img {
+  height: 225px;
+  transform: scale(1.2);
+  opacity: 0;
+  animation: logoGrowIn 0.6s ease-out forwards;
+}
+
+@keyframes logoGrowIn {
+  to {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+
+/* main */
 .main-content {
     opacity: 0;
     transition: opacity 1s ease-in-out 0.8s; /* delayed for crossfade */
@@ -558,56 +595,6 @@ body {
     font-weight: 400;
 }
 
-/* Events Grid */
-.events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.event-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 35px;
-    border-radius: 16px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.event-card::after {
-  display: none !important;
-}
-
-
-.event-card:hover::after {
-    width: 100%;
-    opacity: 0.05;
-}
-
-.event-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
-}
-
-.event-card h4 {
-    font-family: 'Orbitron', sans-serif;
-    color: #00d4ff;
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    font-weight: 600;
-    position: relative;
-    z-index: 1;
-}
-
-.event-card p {
-    color: #b0b8d0;
-    line-height: 1.7;
-    position: relative;
-    z-index: 1;
-}
 
 /* Navigation */
 
@@ -810,7 +797,7 @@ body {
 }
 
 .roadmap-features li {
-    color: #7e8d44;
+    color: #e838c6;
     margin-bottom: 8px;
     position: relative;
     padding-left: 20px;
@@ -996,7 +983,11 @@ body {
 }
 
 
+/* ===========================================
+   Sponsor Section Layout & Responsive Styling
+   =========================================== */
 
+<<<<<<< Updated upstream
 /* sponsor*/
 /* ===============================
    Sponsor Section Layout Fix
@@ -1071,12 +1062,81 @@ body {
     border: 1px solid rgba(255, 0, 0, 0.6);
     box-shadow: 0 0 25px rgba(255, 0, 0, 0.6),
                 0 0 50px rgba(255, 0, 0, 0.3);
+=======
+.sponsor-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 60px;
 }
+
+/* Individual sponsor card */
+.sponsor-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 12px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.sponsor-card:hover {
+  transform: scale(1.03);
+}
+
+/* Sponsor logo box */
+.sponsor-logo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 15px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* Sponsor name */
+.sponsor-card h4 {
+  font-family: 'Orbitron', sans-serif;
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+/* Sponsor description (optional) */
+.sponsor-card p {
+  color: #a0a9c0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+>>>>>>> Stashed changes
+}
+
+
+/* ========================
+   Tier-Based Color Styling
+   ======================== */
+
+/* Platinum Tier */
 .sponsor-platinum .sponsor-logo {
-    background: rgba(255, 0, 0, 0.1);
-    border: 2px solid rgba(255, 0, 0, 0.6);
-    color: #ff4d4d;
+  border: 2px solid #ff4d4d;
+  color: #ff4d4d;
 }
+.platinum-title {
+  color: #ff4d4d;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+<<<<<<< Updated upstream
 .sponsor-platinum::after {
     background: rgba(255, 0, 0, 0.25);
 }
@@ -1087,11 +1147,23 @@ body {
     box-shadow: 0 0 25px rgba(255, 215, 0, 0.6),
                 0 0 50px rgba(255, 215, 0, 0.3);
 }
+=======
+
+/* Gold Tier */
+>>>>>>> Stashed changes
 .sponsor-gold .sponsor-logo {
-    background: rgba(255, 215, 0, 0.1);
-    border: 2px solid rgba(255, 215, 0, 0.6);
-    color: #FFD700;
+  border: 2px solid #FFD700;
+  color: #FFD700;
 }
+.gold-title {
+  color: #FFD700;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+<<<<<<< Updated upstream
 .sponsor-gold::after {
     background: rgba(255, 215, 0, 0.25);
 }
@@ -1102,11 +1174,23 @@ body {
     box-shadow: 0 0 25px rgba(192, 192, 192, 0.6),
                 0 0 50px rgba(192, 192, 192, 0.3);
 }
+=======
+
+/* Silver Tier */
+>>>>>>> Stashed changes
 .sponsor-silver .sponsor-logo {
-    background: rgba(192, 192, 192, 0.1);
-    border: 2px solid rgba(192, 192, 192, 0.6);
-    color: #c0c0c0;
+  border: 2px solid #c0c0c0;
+  color: #c0c0c0;
 }
+.silver-title {
+  color: #c0c0c0;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+<<<<<<< Updated upstream
 .sponsor-silver::after {
     background: rgba(192, 192, 192, 0.25);
 }
@@ -1117,14 +1201,28 @@ body {
     box-shadow: 0 0 25px rgba(205, 127, 50, 0.6),
                 0 0 50px rgba(205, 127, 50, 0.3);
 }
+=======
+
+/* Bronze Tier */
+>>>>>>> Stashed changes
 .sponsor-bronze .sponsor-logo {
-    background: rgba(205, 127, 50, 0.1);
-    border: 2px solid rgba(205, 127, 50, 0.6);
-    color: #cd7f32;
+  border: 2px solid #cd7f32;
+  color: #cd7f32;
 }
+.bronze-title {
+  color: #cd7f32;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+<<<<<<< Updated upstream
 .sponsor-bronze::after {
     background: rgba(205, 127, 50, 0.25);
 }
+=======
+>>>>>>> Stashed changes
 
 /* ===============================
    Unified Pulse Animation
@@ -1138,6 +1236,93 @@ body {
         opacity: 1;
         transform: scale(1.05);
     }
+}
+
+/* ===========================================
+   Sponsor Tier Pulse Animations (Safe & Scoped)
+   =========================================== */
+
+/* Platinum Pulse (Red) */
+.sponsor-platinum {
+  animation: sponsorPulseRed 2.5s infinite ease-in-out;
+}
+
+@keyframes sponsorPulseRed {
+  0% {
+    box-shadow: 0 0 12px rgba(255, 77, 77, 0.3),
+                0 0 24px rgba(255, 77, 77, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(255, 77, 77, 0.6),
+                0 0 48px rgba(255, 77, 77, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 12px rgba(255, 77, 77, 0.3),
+                0 0 24px rgba(255, 77, 77, 0.2);
+  }
+}
+
+
+/* Gold Pulse (Gold) */
+.sponsor-gold {
+  animation: sponsorPulseGold 2.5s infinite ease-in-out;
+}
+
+@keyframes sponsorPulseGold {
+  0% {
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3),
+                0 0 24px rgba(255, 215, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(255, 215, 0, 0.6),
+                0 0 48px rgba(255, 215, 0, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3),
+                0 0 24px rgba(255, 215, 0, 0.2);
+  }
+}
+
+
+/* Silver Pulse (Gray) */
+.sponsor-silver {
+  animation: sponsorPulseSilver 2.5s infinite ease-in-out;
+}
+
+@keyframes sponsorPulseSilver {
+  0% {
+    box-shadow: 0 0 12px rgba(192, 192, 192, 0.3),
+                0 0 24px rgba(192, 192, 192, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(192, 192, 192, 0.6),
+                0 0 48px rgba(192, 192, 192, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 12px rgba(192, 192, 192, 0.3),
+                0 0 24px rgba(192, 192, 192, 0.2);
+  }
+}
+
+
+/* Bronze Pulse (Brown) */
+.sponsor-bronze {
+  animation: sponsorPulseBronze 2.5s infinite ease-in-out;
+}
+
+@keyframes sponsorPulseBronze {
+  0% {
+    box-shadow: 0 0 12px rgba(205, 127, 50, 0.3),
+                0 0 24px rgba(205, 127, 50, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(205, 127, 50, 0.6),
+                0 0 48px rgba(205, 127, 50, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 12px rgba(205, 127, 50, 0.3),
+                0 0 24px rgba(205, 127, 50, 0.2);
+  }
 }
 
 
@@ -1420,6 +1605,28 @@ body {
   color: #666;
 }
 
+
+
+/* Contact section fix for multiple phone numbers */
+
+.contact-phone {
+  align-items: flex-start;
+}
+
+.contact-phone .contact-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  gap: 2px;
+}
+
+.contact-phone i {
+  margin-top: 3px;
+  font-size: 1rem;
+  color: #00d4ff;
+}
+
 /* Responsive Footer */
 @media (max-width: 768px) {
   .site-footer {
@@ -1493,13 +1700,19 @@ body {
   }
 }
 
-/* logos */
-.tie-logo {
-    width: 70%;
-    height: 70%;
-    object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+/* Match contact link colors (map, email, etc.) to icon color */
+
+.contact-item a {
+  color: #00d4ff;
+  text-decoration: none;
+  font-size: 0.9rem;
 }
+
+.contact-item a:hover {
+  text-decoration: underline;
+  color: #00d4ff;
+}
+
 
 /* symcredia*/
 /* 🌟 Symcreidea Special Card */
@@ -1595,6 +1808,217 @@ body {
 
 
 /* Event card glow */
+/* Fixed Event Card Layout - Wider Cards */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 600px)); /* Much wider range */
+  gap: 40px;
+  margin-top: 40px;
+  justify-content: center; 
+}
+
+.event-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px;           /* Increased padding for wider cards */
+  border-radius: 20px;     
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  min-height: 500px;       
+  max-width: 800px;        /* Increased max-width significantly */
+  width: 100%;             /* Take full available width */
+  box-sizing: border-box;
+}
+
+/* Restore the glow effect that was missing */
+.event-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.event-card:hover::before {
+  left: 100%;
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+  border-color: rgba(0, 212, 255, 0.4);
+}
+
+.event-card::after {
+  display: none !important;
+}
+
+.event-card:hover::after {
+    width: 100%;
+    opacity: 0.05;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+}
+
+/* Event Logo - Adjust for wider cards */
+.event-logo {
+  height: 200px;           /* Even larger since we have more space */
+  width: auto;
+  max-width: 90%;          
+  object-fit: contain;
+  display: block;
+  margin-bottom: 25px;
+  
+  /* Strong glow effect */
+  filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.6)) 
+          drop-shadow(0 0 40px rgba(0, 212, 255, 0.4))
+          brightness(1.1);
+  
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.event-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 25px rgba(0, 212, 255, 0.8)) 
+          drop-shadow(0 0 50px rgba(0, 212, 255, 0.6))
+          brightness(1.2);
+}
+
+.event-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Event Title */
+.event-card h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00d4ff;
+    font-size: 1.5rem;       /* Slightly larger */
+    margin-bottom: 15px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;   /* Better spacing */
+}
+
+/* Caption style */
+.event-caption {
+    font-style: italic; 
+    color: #FFD700;
+    font-weight: 500;
+    margin-bottom: 20px;     /* More space */
+    text-align: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;       /* Slightly larger */
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+/* Description - Better spacing for wider cards */
+.event-description {
+  color: #b0b8d0;
+  line-height: 1.7;         /* More comfortable line height */
+  font-weight: 400;
+  font-size: 1rem;          /* Slightly larger font for wider cards */
+  text-align: justify;      
+  text-align-last: center;  
+  
+  flex-grow: 1;
+  display: block;           
+  
+  overflow: visible;        
+  padding: 0 20px;          /* More horizontal padding for wider cards */
+  max-width: 100%;          /* Ensure text uses full width */
+}
+
+/* Custom scrollbar styling - Remove since we're not using scroll */
+
+/* Responsive adjustments for wider cards */
+@media (max-width: 768px) {
+  .events-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 500px)); /* Wider on tablet */
+    gap: 30px;
+  }
+  
+  .event-card {
+    padding: 30px;
+    min-height: 450px;      
+    max-width: 500px;       /* Wider max-width */
+  }
+  
+  .event-logo {
+    height: 170px;          /* Keep larger on tablet */
+    filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.5)) 
+            drop-shadow(0 0 30px rgba(0, 212, 255, 0.3));
+  }
+  
+  .event-card h4 {
+    font-size: 1.5rem;      /* Slightly larger for wider cards */
+  }
+  
+  .event-caption {
+    font-size: 1.1rem;
+  }
+  
+  .event-description {
+    font-size: 0.95rem;     /* Larger text for wider cards */
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 0 10px;
+  }
+  
+  .event-card {
+    padding: 25px;
+    min-height: 400px;      
+    margin: 0 auto;
+    max-width: 400px;       /* Wider even on mobile */
+    width: calc(100% - 20px); /* Take most of screen width */
+  }
+  
+  .event-logo {
+    height: 150px;          /* Keep reasonably large on mobile */
+    filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.5)) 
+            drop-shadow(0 0 25px rgba(0, 212, 255, 0.3));
+  }
+  
+  .event-card h4 {
+    font-size: 1.4rem;
+  }
+  
+  .event-caption {
+    font-size: 1rem;
+  }
+  
+  .event-description {
+    font-size: 0.9rem;      /* Larger mobile text */
+    text-align: center;     
+    text-align-last: center;
+    padding: 0 10px;
+  }
+}
+
+/* Event card glow */
 /* Custom styling for golden glowing card */
 .glow-gold {
   position: relative;
@@ -1606,6 +2030,7 @@ body {
   overflow: hidden;
   transition: all 0.3s ease-in-out;
 }
+
 
 /* Emission glow effect */
 .glow-gold::before {
@@ -1658,34 +2083,4 @@ body {
 
 .glow-gold:hover .event-caption {
   color: #ffcc33;
-}
-
-/* Description remains untouched */
-.event-description {
-  color: #b0b8d0;
-  line-height: 1.7;
-  font-weight: 400;
-}
-
-
-/* Caption style */
-.event-caption {
-    font-style: italic; 
-    color: #FFD700;
-    font-weight: 500;
-    margin-bottom: 15px;
-}
-
-/* Description style */
-.event-description {
-    color: #b0b8d0;
-    line-height: 1.7;
-    font-weight: 400;
-}
-
-.event-logo {
-  display: block;
-  max-width: 100px; /* adjust size as needed */
-  margin: 0 auto 15px auto; /* center with space below */
-  filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
 }
