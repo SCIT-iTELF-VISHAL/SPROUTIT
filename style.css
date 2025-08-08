@@ -997,12 +997,31 @@ body {
 
 
 
-/* sponsor*/
-.sponsor-logo {
-    width: 100px;
-    height: 100px;
+/* Sponsors Grid Layout */
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Base Sponsor Card Style */
+.sponsor-card {
+    text-align: center;
+    padding: 25px;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(0, 212, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sponsor-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Base Sponsor Logo Style */
+.sponsor-logo {
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -1014,12 +1033,79 @@ body {
     color: #00d4ff;
     box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
     transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.sponsor-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .sponsor-card:hover .sponsor-logo {
     background: rgba(0, 212, 255, 0.1);
     border-color: #00d4ff;
     transform: scale(1.05);
+}
+
+/* Tier: Platinum */
+.platinum {
+    background: linear-gradient(135deg, #E5E4E2, #C0C0C0);
+    box-shadow: 0 0 35px rgba(192, 192, 192, 0.9);
+    max-width: 360px;
+}
+.platinum .sponsor-logo {
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgba(229, 228, 226, 0.8);
+}
+
+/* Tier: Gold */
+.gold {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    box-shadow: 0 0 28px rgba(255, 215, 0, 0.8);
+    max-width: 320px;
+}
+.gold .sponsor-logo {
+    width: 130px;
+    height: 130px;
+    border: 2px solid rgba(255, 215, 0, 0.8);
+}
+
+/* Tier: Silver */
+.silver {
+    background: linear-gradient(135deg, #C0C0C0, #A9A9A9);
+    box-shadow: 0 0 20px rgba(192, 192, 192, 0.7);
+    max-width: 290px;
+}
+.silver .sponsor-logo {
+    width: 110px;
+    height: 110px;
+    border: 2px solid rgba(192, 192, 192, 0.7);
+}
+
+/* Tier: Bronze */
+.bronze {
+    background: linear-gradient(135deg, #CD7F32, #8B4513);
+    box-shadow: 0 0 14px rgba(205, 127, 50, 0.6);
+    max-width: 260px;
+}
+.bronze .sponsor-logo {
+    width: 95px;
+    height: 95px;
+    border: 2px solid rgba(205, 127, 50, 0.6);
+}
+
+/* Neutral (No Glow) */
+.neutral {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 240px;
+}
+.neutral .sponsor-logo {
+    width: 80px;
+    height: 80px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Responsive Design */
@@ -1038,7 +1124,8 @@ body {
     }
 
     .events-grid,
-    .investors-grid {
+    .investors-grid,
+    .sponsors-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
@@ -1089,7 +1176,8 @@ body {
     }
 
     .event-card,
-    .investor-card {
+    .investor-card,
+    .sponsor-card {
         padding: 25px;
     }
 
