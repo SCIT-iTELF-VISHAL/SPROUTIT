@@ -270,6 +270,133 @@ body {
     opacity: 1;
 }
 
+
+/* 🚀 SCIT Neon Glass Card */
+.glow-scit {
+  position: relative;
+  padding: 40px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.12), rgba(100, 0, 0, 0.15));
+  border: 1px solid rgba(255, 0, 0, 0.4);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3),
+              inset 0 0 20px rgba(255, 0, 0, 0.15);
+  backdrop-filter: blur(15px);
+  overflow: hidden;
+  transform: translateY(0);
+  animation: scitBreath 6s ease-in-out infinite;
+  transition: all 0.4s ease;
+}
+
+/* Breathing neon glow animation */
+@keyframes scitBreath {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3),
+                inset 0 0 20px rgba(255, 0, 0, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.6),
+                inset 0 0 30px rgba(255, 0, 0, 0.25);
+  }
+}
+
+/* Diagonal moving background effect */
+.glow-scit::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg,
+              rgba(255, 50, 50, 0.05) 25%,
+              rgba(255, 0, 0, 0.15) 50%,
+              rgba(255, 50, 50, 0.05) 75%);
+  background-size: 200% 200%;
+  animation: scitMove 12s linear infinite;
+  z-index: 0;
+}
+
+@keyframes scitMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 200%; }
+}
+
+/* Hover effect - lift + shine */
+.glow-scit:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: rgba(255, 0, 0, 0.85);
+}
+
+/* Sweep shine */
+.glow-scit::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.15), transparent);
+  transform: skewX(-20deg);
+  transition: 0.8s;
+  z-index: 1;
+}
+
+.glow-scit:hover::after {
+  left: 150%;
+}
+
+/* Heading - Bold SCIT red */
+.glow-scit h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.6rem;
+  color: #ff3333;
+  text-shadow: 0 0 10px rgba(255, 60, 60, 0.8);
+  position: relative;
+  z-index: 2;
+}
+
+/* Paragraph - soft light red */
+.glow-scit p {
+  color: #ffb3b3;
+  line-height: 1.7;
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
+}
+
+/* Make whole SCIT card clickable */
+.scit-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Symbiosis logo styling */
+.scit-logo {
+  display: block;
+  max-width: 168px; /* increased from 120px */
+  margin: 0 auto 18px auto;
+  filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.4));
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.glow-scit:hover .scit-logo {
+  transform: scale(1.08);
+}
+
+/* Red heading */
+.glow-scit h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.6rem;
+  color: #ff3333;
+  text-shadow: 0 0 10px rgba(255, 60, 60, 0.8);
+  text-align: center;
+}
+
+
+
 /* Animated Background */
 #particles-js {
     position: fixed;
@@ -683,7 +810,7 @@ body {
 }
 
 .roadmap-features li {
-    color: #a0a9c0;
+    color: #7e8d44;
     margin-bottom: 8px;
     position: relative;
     padding-left: 20px;
@@ -700,12 +827,7 @@ body {
 }
 
 /* Investors Section */
-.investors-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
+
 
 .investor-card {
     background: rgba(255, 255, 255, 0.05);
@@ -717,7 +839,19 @@ body {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    max-width: 350px;
+    margin: 0 auto;
 }
+
+/* Prevent investor cards from stretching too much */
+.investors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+
 
 .investor-card::before {
     content: '';
@@ -764,6 +898,29 @@ body {
     font-weight: 600;
 }
 
+/* Standard Investor Logo Size */
+.investor-logo {
+    width: 120px; /* display size inside card */
+    height: 120px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #00d4ff 0%, #091a7a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+}
+
+/* For Images (maintains 600x600 ratio) */
+.investor-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: transparent;
+}
+
+
 .investor-card p {
     color: #a0a9c0;
     font-size: 0.9rem;
@@ -781,6 +938,66 @@ body {
     display: inline-block;
 }
 
+
+.investor-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 16px;
+}
+
+/* Glow Effect + Animation */
+.investor-card {
+    max-width: 350px;
+    margin: 0 auto;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.4s ease;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2); /* subtle glow */
+}
+
+/* Hover Glow Animation */
+/* Consistent Size */
+.investor-card {
+    max-width: 350px;
+    margin: 0 auto;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.4s ease;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 0, 0.35);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    animation: greenPulse 2s infinite;
+    border-radius: 10px;
+}
+
+/* Hover Effect */
+.investor-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 32px rgba(0, 255, 0, 0.8),
+                0 0 56px rgba(0, 255, 0, 0.6);
+}
+
+/* Pulse Animation */
+@keyframes greenPulse {
+    0% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.5),
+                    0 0 40px rgba(0, 255, 0, 0.3);
+        border-color: rgba(0, 255, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 36px rgba(0, 255, 0, 0.85),
+                    0 0 72px rgba(0, 255, 0, 0.65);
+        border-color: rgba(0, 255, 0, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.5),
+                    0 0 40px rgba(0, 255, 0, 0.3);
+        border-color: rgba(0, 255, 0, 0.5);
+    }
+}
+
+
+
+/* sponsor*/
 .sponsor-logo {
     width: 100px;
     height: 100px;
@@ -1160,25 +1377,97 @@ body {
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
 }
 
+/* symcredia*/
+/* 🌟 Symcreidea Special Card */
+.symcreidea-card {
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(0, 100, 150, 0.1));
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2),
+              inset 0 0 15px rgba(0, 212, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  animation: symcPulse 6s infinite ease-in-out;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.symcreidea-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 35px rgba(0, 212, 255, 0.4),
+              inset 0 0 25px rgba(0, 212, 255, 0.15);
+}
+
+/* Breathing cyan glow */
+@keyframes symcPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.2), inset 0 0 15px rgba(0, 212, 255, 0.1); }
+  50% { box-shadow: 0 0 35px rgba(0, 212, 255, 0.4), inset 0 0 25px rgba(0, 212, 255, 0.15); }
+}
+
+/* Text inside Symcreidea */
+.symcreidea-card p {
+  color: #b8f5ff;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+/* 🌈 Register Button with Pulse + Sweep */
 .symcreidea-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 28px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: white;
-    background: linear-gradient(135deg, #ff0033 0%, #ff5050 100%);
-    border: none;
-    border-radius: 30px;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(255, 0, 51, 0.4);
-    transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #00d4ff 0%, #0062ff 100%);
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+  animation: btnPulse 2s infinite ease-in-out;
+  transition: transform 0.3s ease;
 }
 
 .symcreidea-button:hover {
-    background: linear-gradient(135deg, #ff1a4d 0%, #ff6666 100%);
-    transform: translateY(-2px);
+  transform: scale(1.05);
 }
+
+/* Pulse animation */
+@keyframes btnPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.4),
+                0 0 20px rgba(0, 212, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.7),
+                0 0 40px rgba(0, 212, 255, 0.3);
+  }
+}
+
+/* Sweep shine effect */
+.symcreidea-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4), transparent);
+  transform: skewX(-20deg);
+  animation: sweep 3s infinite;
+}
+
+@keyframes sweep {
+  0% { left: -75%; }
+  50% { left: 125%; }
+  100% { left: 125%; }
+}
+
+
 
 
 /* Event card glow */
@@ -1268,4 +1557,11 @@ body {
     color: #b0b8d0;
     line-height: 1.7;
     font-weight: 400;
+}
+
+.event-logo {
+  display: block;
+  max-width: 100px; /* adjust size as needed */
+  margin: 0 auto 15px auto; /* center with space below */
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
 }
