@@ -986,105 +986,29 @@ body {
 
 
 /* ===========================================
-   Sponsor Section Layout & Responsive Styling
+   FIXED SPONSORS SECTION - HORIZONTAL LAYOUT
    =========================================== */
 
-<<<<<<< Updated upstream
-/* sponsor*/
-/* ===============================
-   Sponsor Section Layout Fix
-   =============================== */
-/* Section spacing */
-#sponsors {
-    padding-bottom: 100px;
-}
-
-/* Sponsor grid layout */
-.sponsor-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    margin-bottom: 60px;
-}
-
-/* Tier headings */
-.sponsor-tier-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    text-align: center;
-    margin: 40px 0 20px 0;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-}
-
-.platinum-title { color: #ff4d4d; text-shadow: 0 0 10px rgba(255, 0, 0, 0.6); }
-.gold-title     { color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6); }
-.silver-title   { color: #c0c0c0; text-shadow: 0 0 10px rgba(192, 192, 192, 0.6); }
-.bronze-title   { color: #cd7f32; text-shadow: 0 0 10px rgba(205, 127, 50, 0.6); }
-
-/* Base sponsor card */
-.sponsor-card {
-    position: relative;
-    padding: 30px;
-    border-radius: 16px;
-    text-align: center;
-    transition: all 0.4s ease;
-    max-width: 350px;
-    margin: 0 auto;
-}
-
-/* Logo box */
-.sponsor-logo {
-    width: 120px;
-    height: 120px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    transition: all 0.3s ease;
-}
-
-/* Glow halo */
-.sponsor-card::after {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    border-radius: 20px;
-    filter: blur(25px);
-    z-index: -1;
-    animation: tierPulse 3s ease-in-out infinite;
-}
-
-/* Platinum */
-.sponsor-platinum {
-    border: 1px solid rgba(255, 0, 0, 0.6);
-    box-shadow: 0 0 25px rgba(255, 0, 0, 0.6),
-                0 0 50px rgba(255, 0, 0, 0.3);
-=======
+/* Main sponsor grid - displays all sponsors in horizontal rows */
 .sponsor-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  margin-bottom: 60px;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 40px; /* Reduced margin between tiers */
 }
 
 /* Individual sponsor card */
 .sponsor-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 25px;
+  padding: 20px;
   border-radius: 12px;
-  width: 280px;
+  width: 200px; /* Slightly smaller for better horizontal fit */
   text-align: center;
   transition: transform 0.3s ease;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .sponsor-card:hover {
@@ -1093,39 +1017,47 @@ body {
 
 /* Sponsor logo box */
 .sponsor-logo {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 15px;
-  border-radius: 16px;
+  width: 80px; /* Slightly smaller for better fit */
+  height: 80px;
+  margin: 0 auto 12px;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 16px; /* Adjusted font size */
 }
 
 /* Sponsor name */
 .sponsor-card h4 {
   font-family: 'Orbitron', sans-serif;
   color: #ffffff;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 8px;
   font-weight: 600;
 }
 
-/* Sponsor description (optional) */
-.sponsor-card p {
-  color: #a0a9c0;
-  font-size: 0.95rem;
-  line-height: 1.5;
->>>>>>> Stashed changes
+/* ========================
+   TIER TITLES - Better Spacing
+   ======================== */
+
+.sponsor-tier-title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  margin: 60px 0 30px 0; /* More space above, less below */
 }
 
+/* First tier title - less top margin */
+.sponsor-tier-title:first-of-type {
+  margin-top: 20px;
+}
 
 /* ========================
-   Tier-Based Color Styling
+   TIER-BASED COLOR STYLING
    ======================== */
 
 /* Platinum Tier */
@@ -1135,200 +1067,161 @@ body {
 }
 .platinum-title {
   color: #ff4d4d;
-  text-align: center;
-  font-size: 1.4rem;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  margin-bottom: 20px;
 }
-<<<<<<< Updated upstream
-.sponsor-platinum::after {
-    background: rgba(255, 0, 0, 0.25);
-}
-
-/* Gold */
-.sponsor-gold {
-    border: 1px solid rgba(255, 215, 0, 0.6);
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 0 50px rgba(255, 215, 0, 0.3);
-}
-=======
 
 /* Gold Tier */
->>>>>>> Stashed changes
 .sponsor-gold .sponsor-logo {
   border: 2px solid #FFD700;
   color: #FFD700;
 }
 .gold-title {
   color: #FFD700;
-  text-align: center;
-  font-size: 1.4rem;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  margin-bottom: 20px;
 }
-<<<<<<< Updated upstream
-.sponsor-gold::after {
-    background: rgba(255, 215, 0, 0.25);
-}
-
-/* Silver */
-.sponsor-silver {
-    border: 1px solid rgba(192, 192, 192, 0.6);
-    box-shadow: 0 0 25px rgba(192, 192, 192, 0.6), 0 0 50px rgba(192, 192, 192, 0.3);
-}
-=======
 
 /* Silver Tier */
->>>>>>> Stashed changes
 .sponsor-silver .sponsor-logo {
   border: 2px solid #c0c0c0;
   color: #c0c0c0;
 }
 .silver-title {
   color: #c0c0c0;
-  text-align: center;
-  font-size: 1.4rem;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  margin-bottom: 20px;
 }
-<<<<<<< Updated upstream
-.sponsor-silver::after {
-    background: rgba(192, 192, 192, 0.25);
-}
-
-/* Bronze */
-.sponsor-bronze {
-    border: 1px solid rgba(205, 127, 50, 0.6);
-    box-shadow: 0 0 25px rgba(205, 127, 50, 0.6), 0 0 50px rgba(205, 127, 50, 0.3);
-}
-=======
 
 /* Bronze Tier */
->>>>>>> Stashed changes
 .sponsor-bronze .sponsor-logo {
   border: 2px solid #cd7f32;
   color: #cd7f32;
 }
 .bronze-title {
   color: #cd7f32;
-  text-align: center;
-  font-size: 1.4rem;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-<<<<<<< Updated upstream
-.sponsor-bronze::after {
-    background: rgba(205, 127, 50, 0.25);
-}
-=======
->>>>>>> Stashed changes
-
-/* Pulse animation */
-@keyframes tierPulse {
-    0%, 100% {
-        opacity: 0.6;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.05);
-    }
 }
 
 /* ===========================================
-   Sponsor Tier Pulse Animations (Safe & Scoped)
+   PULSE ANIMATIONS (Optimized)
    =========================================== */
 
 /* Platinum Pulse (Red) */
 .sponsor-platinum {
-  animation: sponsorPulseRed 2.5s infinite ease-in-out;
+  animation: sponsorPulseRed 3s infinite ease-in-out;
 }
 
 @keyframes sponsorPulseRed {
-  0% {
-    box-shadow: 0 0 12px rgba(255, 77, 77, 0.3),
-                0 0 24px rgba(255, 77, 77, 0.2);
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(255, 77, 77, 0.3);
   }
   50% {
-    box-shadow: 0 0 24px rgba(255, 77, 77, 0.6),
-                0 0 48px rgba(255, 77, 77, 0.4);
-  }
-  100% {
-    box-shadow: 0 0 12px rgba(255, 77, 77, 0.3),
-                0 0 24px rgba(255, 77, 77, 0.2);
+    box-shadow: 0 0 24px rgba(255, 77, 77, 0.6);
   }
 }
 
-
-/* Gold Pulse (Gold) */
+/* Gold Pulse */
 .sponsor-gold {
-  animation: sponsorPulseGold 2.5s infinite ease-in-out;
+  animation: sponsorPulseGold 3s infinite ease-in-out;
 }
 
 @keyframes sponsorPulseGold {
-  0% {
-    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3),
-                0 0 24px rgba(255, 215, 0, 0.2);
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
   }
   50% {
-    box-shadow: 0 0 24px rgba(255, 215, 0, 0.6),
-                0 0 48px rgba(255, 215, 0, 0.4);
-  }
-  100% {
-    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3),
-                0 0 24px rgba(255, 215, 0, 0.2);
+    box-shadow: 0 0 24px rgba(255, 215, 0, 0.6);
   }
 }
 
-
-/* Silver Pulse (Gray) */
+/* Silver Pulse */
 .sponsor-silver {
-  animation: sponsorPulseSilver 2.5s infinite ease-in-out;
+  animation: sponsorPulseSilver 3s infinite ease-in-out;
 }
 
 @keyframes sponsorPulseSilver {
-  0% {
-    box-shadow: 0 0 12px rgba(192, 192, 192, 0.3),
-                0 0 24px rgba(192, 192, 192, 0.2);
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(192, 192, 192, 0.3);
   }
   50% {
-    box-shadow: 0 0 24px rgba(192, 192, 192, 0.6),
-                0 0 48px rgba(192, 192, 192, 0.4);
-  }
-  100% {
-    box-shadow: 0 0 12px rgba(192, 192, 192, 0.3),
-                0 0 24px rgba(192, 192, 192, 0.2);
+    box-shadow: 0 0 24px rgba(192, 192, 192, 0.6);
   }
 }
 
-
-/* Bronze Pulse (Brown) */
+/* Bronze Pulse */
 .sponsor-bronze {
-  animation: sponsorPulseBronze 2.5s infinite ease-in-out;
+  animation: sponsorPulseBronze 3s infinite ease-in-out;
 }
 
 @keyframes sponsorPulseBronze {
-  0% {
-    box-shadow: 0 0 12px rgba(205, 127, 50, 0.3),
-                0 0 24px rgba(205, 127, 50, 0.2);
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(205, 127, 50, 0.3);
   }
   50% {
-    box-shadow: 0 0 24px rgba(205, 127, 50, 0.6),
-                0 0 48px rgba(205, 127, 50, 0.4);
-  }
-  100% {
-    box-shadow: 0 0 12px rgba(205, 127, 50, 0.3),
-                0 0 24px rgba(205, 127, 50, 0.2);
+    box-shadow: 0 0 24px rgba(205, 127, 50, 0.6);
   }
 }
 
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
 
+@media (max-width: 768px) {
+  .sponsor-grid {
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .sponsor-card {
+    width: 180px;
+    padding: 18px;
+  }
+  
+  .sponsor-logo {
+    width: 70px;
+    height: 70px;
+    font-size: 14px;
+  }
+  
+  .sponsor-tier-title {
+    font-size: 1.4rem;
+    margin: 40px 0 20px 0;
+  }
+}
 
+@media (max-width: 600px) {
+  .sponsor-grid {
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .sponsor-card {
+    width: 160px;
+    padding: 15px;
+  }
+  
+  .sponsor-logo {
+    width: 60px;
+    height: 60px;
+    font-size: 12px;
+  }
+  
+  .sponsor-card h4 {
+    font-size: 0.9rem;
+  }
+  
+  .sponsor-tier-title {
+    font-size: 1.2rem;
+    margin: 30px 0 15px 0;
+  }
+}
 
-
+@media (max-width: 480px) {
+  /* Stack sponsors vertically on very small screens if needed */
+  .sponsor-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .sponsor-card {
+    width: 200px; /* Wider when stacked */
+  }
+}
 
 
 /* Responsive Design */
@@ -1714,6 +1607,14 @@ body {
 }
 
 
+
+
+/* ===========================================
+   UPDATED SYMCREIDEA SECTION (Button Removed)
+   =========================================== */
+
+
+
 /* symcredia*/
 /* 🌟 Symcreidea Special Card */
 .symcreidea-card {
@@ -1723,11 +1624,12 @@ body {
               inset 0 0 15px rgba(0, 212, 255, 0.1);
   backdrop-filter: blur(15px);
   border-radius: 20px;
-  padding: 30px;
+  padding: 40px;
   animation: symcPulse 6s infinite ease-in-out;
   position: relative;
   overflow: hidden;
   transition: all 0.4s ease;
+  text-align: center;
 }
 
 .symcreidea-card:hover {
@@ -1736,57 +1638,205 @@ body {
               inset 0 0 25px rgba(0, 212, 255, 0.15);
 }
 
-/* Breathing cyan glow */
-@keyframes symcPulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.2), inset 0 0 15px rgba(0, 212, 255, 0.1); }
-  50% { box-shadow: 0 0 35px rgba(0, 212, 255, 0.4), inset 0 0 25px rgba(0, 212, 255, 0.15); }
-}
-
-/* Text inside Symcreidea */
 .symcreidea-card p {
   color: #b8f5ff;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.7;
   font-weight: 400;
+  margin: 0;
 }
 
-/* 🌈 Register Button with Pulse + Sweep */
-.symcreidea-button {
+/* Keep the pulse animation */
+@keyframes symcPulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2), 
+                inset 0 0 15px rgba(0, 212, 255, 0.1); 
+  }
+  50% { 
+    box-shadow: 0 0 35px rgba(0, 212, 255, 0.4), 
+                inset 0 0 25px rgba(0, 212, 255, 0.15); 
+  }
+}
+
+
+/* Event card glow */
+
+
+/* ===========================================
+   COMPLETE UPDATED FLIP CARD EVENTS SECTION
+   =========================================== */
+
+/* Updated Events Grid - SMALLER */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 320px)); /* Reduced from 350px-400px */
+  gap: 30px; /* Reduced from 40px */
+  margin-top: 40px;
+  justify-content: center; 
+}
+
+/* Main flip card container - SMALLER */
+.event-card {
+  background: transparent;
+  width: 100%;
+  height: 420px; /* Reduced from 500px */
+  perspective: 1000px;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* The flip card inner container - FIXED TRANSITION */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s ease-in-out; /* Smoother, no bounce */
+  transform-style: preserve-3d;
+  border-radius: 20px;
+}
+
+/* CLICK-BASED FLIP - Changed from hover to .flipped class */
+.event-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and back shared styles */
+.flip-card-front, 
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  box-sizing: border-box;
+  
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Front side - Logo only */
+.flip-card-front {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 100, 150, 0.15));
+  border-color: rgba(0, 212, 255, 0.3);
+}
+
+/* Back side - Content */
+.flip-card-back {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 150, 0, 0.15));
+  border-color: rgba(255, 215, 0, 0.3);
+  transform: rotateY(180deg);
+}
+
+/* Front side logo - BIGGER */
+.flip-card-front .event-logo {
+  height: 450px; /* Increased from 250px */
+  width: auto;
+  max-width: 100%; /* Increased from 90% */
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.6)) 
+          drop-shadow(0 0 40px rgba(0, 212, 255, 0.4));
+  transition: all 0.3s ease;
+}
+
+/* Logo glow animation on front */
+.flip-card-front .event-logo {
+  animation: logoGlowPulse 3s ease-in-out infinite;
+}
+
+@keyframes logoGlowPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.4)) 
+            drop-shadow(0 0 30px rgba(0, 212, 255, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(0, 212, 255, 0.7)) 
+            drop-shadow(0 0 50px rgba(0, 212, 255, 0.5));
+  }
+}
+
+/* Back side content */
+.flip-card-back h4 {
+  font-family: 'Orbitron', sans-serif;
+  color: #FFD700;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.flip-card-back .event-caption {
+  font-style: italic;
+  color: #ffcc33;
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px rgba(255, 204, 51, 0.3);
+}
+
+.flip-card-back .event-description {
+  color: #e0e8f0;
+  line-height: 1.6;
+  font-weight: 400;
+  font-size: 0.9rem; /* Slightly smaller */
+  text-align: justify;
+  text-align-last: center;
+  overflow-y: auto;
+  max-height: 180px; /* Reduced from 250px */
+  padding: 0 10px;
+  
+  /* Custom scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 215, 0, 0.5) transparent;
+}
+
+.flip-card-back .event-description::-webkit-scrollbar {
+  width: 4px;
+}
+
+.flip-card-back .event-description::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.flip-card-back .event-description::-webkit-scrollbar-thumb {
+  background: rgba(255, 215, 0, 0.5);
+  border-radius: 2px;
+}
+
+/* Register Button for Biznovator */
+.biznovator-button {
   display: inline-block;
+  margin-top: 20px;
   padding: 12px 28px;
   font-size: 1rem;
   font-weight: 600;
   color: white;
-  background: linear-gradient(135deg, #00d4ff 0%, #0062ff 100%);
+  background: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%);
   border: none;
   border-radius: 30px;
   text-decoration: none;
-  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
   position: relative;
   overflow: hidden;
-  animation: btnPulse 2s infinite ease-in-out;
   transition: transform 0.3s ease;
+  text-align: center;
 }
 
-.symcreidea-button:hover {
+.biznovator-button:hover {
   transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
 }
 
-/* Pulse animation */
-@keyframes btnPulse {
-  0%, 100% {
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.4),
-                0 0 20px rgba(0, 212, 255, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.7),
-                0 0 40px rgba(0, 212, 255, 0.3);
-  }
-}
-
-/* Sweep shine effect */
-.symcreidea-button::after {
+/* Golden sweep effect */
+.biznovator-button::after {
   content: '';
   position: absolute;
   top: 0;
@@ -1795,292 +1845,442 @@ body {
   height: 100%;
   background: linear-gradient(120deg, rgba(255,255,255,0.4), transparent);
   transform: skewX(-20deg);
-  animation: sweep 3s infinite;
+  animation: goldenSweep 3s infinite;
 }
 
-@keyframes sweep {
+@keyframes goldenSweep {
   0% { left: -75%; }
   50% { left: 125%; }
   100% { left: 125%; }
 }
 
+/* Hover effects for entire card */
 
 
-
-/* Event card glow */
-/* Fixed Event Card Layout - Wider Cards */
-.events-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 600px)); /* Much wider range */
-  gap: 40px;
-  margin-top: 40px;
-  justify-content: center; 
-}
-
-.event-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 40px;           /* Increased padding for wider cards */
-  border-radius: 20px;     
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-
-  min-height: 500px;       
-  max-width: 800px;        /* Increased max-width significantly */
-  width: 100%;             /* Take full available width */
-  box-sizing: border-box;
-}
-
-/* Restore the glow effect that was missing */
-.event-card::before {
+/* Add subtle card glow */
+.flip-card-front::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
-  transition: left 0.5s ease;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, rgba(0, 212, 255, 0.3), rgba(0, 150, 255, 0.2));
+  border-radius: 22px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.event-card:hover::before {
-  left: 100%;
+.flip-card-back::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, rgba(255, 215, 0, 0.3), rgba(255, 150, 0, 0.2));
+  border-radius: 22px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.event-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
-  border-color: rgba(0, 212, 255, 0.4);
+.event-card:hover .flip-card-front::before,
+.event-card:hover .flip-card-back::before {
+  opacity: 1;
 }
 
-.event-card::after {
-  display: none !important;
-}
+/* ===========================================
+   UPDATED RESPONSIVE DESIGN
+   =========================================== */
 
-.event-card:hover::after {
-    width: 100%;
-    opacity: 0.05;
-}
-
-.event-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
-}
-
-/* Event Logo - Adjust for wider cards */
-.event-logo {
-  height: 200px;           /* Even larger since we have more space */
-  width: auto;
-  max-width: 90%;          
-  object-fit: contain;
-  display: block;
-  margin-bottom: 25px;
-  
-  /* Strong glow effect */
-  filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.6)) 
-          drop-shadow(0 0 40px rgba(0, 212, 255, 0.4))
-          brightness(1.1);
-  
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-}
-
-.event-logo:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 25px rgba(0, 212, 255, 0.8)) 
-          drop-shadow(0 0 50px rgba(0, 212, 255, 0.6))
-          brightness(1.2);
-}
-
-.event-logo:hover {
-  transform: scale(1.05);
-}
-
-/* Event Title */
-.event-card h4 {
-    font-family: 'Orbitron', sans-serif;
-    color: #00d4ff;
-    font-size: 1.5rem;       /* Slightly larger */
-    margin-bottom: 15px;
-    font-weight: 600;
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    flex-shrink: 0;
-    letter-spacing: 0.5px;   /* Better spacing */
-}
-
-/* Caption style */
-.event-caption {
-    font-style: italic; 
-    color: #FFD700;
-    font-weight: 500;
-    margin-bottom: 20px;     /* More space */
-    text-align: center;
-    flex-shrink: 0;
-    font-size: 1.1rem;       /* Slightly larger */
-    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
-}
-
-/* Description - Better spacing for wider cards */
-.event-description {
-  color: #b0b8d0;
-  line-height: 1.7;         /* More comfortable line height */
-  font-weight: 400;
-  font-size: 1rem;          /* Slightly larger font for wider cards */
-  text-align: justify;      
-  text-align-last: center;  
-  
-  flex-grow: 1;
-  display: block;           
-  
-  overflow: visible;        
-  padding: 0 20px;          /* More horizontal padding for wider cards */
-  max-width: 100%;          /* Ensure text uses full width */
-}
-
-/* Custom scrollbar styling - Remove since we're not using scroll */
-
-/* Responsive adjustments for wider cards */
 @media (max-width: 768px) {
   .events-grid {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 500px)); /* Wider on tablet */
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 300px)); /* Smaller on tablet */
+    gap: 25px;
   }
   
   .event-card {
-    padding: 30px;
-    min-height: 450px;      
-    max-width: 500px;       /* Wider max-width */
+    height: 380px; /* Smaller on tablet */
   }
   
-  .event-logo {
-    height: 170px;          /* Keep larger on tablet */
-    filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.5)) 
-            drop-shadow(0 0 30px rgba(0, 212, 255, 0.3));
+  .flip-card-front .event-logo {
+    height: 260px; /* Still bigger than before, but scaled for tablet */
   }
   
-  .event-card h4 {
-    font-size: 1.5rem;      /* Slightly larger for wider cards */
+  .flip-card-back h4 {
+    font-size: 1.5rem; /* Slightly smaller */
   }
   
-  .event-caption {
-    font-size: 1.1rem;
-  }
-  
-  .event-description {
-    font-size: 0.95rem;     /* Larger text for wider cards */
-    padding: 0 15px;
+  .flip-card-back .event-description {
+    font-size: 0.85rem;
+    max-height: 160px;
   }
 }
 
 @media (max-width: 480px) {
   .events-grid {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 20px;
     padding: 0 10px;
   }
   
   .event-card {
-    padding: 25px;
-    min-height: 400px;      
+    height: 350px; /* Smaller on mobile */
+    max-width: 320px; /* Limit max width on mobile */
     margin: 0 auto;
-    max-width: 400px;       /* Wider even on mobile */
-    width: calc(100% - 20px); /* Take most of screen width */
   }
   
-  .event-logo {
-    height: 150px;          /* Keep reasonably large on mobile */
-    filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.5)) 
-            drop-shadow(0 0 25px rgba(0, 212, 255, 0.3));
+  .flip-card-front, 
+  .flip-card-back {
+    padding: 20px;
   }
   
-  .event-card h4 {
-    font-size: 1.4rem;
+  .flip-card-front .event-logo {
+    height: 220px; /* Still bigger than original, scaled for mobile */
   }
   
-  .event-caption {
-    font-size: 1rem;
+  .flip-card-back h4 {
+    font-size: 1.3rem;
   }
   
-  .event-description {
-    font-size: 0.9rem;      /* Larger mobile text */
-    text-align: center;     
-    text-align-last: center;
-    padding: 0 10px;
+  .flip-card-back .event-caption {
+    font-size: 0.95rem;
+  }
+  
+  .flip-card-back .event-description {
+    font-size: 0.8rem;
+    max-height: 140px;
+  }
+  
+  .biznovator-button {
+    padding: 8px 20px;
+    font-size: 0.85rem;
   }
 }
 
-/* Event card glow */
-/* Custom styling for golden glowing card */
+
+
+/* FINAL FIXED Custom styling for golden glowing card */
 .glow-gold {
-  position: relative;
-  z-index: 1;
-  border: 1px solid rgba(255, 215, 0, 0.5);
-  background: rgba(255, 223, 0, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.5) !important;
+  background: rgba(255, 223, 0, 0.05) !important;
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.4),
-              0 0 40px rgba(255, 223, 0, 0.2);
+              0 0 40px rgba(255, 223, 0, 0.2) !important;
+  animation: goldenPulse 3s ease-in-out infinite;
+  position: relative;
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
 }
 
+/* Apply glow to both front and back sides */
+.glow-gold .flip-card-front,
+.glow-gold .flip-card-back {
+  border: 1px solid rgba(255, 215, 0, 0.5) !important;
+  background: linear-gradient(135deg, rgba(255, 223, 0, 0.1), rgba(255, 215, 0, 0.15)) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+              0 0 20px rgba(255, 215, 0, 0.4) !important;
+}
+
+/* CRITICAL FIX: Override the default event-card hover transform */
+.event-card.glow-gold:hover {
+  transform: translateY(0) !important; /* Force no movement */
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.8),
+              0 0 60px rgba(255, 223, 0, 0.4),
+              0 0 90px rgba(255, 215, 0, 0.2) !important;
+}
 
 /* Emission glow effect */
 .glow-gold::before {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 70%);
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 60%);
   opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease;
   z-index: -1;
+  border-radius: 25px;
+  pointer-events: none;
 }
 
 .glow-gold:hover::before {
   opacity: 1;
-  transform: scale(1.2);
 }
 
-/* Remove the default blue shimmer */
-.glow-gold::after {
+/* Remove any default glow effects for golden cards */
+.glow-gold .flip-card-front::before,
+.glow-gold .flip-card-back::before {
   display: none !important;
 }
 
-/* Hover enhancements */
-.glow-gold:hover {
-  box-shadow: 0 0 30px rgba(255, 215, 0, 0.8),
-              0 0 60px rgba(255, 223, 0, 0.4),
-              0 0 90px rgba(255, 215, 0, 0.2);
-  border-color: rgba(255, 215, 0, 0.8);
-  transform: translateY(-10px);
+/* Title & caption styles for back side */
+.glow-gold .flip-card-back h4 {
+  color: #FFD700 !important;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5) !important;
 }
 
-/* Title & caption styles */
-.glow-gold h4 {
-  color: #FFD700;
-}
-
-.glow-gold:hover h4 {
-  color: #ffcc00;
-}
-
-.glow-gold .event-caption {
+.glow-gold .flip-card-back .event-caption {
   font-style: italic; 
-  color: #FFD700;
+  color: #ffcc33 !important;
   font-weight: 500;
   margin-bottom: 15px;
+  text-shadow: 0 0 5px rgba(255, 204, 51, 0.3) !important;
 }
 
-.glow-gold:hover .event-caption {
-  color: #ffcc33;
+
+/* Golden pulse animation */
+@keyframes goldenPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4),
+                0 0 40px rgba(255, 223, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6),
+                0 0 50px rgba(255, 223, 0, 0.3);
+  }
 }
+
+
+/* normal event cards */
+/* ===========================================
+   FEATURED EVENT (Biznovator) - Centered
+   =========================================== */
+.featured-event {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+.featured-event .event-card {
+  max-width: 400px;
+}
+
+/* ===========================================
+   OTHER EVENTS - Smaller Cards Section
+   =========================================== */
+.other-events {
+  margin-top: 60px;
+}
+.sub-section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #00d4ff;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+/* Small Events Grid */
+.small-events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
+  gap: 20px;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===========================================
+   SMALL EVENT CARDS - Compact Flip Design
+   =========================================== */
+.small-event-card {
+  background: transparent;
+  width: 100%;
+  height: 220px;
+  perspective: 1000px;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.small-event-card.flipped .small-flip-card-inner {
+  transform: rotateY(180deg);
+}
+.small-flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+}
+
+/* Shared front/back styles */
+.small-flip-card-front, 
+.small-flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Front */
+.small-flip-card-front {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 100, 150, 0.15));
+  border-color: rgba(0, 212, 255, 0.3);
+}
+.small-flip-card-front .small-event-logo {
+  height: 80px;
+  max-width: 80%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.4));
+  background-color: transparent;
+  transition: transform 0.3s ease;
+}
+.small-event-card:hover .small-flip-card-front .small-event-logo {
+  transform: scale(1.05);
+}
+
+/* Back */
+.small-flip-card-back {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.12), rgba(0, 150, 200, 0.18));
+  border-color: rgba(0, 212, 255, 0.4);
+  transform: rotateY(180deg);
+}
+.small-flip-card-back h4 {
+  font-family: 'Orbitron', sans-serif;
+  color: #00d4ff;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  font-weight: 600;
+  text-shadow: 0 0 6px rgba(0, 212, 255, 0.4);
+  text-align: center;
+}
+.small-flip-card-back .small-event-caption {
+  font-style: italic;
+  color: #66e0ff;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.small-flip-card-back .small-event-description {
+  color: #b8f5ff;
+  font-size: 0.7rem;
+  line-height: 1.3;
+  text-align: center;
+  overflow-y: auto;
+  max-height: 60px;
+  padding: 0 5px;
+}
+
+/* ===========================================
+   CYAN GLOW + PULSE ANIMATION
+   =========================================== */
+.small-event-card.glow-cyan {
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  background: rgba(0, 212, 255, 0.03);
+  animation: cyanSmallPulse 4s ease-in-out infinite;
+}
+.small-event-card.glow-cyan .small-flip-card-front,
+.small-event-card.glow-cyan .small-flip-card-back {
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25),
+              0 0 14px rgba(0, 212, 255, 0.2);
+}
+@keyframes cyanSmallPulse {
+  0%, 100% {
+    box-shadow: 0 0 14px rgba(0, 212, 255, 0.2),
+                0 0 28px rgba(0, 212, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(0, 212, 255, 0.35),
+                0 0 40px rgba(0, 212, 255, 0.18);
+  }
+}
+
+/* Hover lift */
+.small-event-card.glow-cyan:hover {
+  transform: translateY(-4px);
+}
+
+
+
+
+
+/* ROad Map Glow */
+
+
+.glow-pink {
+  position: relative;
+  background: #120014; /* Solid dark color, no transparency */
+  border: 1px solid rgba(255, 0, 140, 0.5);
+  box-shadow: 0 0 14px rgba(255, 0, 140, 0.25),
+              0 0 30px rgba(255, 0, 140, 0.15);
+  animation: pinkPulse 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* Glow ring layer */
+.glow-pink {
+  position: relative;
+  background: #120014; /* solid fill, no transparency */
+  border: none; /* remove border to kill inner box line */
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(255, 0, 140, 0.4),
+              0 0 38px rgba(255, 0, 140, 0.25);
+  animation: pinkPulse 3s ease-in-out infinite;
+}
+
+@keyframes pinkPulse {
+  0%, 100% {
+    box-shadow: 0 0 18px rgba(255, 0, 140, 0.4),
+                0 0 38px rgba(255, 0, 140, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(255, 0, 140, 0.55),
+                0 0 55px rgba(255, 0, 140, 0.35);
+  }
+}
+
+
+/* mystery pulse */
+/* Mystery / Locked Roadmap Card */
+.roadmap-card-hidden {
+  background: #0a0010; /* Solid dark so no background lines show */
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(200, 0, 255, 0.4),
+              0 0 38px rgba(200, 0, 255, 0.25); /* Purple glow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 0 10px rgba(200, 0, 255, 0.8),
+               0 0 20px rgba(200, 0, 255, 0.6);
+  cursor: default;
+  user-select: none;
+  animation: roadmapMysteryPulse 3s ease-in-out infinite;
+  min-height: 180px; /* matches your roadmap card height */
+  padding: 20px;
+}
+
+/* Glow pulse animation */
+@keyframes roadmapMysteryPulse {
+  0%, 100% {
+    box-shadow: 0 0 18px rgba(200, 0, 255, 0.4),
+                0 0 38px rgba(200, 0, 255, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(200, 0, 255, 0.55),
+                0 0 55px rgba(200, 0, 255, 0.35);
+  }
+}
+
