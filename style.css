@@ -2012,7 +2012,7 @@ body {
 
 
 /* ===================================
-   📱 Responsive Design for All Devices
+   📱 Complete Responsive Design Fix
    =================================== */
 
 /* ---------- Tablets & Small Laptops ---------- */
@@ -2027,6 +2027,9 @@ body {
   .hero-logo img {
     height: 220px;
   }
+  .content-card {
+    padding: 18px;
+  }
   .roadmap-item {
     width: 45%;
   }
@@ -2039,6 +2042,7 @@ body {
 
 /* ---------- Large Phones & Portrait Tablets ---------- */
 @media (max-width: 768px) {
+  /* Navigation */
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
@@ -2051,9 +2055,9 @@ body {
   .content-card {
     padding: 15px;
   }
-  /* Roadmap Layout Center */
+  /* Roadmap layout center */
   .roadmap-container {
-    padding-left: 0;
+    padding: 0;
   }
   .roadmap-timeline {
     position: relative;
@@ -2061,14 +2065,26 @@ body {
     width: 100%;
   }
   .roadmap-timeline::before {
-    left: 20px;
+    display: none; /* hide center line */
   }
   .roadmap-item {
-    width: calc(100% - 40px);
-    left: 40px !important;
-    margin-bottom: 40px;
+    position: relative !important;
+    left: 0 !important;
+    width: 100% !important;
+    margin: 20px 0;
+    text-align: center;
   }
-  /* Footer Center */
+  .roadmap-date {
+    position: relative !important;
+    left: 0 !important;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  .roadmap-content {
+    text-align: center;
+  }
+  /* Footer center */
   .footer-container {
     flex-direction: column;
     gap: 20px;
@@ -2109,31 +2125,34 @@ body {
   .small-event-logo {
     height: 100px;
   }
-  /* Roadmap Single Column */
-  .roadmap-timeline::before {
-    display: none;
+  /* Roadmap full mobile stack */
+  .roadmap-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .roadmap-item {
-    position: relative !important;
-    left: 0 !important;
-    width: 100% !important;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
     text-align: center;
-    margin-bottom: 30px;
+    width: 95%;
+    margin: 10px 0;
   }
   .roadmap-date {
-    position: relative !important;
-    left: 0 !important;
     font-size: 0.85rem;
-    margin-bottom: 8px;
+    font-weight: bold;
+    margin-bottom: 6px;
   }
   .roadmap-content {
-    text-align: center;
+    font-size: 0.85rem;
   }
-  /* Sponsors Single Column */
+  /* Sponsors single column */
   .sponsor-grid {
     grid-template-columns: 1fr;
   }
-  /* Footer Small */
+  /* Footer small */
   .footer-bottom {
     font-size: 0.75rem;
   }
@@ -2161,6 +2180,9 @@ body {
   }
   .roadmap-date {
     font-size: 0.75rem;
+  }
+  .roadmap-content {
+    font-size: 0.8rem;
   }
   /* Symcreidea Logo */
   #symcreidea .section-title img {
