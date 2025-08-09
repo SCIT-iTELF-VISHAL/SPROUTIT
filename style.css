@@ -2287,3 +2287,90 @@ body {
   }
 }
 
+/* ===============================
+   📱 Mobile Fix Pack for Phones
+   =============================== */
+
+/* Extra tweak for small-to-medium phones */
+@media (max-width: 480px) {
+
+  /* Logo in hero section */
+  .hero-logo img {
+    height: 150px;
+    transform: scale(1);
+    animation: none; /* avoids oversized growth */
+  }
+
+  /* Loader image */
+  .loader-logo-img {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* Navigation links spacing */
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.85rem;
+  }
+
+  /* Content cards padding */
+  .content-card {
+    padding: 15px;
+  }
+
+  /* Event logos on small flip cards */
+  .event-logo {
+    height: 180px !important;
+  }
+  .small-event-logo {
+    height: 120px;
+  }
+
+  /* Roadmap - force single column */
+  .roadmap-timeline::before {
+    left: 20px;
+  }
+  .roadmap-item {
+    width: calc(100% - 40px);
+    left: 40px !important;
+    margin-bottom: 40px;
+  }
+  .roadmap-date {
+    left: -60px !important;
+    font-size: 0.7rem;
+    padding: 6px 10px;
+  }
+
+  /* Footer stack and font size */
+  .footer-container {
+    gap: 20px;
+  }
+  .footer-about h3 {
+    font-size: 1.1rem;
+  }
+  .footer-description {
+    font-size: 0.8rem;
+  }
+  .footer-bottom {
+    font-size: 0.75rem;
+  }
+}
+
+/* Ultra-small devices (under 360px wide) */
+@media (max-width: 360px) {
+  body {
+    font-size: 0.8rem;
+  }
+  .hero-logo img {
+    height: 130px;
+  }
+  .loader-logo-img {
+    width: 150px;
+    height: 150px;
+  }
+  .event-logo {
+    height: 150px !important;
+  }
+}
