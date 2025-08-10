@@ -1,0 +1,1055 @@
+/* =====================================================
+   RESPONSIVE.CSS - Complete Mobile & Tablet Support
+   ===================================================== */
+
+/* ===========================================
+   LARGE SCREENS (1200px+) - Desktop
+   =========================================== */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1400px;
+    padding: 0 40px;
+  }
+  
+  .hero-content {
+    padding: 80px 60px;
+    max-width: 700px;
+  }
+  
+  .symcreidea-logo {
+    width: 450px !important;
+    height: auto;
+  }
+}
+
+/* ===========================================
+   TABLET LANDSCAPE (768px - 1199px)
+   =========================================== */
+@media (max-width: 1199px) and (min-width: 768px) {
+  /* Container adjustments */
+  .container {
+    max-width: 100%;
+    padding: 0 30px;
+  }
+  
+  /* iTELF Logo - Tablet size */
+  .itelf-logo {
+    height: 50px;
+    right: 15px;
+    top: 10px;
+  }
+  
+  .itelf-logo img {
+    max-width: 180px;
+  }
+  
+  /* Hero section */
+  .hero-content {
+    padding: 50px 30px;
+    max-width: 550px;
+    margin: 0 15px;
+  }
+  
+  .hero-logo img {
+    height: 180px;
+    transform: scale(1.1);
+  }
+  
+  /* Navigation */
+  .nav-content {
+    padding: 15px 30px;
+    padding-right: 200px;
+  }
+  
+  .nav-links {
+    gap: 25px;
+  }
+  
+  /* Symcreidea Logo - Tablet */
+  .symcreidea-logo {
+    width: 380px !important;
+    height: auto;
+    max-width: 90% !important;
+  }
+  
+  /* Content cards */
+  .content-card {
+    padding: 35px;
+    margin-bottom: 35px;
+  }
+  
+  /* SCIT card adjustments */
+  .glow-scit {
+    padding: 35px;
+  }
+  
+  .scit-logo {
+    max-width: 150px;
+  }
+  
+  /* Events - Featured event */
+  .featured-event .event-card {
+    max-width: 350px;
+  }
+  
+  .event-card {
+    height: 380px;
+  }
+  
+  /* Small events grid */
+  .small-events-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 180px));
+    gap: 18px;
+    max-width: 800px;
+  }
+  
+  .small-event-card {
+    height: 200px;
+  }
+  
+  /* Footer adjustments */
+  .footer-container {
+    grid-template-columns: 1.8fr 1fr 1fr;
+    gap: 30px;
+  }
+  
+  /* Sponsors */
+  .sponsor-grid {
+    gap: 20px;
+  }
+  
+  .sponsor-card {
+    width: 180px;
+    padding: 18px;
+  }
+  
+  .sponsor-logo {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* ===========================================
+   TABLET PORTRAIT (481px - 767px)
+   =========================================== */
+@media (max-width: 767px) and (min-width: 481px) {
+  /* Container */
+  .container {
+    padding: 0 20px;
+  }
+  
+  /* iTELF Logo - Smaller for tablets */
+  .itelf-logo {
+    height: 45px;
+    right: 12px;
+    top: 8px;
+  }
+  
+  .itelf-logo img {
+    max-width: 160px;
+  }
+  
+  /* Hero section */
+  .hero-content {
+    padding: 40px 25px;
+    max-width: 90%;
+    margin: 0 10px;
+  }
+  
+  .hero-logo img {
+    height: 150px;
+    transform: scale(1.0);
+  }
+  
+  .tagline {
+    font-size: 1.1rem !important;
+  }
+  
+  /* Navigation - Stack on tablets */
+  .nav-content {
+    padding: 12px 20px;
+    padding-right: 180px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-links {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+  
+  /* CRITICAL: Symcreidea Logo - Tablet Portrait */
+  .symcreidea-logo {
+    width: 320px !important;
+    height: auto;
+    max-width: 95% !important;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Section spacing */
+  .section {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+  
+  /* Content cards */
+  .content-card {
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .content-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  /* SCIT card */
+  .glow-scit {
+    padding: 30px;
+  }
+  
+  .scit-logo {
+    max-width: 130px;
+  }
+  
+  /* Events section */
+  .featured-event .event-card {
+    max-width: 320px;
+  }
+  
+  .event-card {
+    height: 350px;
+  }
+  
+  .flip-card-front .event-logo {
+    height: 180px;
+  }
+  
+  /* Small events - 2x2 grid */
+  .small-events-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 400px;
+  }
+  
+  .small-event-card {
+    height: 180px;
+  }
+  
+  .small-flip-card-front .small-event-logo {
+    height: 60px;
+  }
+  
+  /* Investors - Stack in single column */
+  .investors-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* Sponsors - 2 per row */
+  .sponsor-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 450px;
+    margin: 0 auto 30px;
+  }
+  
+  .sponsor-card {
+    width: 100%;
+    padding: 15px;
+  }
+  
+  .sponsor-logo {
+    width: 60px;
+    height: 60px;
+    font-size: 14px;
+  }
+  
+  /* Footer - Stack vertically */
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
+
+/* ===========================================
+   MOBILE DEVICES (320px - 480px)
+   =========================================== */
+@media (max-width: 480px) {
+  /* Base adjustments */
+  body {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  /* iTELF Logo - Mobile size */
+  .itelf-logo {
+    height: 40px;
+    right: 10px;
+    top: 6px;
+  }
+  
+  .itelf-logo img {
+    max-width: 140px;
+  }
+  
+  /* Loading screen - Mobile */
+  .loader-logo-img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .loader-text {
+    font-size: 1.8rem;
+  }
+  
+  .loader-progress {
+    width: 250px;
+  }
+  
+  /* Hero section - Mobile */
+  .hero-content {
+    padding: 30px 20px;
+    margin: 0 5px;
+    max-width: 95%;
+  }
+  
+  .hero-logo img {
+    height: 120px;
+    transform: scale(0.9);
+  }
+  
+  .tagline {
+    font-size: 1rem !important;
+    margin-bottom: 20px;
+  }
+  
+  /* Navigation - Mobile friendly */
+  .nav-content {
+    padding: 10px 15px;
+    padding-right: 155px;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .nav-links {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-links a {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+  
+  /* CRITICAL: Symcreidea Logo - Mobile */
+  .symcreidea-logo {
+    width: 280px !important;
+    height: auto;
+    max-width: 100% !important;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Section adjustments */
+  .section {
+    padding: 50px 0;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    line-height: 1.2;
+  }
+  
+  /* Content cards - Mobile */
+  .content-card {
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+  }
+  
+  .content-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  
+  .content-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  /* SCIT card - Mobile */
+  .glow-scit {
+    padding: 25px;
+  }
+  
+  .scit-logo {
+    max-width: 110px;
+    margin-bottom: 15px;
+  }
+  
+  .glow-scit h3 {
+    font-size: 1.3rem;
+  }
+  
+  /* Events - Mobile */
+  .featured-event .event-card {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .event-card {
+    height: 320px;
+  }
+  
+  .flip-card-front .event-logo {
+    height: 140px;
+    max-width: 95%;
+  }
+  
+  .flip-card-front, 
+  .flip-card-back {
+    padding: 20px;
+  }
+  
+  .flip-card-back h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+  .flip-card-back .event-caption {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+  
+  .flip-card-back .event-description {
+    font-size: 0.85rem;
+    max-height: 120px;
+  }
+  
+  .biznovator-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    margin-top: 15px;
+  }
+  
+  /* Small events - Single column on mobile */
+  .small-events-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 250px;
+  }
+  
+  .small-event-card {
+    height: 160px;
+  }
+  
+  .small-flip-card-front .small-event-logo {
+    height: 50px;
+  }
+  
+  .small-flip-card-back h4 {
+    font-size: 0.9rem;
+  }
+  
+  .small-flip-card-back .small-event-caption {
+    font-size: 0.75rem;
+  }
+  
+  .small-flip-card-back .small-event-description {
+    font-size: 0.65rem;
+    max-height: 50px;
+  }
+  
+  /* Investors - Mobile */
+  .investors-grid {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .investor-card {
+    padding: 25px;
+    max-width: 100%;
+  }
+  
+  .investor-logo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  /* Sponsors - Single column */
+  .sponsor-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 220px;
+    margin: 0 auto 25px;
+  }
+  
+  .sponsor-card {
+    width: 100%;
+    padding: 12px;
+  }
+  
+  .sponsor-logo {
+    width: 50px;
+    height: 50px;
+    font-size: 12px;
+  }
+  
+  .sponsor-tier-title {
+    font-size: 1.3rem;
+    margin: 40px 0 20px 0;
+  }
+  
+  /* Footer - Mobile stack */
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: center;
+  }
+  
+  .footer-about {
+    order: 1;
+  }
+  
+  .footer-links {
+    order: 2;
+  }
+  
+  .footer-contact {
+    order: 3;
+  }
+  
+  .footer-social {
+    justify-content: center;
+  }
+  
+  .contact-phone .contact-text {
+    font-size: 0.8rem;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  
+  .footer-bottom-links {
+    gap: 10px;
+  }
+}
+
+/* ===========================================
+   EXTRA SMALL MOBILE (320px - 375px)
+   =========================================== */
+@media (max-width: 375px) {
+  /* Ultra-compact mobile */
+  .container {
+    padding: 0 12px;
+  }
+  
+  /* iTELF Logo - Extra small */
+  .itelf-logo {
+    height: 35px;
+    right: 8px;
+    top: 5px;
+  }
+  
+  .itelf-logo img {
+    max-width: 120px;
+  }
+  
+  /* Loading screen */
+  .loader-logo-img {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .loader-text {
+    font-size: 1.5rem;
+  }
+  
+  .loader-progress {
+    width: 200px;
+  }
+  
+  /* Hero */
+  .hero-content {
+    padding: 25px 15px;
+    margin: 0 3px;
+  }
+  
+  .hero-logo img {
+    height: 100px;
+    transform: scale(0.8);
+  }
+  
+  /* Navigation - Compact */
+  .nav-content {
+    padding: 8px 12px;
+    padding-right: 130px;
+  }
+  
+  .nav-links {
+    gap: 12px;
+  }
+  
+  .nav-links a {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+  
+  /* CRITICAL: Symcreidea Logo - Extra Small Mobile */
+  .symcreidea-logo {
+    width: 240px !important;
+    height: auto;
+    max-width: 100% !important;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Sections */
+  .section {
+    padding: 40px 0;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+  
+  /* Cards */
+  .content-card {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .content-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .content-card p {
+    font-size: 0.85rem;
+  }
+  
+  /* SCIT card */
+  .glow-scit {
+    padding: 20px;
+  }
+  
+  .scit-logo {
+    max-width: 100px;
+  }
+  
+  .glow-scit h3 {
+    font-size: 1.2rem;
+  }
+  
+  /* Events */
+  .event-card {
+    height: 280px;
+  }
+  
+  .flip-card-front .event-logo {
+    height: 110px;
+  }
+  
+  .flip-card-back h4 {
+    font-size: 1.2rem;
+  }
+  
+  .flip-card-back .event-caption {
+    font-size: 0.85rem;
+  }
+  
+  .flip-card-back .event-description {
+    font-size: 0.8rem;
+    max-height: 100px;
+  }
+  
+  .biznovator-button {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+  
+  /* Small events - Single column, compact */
+  .small-events-grid {
+    max-width: 200px;
+  }
+  
+  .small-event-card {
+    height: 140px;
+  }
+  
+  .small-flip-card-front .small-event-logo {
+    height: 40px;
+  }
+  
+  /* Sponsors - Single column, compact */
+  .sponsor-grid {
+    max-width: 180px;
+  }
+  
+  .sponsor-card {
+    padding: 10px;
+  }
+  
+  .sponsor-logo {
+    width: 45px;
+    height: 45px;
+    font-size: 10px;
+  }
+  
+  .sponsor-tier-title {
+    font-size: 1.1rem;
+    margin: 30px 0 15px 0;
+  }
+}
+
+/* ===========================================
+   LANDSCAPE MOBILE (Specific orientation fix)
+   =========================================== */
+@media (max-height: 500px) and (orientation: landscape) {
+  /* Fix hero section for landscape mobile */
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 0;
+  }
+  
+  .hero-content {
+    padding: 25px 20px;
+    margin: 20px 10px;
+  }
+  
+  .hero-logo img {
+    height: 80px;
+    transform: scale(0.7);
+  }
+  
+  /* Navigation adjustments */
+  .nav-content {
+    padding: 8px 15px;
+    padding-right: 150px;
+  }
+  
+  /* Symcreidea logo for landscape */
+  .symcreidea-logo {
+    width: 200px !important;
+    max-width: 80% !important;
+  }
+  
+  /* Compact sections */
+  .section {
+    padding: 30px 0;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+}
+
+/* ===========================================
+   UNIVERSAL FIXES - All Devices
+   =========================================== */
+
+/* Ensure Symcreidea logo is always centered and responsive */
+.event-logo.symcreidea-logo {
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.5));
+}
+
+/* Fix text overflow on all devices */
+.flip-card-back .event-description,
+.small-flip-card-back .small-event-description {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Ensure all images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix button text wrapping */
+.biznovator-button {
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+/* Prevent horizontal scrolling */
+body, html {
+  overflow-x: hidden;
+}
+
+/* Fix contact section alignment on all devices */
+.contact-item {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.footer-container .footer-contact .contact-info {
+  align-items: flex-start;
+}
+
+/* ===========================================
+   ACCESSIBILITY & TOUCH IMPROVEMENTS
+   =========================================== */
+
+/* Larger touch targets for mobile */
+@media (max-width: 767px) {
+  .nav-links a {
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    background: rgba(0, 212, 255, 0.1);
+  }
+  
+  /* Better button sizes for touch */
+  .footer-social a {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+  
+  /* Ensure flip cards are easy to tap */
+  .event-card,
+  .small-event-card {
+    touch-action: manipulation;
+  }
+}
+
+/* ===========================================
+   PRINT STYLES (Bonus)
+   =========================================== */
+@media print {
+  /* Hide interactive elements */
+  .nav,
+  .loader-container,
+  #particles-js,
+  .footer-social {
+    display: none !important;
+  }
+  
+  /* Optimize for print */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .content-card,
+  .investor-card,
+  .sponsor-card {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+}
+
+/* ===========================================
+   PERFORMANCE OPTIMIZATIONS
+   =========================================== */
+
+/* Reduce animations on low-end devices */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Force hardware acceleration on supported devices */
+.event-card,
+.small-event-card,
+.content-card,
+.hero-content {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* ===========================================
+   FINAL SYMCREIDEA LOGO FIXES - ALL DEVICES
+   =========================================== */
+
+/* Universal Symcreidea logo container */
+.section-title img.symcreidea-logo {
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.5));
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for all devices */
+.section-title img.symcreidea-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Fix any potential margin/padding issues */
+#symcreidea .section-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* Ensure symcreidea card stays centered */
+.symcreidea-card {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* ===========================================
+   UTILITY CLASSES FOR COMMON FIXES
+   =========================================== */
+
+.mobile-hidden {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile-hidden {
+    display: none;
+  }
+  
+  .mobile-only {
+    display: block;
+  }
+}
+
+/* Center content utility */
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Responsive spacing utilities */
+.spacing-mobile {
+  padding: 15px;
+}
+
+.spacing-tablet {
+  padding: 25px;
+}
+
+.spacing-desktop {
+  padding: 40px;
+}
+
+@media (max-width: 480px) {
+  .spacing-responsive {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .spacing-responsive {
+    padding: 25px;
+  }
+}
+
+@media (min-width: 768px) {
+  .spacing-responsive {
+    padding: 40px;
+  }
+}
+
+/* ===== Mobile & Tablet Responsive Fixes ===== */
+@media (max-width: 768px) {
+  /* Center all main sections */
+  body, .container, .section, .main-content {
+    text-align: center !important;
+  }
+
+  /* Fix pushed-to-left layouts */
+  .nav-content,
+  .hero-content,
+  .content-card,
+  .glow-scit,
+  .symcreidea-card {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block;
+  }
+
+  /* Reduce Symcredia logo size */
+  .symcreidea-card img {
+    max-width: 150px;
+    height: auto;
+  }
+
+  /* Make hero logo scale */
+  .hero-logo img {
+    max-height: 150px;
+    transform: scale(1) !important;
+  }
+
+  /* Nav links vertical for mobile */
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  /* Make cards take full width */
+  .content-card,
+  .glow-scit,
+  .investor-card,
+  .sponsor-card {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further reduce Symcredia logo */
+  .symcreidea-card img {
+    max-width: 120px;
+  }
+
+  /* Smaller hero logo */
+  .hero-logo img {
+    max-height: 120px;
+  }
+}
