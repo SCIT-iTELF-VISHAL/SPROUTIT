@@ -978,4 +978,42 @@ body {
   border: 1px dashed rgba(255, 255, 255, 0.1);
 }
 
+
+.timeline-card {
+  position: relative; /* needed for the button to position inside */
+  padding-bottom: 60px; /* space for the button so it doesn't overlap text */
+}
+
+.timeline-card .register-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #000;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 25px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.timeline-card .register-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.35);
+}
+
+/* Mobile friendly adjustments */
+@media (max-width: 600px) {
+  .timeline-card .register-btn {
+    padding: 10px 16px;
+    font-size: 1rem;
+  }
+}
+
+
 /* End of file */
