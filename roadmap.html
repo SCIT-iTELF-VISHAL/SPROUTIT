@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Roadmap</title>
+  <link rel="stylesheet" href="roadmap.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Header -->
+  <header class="roadmap-header">
+    <div class="header-logo right-logo">
+      <img src="logos/iTELF-logo.png" alt="ITELF Logo">
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="roadmap-container">
+    
+    <!-- Title Section -->
+    <section class="roadmap-title-section">
+      <div class="sproutit-logo-container">
+        <img src="logos/Sprout-2025.png" alt="SproutIT Logo" class="sproutit-logo">
+      </div>
+      <h1 class="roadmap-main-title">Event Roadmap</h1>
+      <p class="roadmap-subtitle">Track our progress day by day</p>
+      <div class="roadmap-date"><i class="fas fa-calendar-day"></i> August 11, 2025</div>
+    </section>
+
+    <!-- Timeline -->
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+
+      <!-- Day 1 - Completed -->
+      <div class="timeline-item" data-status="completed">
+        <div class="timeline-marker">
+          <span class="timeline-dot"></span>
+          <span class="timeline-glow"></span>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-card">
+            <div class="event-time">Day 1</div>
+            <h3 class="event-title">Kick-off Meeting</h3>
+            <p class="event-description">Introduced the project scope, goals, and timeline to all stakeholders.</p>
+            <div class="event-status completed"><i class="fas fa-check-circle"></i> Completed</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 2 - Current -->
+      <div class="timeline-item" data-status="current">
+        <div class="timeline-marker">
+          <span class="timeline-dot"></span>
+          <span class="timeline-glow"></span>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-card featured-event">
+            <div class="event-time">Day 2</div>
+            <h3 class="event-title">Design Phase</h3>
+            <p class="event-description">Creating UI mockups and finalizing design elements for all modules.</p>
+            <div class="event-status current"><i class="fas fa-hourglass-half"></i> In Progress</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 3 - Upcoming -->
+      <div class="timeline-item" data-status="upcoming">
+        <div class="timeline-marker">
+          <span class="timeline-dot"></span>
+          <span class="timeline-glow"></span>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-card upcoming-event">
+            <div class="event-time">Day 3</div>
+            <div class="event-placeholder"><i class="fas fa-question"></i></div>
+            <div class="event-status upcoming"><i class="fas fa-clock"></i> Upcoming</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 4 - Upcoming -->
+      <div class="timeline-item" data-status="upcoming">
+        <div class="timeline-marker">
+          <span class="timeline-dot"></span>
+          <span class="timeline-glow"></span>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-card upcoming-event">
+            <div class="event-time">Day 4</div>
+            <div class="event-placeholder"><i class="fas fa-question"></i></div>
+            <div class="event-status upcoming"><i class="fas fa-clock"></i> Upcoming</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 5 - Upcoming -->
+      <div class="timeline-item" data-status="upcoming">
+        <div class="timeline-marker">
+          <span class="timeline-dot"></span>
+          <span class="timeline-glow"></span>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-card upcoming-event">
+            <div class="event-time">Day 5</div>
+            <div class="event-placeholder"><i class="fas fa-question"></i></div>
+            <div class="event-status upcoming"><i class="fas fa-clock"></i> Upcoming</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <!-- Back to Home -->
+    <div class="back-to-home">
+      <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="roadmap-footer">
+    <div class="footer-content">
+      <p>© 2025 SproutIT & ITELF. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a><span>|</span>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function initializeParticles() {
+      particlesJS("particles-js", {
+        "particles": {
+          "number": {
+            "value": 120,
+            "density": { "enable": true, "value_area": 800 }
+          },
+          "color": { "value": ["#ffffff", "#888888", "#333333"] },
+          "shape": {
+            "type": "circle",
+            "stroke": { "width": 0, "color": "#000000" }
+          },
+          "opacity": {
+            "value": 0.6,
+            "random": true,
+            "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false }
+          },
+          "size": {
+            "value": 3,
+            "random": true,
+            "anim": { "enable": true, "speed": 2, "size_min": 0.1, "sync": false }
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#00d4ff",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 1.5,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": { "enable": true, "mode": "grab" },
+            "onclick": { "enable": true, "mode": "push" }
+          },
+          "modes": {
+            "grab": {
+              "distance": 200,
+              "line_linked": { "opacity": 0.8 }
+            },
+            "push": { "particles_nb": 4 }
+          }
+        },
+        "retina_detect": true
+      });
+    }
+  </script>
+</body>
+</html>

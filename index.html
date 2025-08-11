@@ -99,17 +99,11 @@
         </div>
         <div class="symcreidea-card">
           <p>
-            SYMCREIDEA is where creativity meets entrepreneurship. Join us to pitch your idea,
-            connect with innovators, and turn vision into venture.
+            Symcredia unites entrepreneurial minds, harmonizing creativity and collaboration to spark transformative
+            ventures.
           </p>
         </div>
       </section>
-
-      <!-- Roadmap Section -->
-
-      <!-- Section: Timeline -->
-  
-      <!-- Section: Timeline -->
 
       <!-- Events Section -->
       <section class="section" id="events">
@@ -129,7 +123,8 @@
                 <h4>Biznovator</h4>
                 <p class="event-caption">"Innovation Seeds Tomorrow."</p>
                 <p class="event-description">
-                  Biznovator is Symcredia's stage that empowers young innovators to pitch impactful ideas and turn them into reality.
+                  Biznovator is Symcredia's stage that empowers young innovators to pitch impactful ideas and turn them
+                  into reality.
                 </p>
                 <a href="https://unstop.com/o/dpWQ97h?lb=5tvs3Lf&utm_medium=Share&utm_source=itelfitelf8774&utm_campaign=Competitions"
                   target="_blank" class="biznovator-button">Register Now</a>
@@ -203,8 +198,19 @@
         </div>
       </section>
 
+      <!-- Roadmap Section -->
 
-      <!-- Investors Section -->
+      <!-- Timeline Preview Section -->
+      <section class="home-timeline-preview">
+        <div class="timeline-preview-container">
+          <h2>Our Event Roadmap</h2>
+          <p>Follow our journey and see what’s coming next.</p>
+          <a href="roadmap.html" class="timeline-link-button">
+            View Full Roadmap <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </section>
+
       <!-- Investors Section -->
       <section class="section" id="investors">
         <h2 class="section-title">Our Investors & Partners</h2>
@@ -298,10 +304,12 @@
           <h3>Sprout IT</h3>
           <p class="footer-tagline">Symcreidea</p>
           <p class="footer-description">
-            Cultivating resilient minds to spark original thinking.
+            Symcredia unites entrepreneurial minds, harmonizing creativity and collaboration to spark transformative
+            ventures.
           </p>
           <div class="footer-social">
-            <a href="https://www.instagram.com/itelf_scit?igsh=azRydWpuamZsZW44" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/itelf_scit?igsh=azRydWpuamZsZW44" target="_blank"
+              aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
           </div>
         </div>
@@ -525,23 +533,23 @@
       }
     });
 
-    // Optional: Add touch support for mobile
-    eventCards.forEach(card => {
-      card.addEventListener('touchstart', function (e) {
-        // Add a small delay to distinguish between tap and scroll
-        this.touchStartTime = Date.now();
-      });
+    // // Optional: Add touch support for mobile
+    // eventCards.forEach(card => {
+    //   card.addEventListener('touchstart', function (e) {
+    //     // Add a small delay to distinguish between tap and scroll
+    //     this.touchStartTime = Date.now();
+    //   });
 
-      card.addEventListener('touchend', function (e) {
-        const touchDuration = Date.now() - this.touchStartTime;
+    //   card.addEventListener('touchend', function (e) {
+    //     const touchDuration = Date.now() - this.touchStartTime;
 
-        // Only flip if it's a quick tap (not a scroll)
-        if (touchDuration < 200 && !e.target.closest('a')) {
-          e.preventDefault();
-          this.classList.toggle('flipped');
-        }
-      });
-    });
+    //     // Only flip if it's a quick tap (not a scroll)
+    //     if (touchDuration < 200 && !e.target.closest('a')) {
+    //       e.preventDefault();
+    //       this.classList.toggle('flipped');
+    //     }
+    //   });
+    // });
 
   </script>
   <script>
