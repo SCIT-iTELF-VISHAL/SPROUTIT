@@ -68,7 +68,7 @@ body {
 }
 
 .loader-logo-img {
-  width: 200px; /* Increase size here */
+  width: 250px; /* Increase size here */
   height: 100px;
   animation: logoGlow 2s ease-in-out infinite alternate;
   filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.5));
