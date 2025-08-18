@@ -1,0 +1,10 @@
+# Turn on the URL rewriting engine
+RewriteEngine On
+
+# IMPORTANT: Tell the server that paths are relative to the /SPROUTIT/ folder
+RewriteBase /SPROUTIT/
+
+# This rule permanently redirects any user who types "index.html"
+# to the cleaner URL (e.g., .../roadmap/index.html -> .../roadmap/)
+RewriteCond %{THE_REQUEST} \s(.+?)index\.html[\s?] [NC]
+RewriteRule ^(.+?)index\.html$ %1 [R=301,L]

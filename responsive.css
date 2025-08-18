@@ -316,7 +316,7 @@
   /* Loading screen - Mobile */
   .loader-logo-img {
     width: 200px;
-    height: 200px;
+    height: 100px;
   }
   
   .loader-text {
@@ -586,7 +586,7 @@
   /* Loading screen */
   .loader-logo-img {
     width: 160px;
-    height: 160px;
+    height: 80px;
   }
   
   .loader-text {
