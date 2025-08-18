@@ -1145,4 +1145,19 @@ body {
   box-shadow: 0 5px 12px rgba(0,0,0,0.35);
 }
 
+
+/* --- Glow effect for completed events --- */
+.timeline-item[data-status="completed"] .timeline-card {
+  border: 1px solid #28a745; /* Green border */
+  box-shadow: 0 0 15px rgba(40, 167, 69, 0.6); /* Green glow */
+}
+
+.timeline-item[data-status="completed"] .timeline-dot {
+  background-color: #28a745; /* Green dot */
+}
+
+.timeline-item[data-status="completed"] .event-status.completed {
+    color: #28a745; /* Green status text */
+}
+
 /* End of file */

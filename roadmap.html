@@ -12,20 +12,16 @@
 
 <body>
 
-  <!-- Particle Background -->
   <div id="particles-js"></div>
 
-  <!-- Header -->
   <header class="roadmap-header">
     <div class="header-logo right-logo">
       <img src="logos/iTELF-logo.png" alt="ITELF Logo">
     </div>
   </header>
 
-  <!-- Main Content -->
   <main class="roadmap-container">
 
-    <!-- Title Section -->
     <section class="roadmap-title-section">
       <div class="sproutit-logo-container">
         <img src="logos/Sprout-2025.png" alt="SproutIT Logo" class="sproutit-logo">
@@ -35,28 +31,24 @@
       <div class="roadmap-date"><i class="fas fa-calendar-day"></i> Updated August 2025</div>
     </section>
 
-    <!-- Timeline -->
     <div class="timeline-container">
       <div class="timeline-line"></div>
 
-      <!-- Day 1 - Current -->
-      <div class="timeline-item" data-status="current">
+      <div class="timeline-item" data-status="upcoming">
         <div class="timeline-marker">
           <span class="timeline-dot"></span>
           <span class="timeline-glow"></span>
         </div>
         <div class="timeline-content">
-          <div class="timeline-card featured-event">
-            <div class="event-time">Round 1 – Aug 9, 2025</div>
+          <div class="timeline-card">
+            <div class="event-time">Round 1 – Aug 9 to Aug 26, 2025</div>
             <h3 class="event-title">Round 1 – Abstract Submission</h3>
             <p class="event-description">
               Submit a short abstract explaining your startup idea, problem-solution fit, target market, and
               scalability.
               Official template will be shared via email. No mention of college/institution is allowed.
             </p>
-            <div class="event-status current"><i class="fas fa-hourglass-half"></i> Ongoing</div>
-
-            <!-- Register Button inside card -->
+            <div class="event-status upcoming"><i class="fas fa-clock"></i> Upcoming</div>
             <a href="https://unstop.com/o/dpWQ97h?lb=5tvs3Lf&utm_medium=Share&utm_source=itelfitelf8774&utm_campaign=Competitions"
               class="register-btn" target="_blank" rel="noopener">
               <i class="fas fa-edit"></i> Register
@@ -65,9 +57,6 @@
         </div>
       </div>
 
-
-
-      <!-- Day 2 - Upcoming -->
       <div class="timeline-item" data-status="upcoming">
         <div class="timeline-marker">
           <span class="timeline-dot"></span>
@@ -75,7 +64,7 @@
         </div>
         <div class="timeline-content">
           <div class="timeline-card">
-            <div class="event-time">Round 2 – Aug 26, 2025</div>
+            <div class="event-time">Round 2 – Aug 26 to Sep 3, 2025</div>
             <h3 class="event-title">Round 2 – Business Model Proposal</h3>
             <p class="event-description">
               Submit a 3-page business proposal covering your startup's executive summary, Business Model Canvas,
@@ -87,7 +76,6 @@
         </div>
       </div>
 
-      <!-- Day 3 - Upcoming -->
       <div class="timeline-item" data-status="upcoming">
         <div class="timeline-marker">
           <span class="timeline-dot"></span>
@@ -95,7 +83,7 @@
         </div>
         <div class="timeline-content">
           <div class="timeline-card">
-            <div class="event-time">Round 3 – Sep 3, 2025</div>
+            <div class="event-time">Round 3 – Sep 3 to Sep 8, 2025</div>
             <h3 class="event-title">Round 3 – Prototype/Demo Submission</h3>
             <p class="event-description">
               Submit a 2–3 minute demo video showcasing a working prototype, MVP, or simulated product experience
@@ -107,7 +95,6 @@
         </div>
       </div>
 
-      <!-- Day 4 - Upcoming -->
       <div class="timeline-item" data-status="upcoming">
         <div class="timeline-marker">
           <span class="timeline-dot"></span>
@@ -115,7 +102,7 @@
         </div>
         <div class="timeline-content">
           <div class="timeline-card">
-            <div class="event-time">Round 4 – Sep 8, 2025</div>
+            <div class="event-time">Round 4 – Sep 8 to Sep 10, 2025</div>
             <h3 class="event-title">Round 4 – Grand Finale (Live Pitch Day)</h3>
             <p class="event-description">
               Top teams will pitch their validated startup idea live in front of industry experts and investors.
@@ -129,14 +116,12 @@
       </div>
     </div>
 
-    <!-- Back to Home -->
     <div class="back-to-home">
       <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
     </div>
 
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-about">
@@ -151,16 +136,6 @@
               class="fab fa-instagram"></i></a>
           <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
-      </div>
-
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#investors">Investors</a></li>
-          <li><a href="#sponsors">Sponsors</a></li>
-        </ul>
       </div>
 
       <div class="footer-contact">
@@ -185,18 +160,12 @@
               <span>Harsh: +91 9884319849</span>
             </div>
           </div>
-
-
-
-
-
-
         </div>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2025 Sprout'IT - Symcreidea. All Rights Reserved.</p>
+      <p>© 2025 Sprout'IT - Symcreidea. All Rights Reserved.</p>
       <div class="footer-bottom-links">
         <a href="#">Privacy Policy</a>
         <span>•</span>
@@ -206,7 +175,88 @@
       </div>
     </div>
   </footer>
+  
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      // --- TESTING CONTROLS ---
+      // 1. To test, set isTesting to true.
+      // 2. Set the testDate to whatever date you want to simulate.
+      // 3. To go live, just set isTesting back to false.
+      const isTesting = false; 
+      const testDate = 'September 2, 2025'; // Try 'Aug 10, 2025', 'Sep 5, 2025', etc.
+      // ------------------------
 
+      // The script will now use your testDate if isTesting is true,
+      // otherwise it will use the real current date.
+      const now = isTesting ? new Date(testDate) : new Date();
+
+      // Parses text like "Round 1 – Aug 9 to Aug 26, 2025"
+      function parseEventDates(eventTimeText) {
+        try {
+          const parts = eventTimeText.split('–')[1].trim(); // "Aug 9 to Aug 26, 2025"
+          const dateParts = parts.split(' to '); // ["Aug 9", "Aug 26, 2025"]
+          const year = parts.match(/\d{4}/)[0]; // "2025"
+
+          const startDateStr = dateParts[0].includes(year) ? dateParts[0] : `${dateParts[0]}, ${year}`;
+          const endDateStr = dateParts[1];
+          
+          const startDate = new Date(startDateStr);
+          const endDate = new Date(endDateStr);
+
+          // Set time to the very start of the day for an accurate comparison
+          startDate.setHours(0, 0, 0, 0);
+          // Set time to the very end of the day to make the range inclusive
+          endDate.setHours(23, 59, 59, 999);
+
+          return { start: startDate, end: endDate };
+        } catch (e) {
+          console.error("Could not parse date:", eventTimeText);
+          return null;
+        }
+      }
+      
+      const timelineItems = document.querySelectorAll('.timeline-item');
+
+      timelineItems.forEach(item => {
+        const timeElement = item.querySelector('.event-time');
+        const statusElement = item.querySelector('.event-status');
+        const cardElement = item.querySelector('.timeline-card');
+        const registerButton = item.querySelector('.register-btn');
+        
+        if (timeElement && statusElement) {
+          const dates = parseEventDates(timeElement.textContent);
+          if (!dates) return; // Skip if date parsing failed
+
+          // Check if the event is completed (current date is past the end date)
+          if (now > dates.end) {
+            item.dataset.status = 'completed';
+            statusElement.className = 'event-status completed';
+            statusElement.innerHTML = '<i class="fas fa-check-circle"></i> Completed';
+            cardElement.classList.remove('featured-event');
+            if (registerButton) {
+              registerButton.remove();
+            }
+          } 
+          // Check if the event is ongoing (current date is within the start and end dates)
+          else if (now >= dates.start && now <= dates.end) {
+            item.dataset.status = 'current';
+            statusElement.className = 'event-status current';
+            statusElement.innerHTML = '<i class="fas fa-hourglass-half"></i> Ongoing';
+            cardElement.classList.add('featured-event');
+          } 
+          // Otherwise, the event must be upcoming
+          else {
+            item.dataset.status = 'upcoming';
+            statusElement.className = 'event-status upcoming';
+            statusElement.innerHTML = '<i class="fas fa-clock"></i> Upcoming';
+            cardElement.classList.remove('featured-event');
+          }
+        }
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
     function initializeParticles() {
       particlesJS("particles-js", {
@@ -242,6 +292,7 @@
         "retina_detect": true
       });
     }
+    initializeParticles();
   </script>
 </body>
 
