@@ -51,7 +51,8 @@
   }
   
   .hero-logo img {
-    height: 180px;
+    height: 60px;
+    width: 45;
     transform: scale(1.1);
   }
   
@@ -157,7 +158,8 @@
   }
   
   .hero-logo img {
-    height: 150px;
+    height: 60px;
+    width: 45;
     transform: scale(1.0);
   }
   
@@ -315,7 +317,7 @@
   
   /* Loading screen - Mobile */
   .loader-logo-img {
-    width: 200px;
+    width: 300px;
     height: 100px;
   }
   
@@ -335,7 +337,8 @@
   }
   
   .hero-logo img {
-    height: 120px;
+    height: 60px;
+    width: 45;
     transform: scale(0.9);
   }
   
@@ -585,7 +588,7 @@
   
   /* Loading screen */
   .loader-logo-img {
-    width: 160px;
+    width: 240px;
     height: 80px;
   }
   
@@ -604,7 +607,8 @@
   }
   
   .hero-logo img {
-    height: 100px;
+    height: 60px;
+    width: 45;
     transform: scale(0.8);
   }
   
@@ -748,7 +752,7 @@
   }
   
   .hero-logo img {
-    height: 80px;
+    height:60px;
     transform: scale(0.7);
   }
   
@@ -1022,7 +1026,8 @@ body, html {
 
   /* Make hero logo scale */
   .hero-logo img {
-    max-height: 150px;
+    max-height: 60px;
+    max-width: 45;
     transform: scale(1) !important;
   }
 
@@ -1050,7 +1055,8 @@ body, html {
 
   /* Smaller hero logo */
   .hero-logo img {
-    max-height: 120px;
+    max-height: 60px;
+    max-width: 45;
   }
 }
 /* responsive.css */
