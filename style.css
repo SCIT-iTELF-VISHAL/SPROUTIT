@@ -954,16 +954,17 @@ body {
 /* Footer */
 
 
+/* style.css */
 
-
+/* === REPLACEMENT FOOTER CSS - PASTE THIS IN style.css === */
 
 .site-footer {
-    background: linear-gradient(178deg, #01030d 0%, #05070d 50%, #04203c 100%);
-    padding: 50px 20px 30px;
-    color: #a0a9c0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.9rem;
-    position: relative;
+  background: linear-gradient(178deg, #01030d 0%, #05070d 50%, #04203c 100%);
+  padding: 60px 20px 30px; /* Increased top padding */
+  color: #a0a9c0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  position: relative;
 }
 
 .site-footer::before {
@@ -977,12 +978,27 @@ body {
 }
 
 .footer-container {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  align-items: start;
+  display: flex; /* Use Flexbox for better alignment */
+  justify-content: space-between; /* Distributes columns evenly */
+  align-items: flex-start; /* Aligns columns to the top */
+  flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+  gap: 40px;
+}
+
+/* Set widths for each column */
+.footer-about {
+  flex: 2; /* Takes up twice the space of the others */
+  min-width: 300px; /* Prevents it from getting too squished */
+}
+
+.footer-links,
+.footer-contact {
+  flex: 1; /* Each takes up 1 part of the space */
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-about h3 {
@@ -1010,6 +1026,7 @@ body {
 .footer-social {
   display: flex;
   gap: 12px;
+  margin-top: 20px;
 }
 
 .footer-social a {
@@ -1024,7 +1041,6 @@ body {
   font-size: 1.1rem;
   color: #a0a9c0;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
 }
 
 .footer-social a:hover {
@@ -1041,19 +1057,6 @@ body {
   color: #00d4ff;
   margin-bottom: 15px;
   font-weight: 600;
-  position: relative;
-}
-
-.footer-links h4::after,
-.footer-contact h4::after {
-  content: '';
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 25px;
-  height: 2px;
-  background: linear-gradient(90deg, #00d4ff, #091a7a);
-  border-radius: 1px;
 }
 
 .footer-links ul {
@@ -1069,45 +1072,56 @@ body {
 .footer-links ul li a {
   color: #a0a9c0;
   text-decoration: none;
-  font-weight: 400;
-  transition: all 0.3s ease;
-  font-size: 0.9rem;
+  transition: color 0.3s ease;
 }
 
 .footer-links ul li a:hover {
   color: #00d4ff;
-  transform: translateX(3px);
 }
 
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px; /* Increased gap for better spacing */
 }
 
 .contact-item {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.85rem;
+  align-items: flex-start; /* Aligns icon with the first line of text */
+  gap: 10px;
+  font-size: 0.9rem;
+  text-align: left;
 }
 
 .contact-item i {
   color: #00d4ff;
-  width: 12px;
-  font-size: 0.9rem;
+  margin-top: 3px; /* Adjusts icon position */
 }
 
-.contact-item span {
-  color: #a0a9c0;
+.contact-item a {
+    color: #a0a9c0;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: #00d4ff;
+    text-decoration: underline;
+}
+
+.contact-phone .contact-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 25px;
-  margin-top: 35px;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-top: 30px;
+  margin-top: 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   font-size: 0.85rem;
   color: #888fa7;
@@ -1128,47 +1142,6 @@ body {
 .footer-bottom-links a:hover {
   color: #00d4ff;
 }
-
-.footer-bottom-links span {
-  color: #666;
-}
-
-
-
-/* Contact section fix for multiple phone numbers */
-
-.contact-phone {
-  align-items: flex-start;
-}
-
-.contact-phone .contact-text {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  gap: 2px;
-}
-
-.contact-phone i {
-  margin-top: 3px;
-  font-size: 1rem;
-  color: #00d4ff;
-}
-
-/* Match contact link colors (map, email, etc.) to icon color */
-
-.contact-item a {
-  color: #00d4ff;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.contact-item a:hover {
-  text-decoration: underline;
-  color: #00d4ff;
-}
-
-
 
 
 /* ===========================================
