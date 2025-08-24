@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Coming Soon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Lottie Animation Player Script -->
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+    <style>
+        /* Basic Reset and Body Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            overflow: hidden; /* Hide scrollbars as it's a single page */
+            line-height: 1.6;
+        }
+
+        /* iTELF Logo in Top-Right Corner */
+        .itelf-logo {
+            position: fixed;
+            top: 20px;
+            right: 25px;
+            z-index: 999;
+            height: 60px;
+            transition: transform 0.3s ease;
+        }
+
+        .itelf-logo img {
+            height: 100%;
+            width: auto;
+            max-width: 225px;
+        }
+
+        .itelf-logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Main container for centering content */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%; /* Ensure full width */
+            display: flex;
+            flex-direction: column; /* Stack logo and text vertically */
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            text-align: center;
+            padding: 20px; /* Add padding for smaller screens */
+        }
+
+        /* Sprout'IT Logo Style */
+        .sprout-logo {
+            width: 100%;
+            max-width: 400px; /* Adjust size as needed */
+            height: auto;
+            margin-bottom: 20px;
+            /* Added a mild deep blue glow */
+            filter: drop-shadow(0 0 15px rgba(0, 85, 255, 0.7));
+        }
+
+        /* "Coming Soon" Title Style */
+        .coming-soon-title {
+            font-family: 'Audiowide', cursive; /* Funky and techy font */
+            font-size: clamp(2.5rem, 8vw, 5rem); /* Responsive font size */
+            font-weight: 400; /* Audiowide is best at 400 weight */
+            background: linear-gradient(135deg, #00d4ff 0%, #ffffff 50%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px; /* Adjust spacing for new font */
+            text-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+            margin-bottom: 20px; /* Added space between title and animation */
+        }
+        
+        /* Lottie Animation Style */
+        .lottie-animation {
+            width: 210px; /* Reduced from 300px */
+            height: 210px; /* Reduced from 300px */
+        }
+        
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 767px) {
+            .sprout-logo {
+                max-width: 300px;
+            }
+            .itelf-logo {
+                height: 45px;
+                right: 15px;
+                top: 15px;
+            }
+            .lottie-animation {
+                width: 140px; /* Reduced from 200px */
+                height: 140px; /* Reduced from 200px */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sprout-logo {
+                max-width: 250px;
+            }
+            .itelf-logo {
+                height: 40px;
+                right: 10px;
+                top: 10px;
+            }
+            .lottie-animation {
+                width: 105px; /* Reduced from 150px */
+                height: 105px; /* Reduced from 150px */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- iTELF Logo -->
+    <div class="itelf-logo">
+        <img src="./logos/iTELF-logo.png" alt="iTELF Logo" onerror="this.onerror=null;this.src='https://placehold.co/225x60/000000/FFFFFF?text=iTELF+Logo';">
+    </div>
+
+    <!-- Hero Section with centered content -->
+    <section class="hero">
+        <!-- Sprout'IT Logo -->
+        <img src="./logos/Sprout-2025.png" alt="Sprout'IT Logo" class="sprout-logo" onerror="this.onerror=null;this.src='https://placehold.co/400x133/000000/FFFFFF?text=SproutIT+Logo';">
+        
+        <!-- Coming Soon Title -->
+        <h1 class="coming-soon-title">COMING SOON</h1>
+
+        <!-- Floating Lottie Animation -->
+        <dotlottie-wc
+            src="https://lottie.host/c990dd00-8f7e-4a46-bf3e-cc2bdd9733c8/Cs1cvY2F6r.lottie"
+            class="lottie-animation"
+            speed="1"
+            autoplay
+            loop>
+        </dotlottie-wc>
+    </section>
+
+</body>
+
+</html>

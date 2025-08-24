@@ -611,18 +611,24 @@ body {
 /* Investors Section */
 
 .investor-card {
-    max-width: 350px;
-    margin: 0 auto;
-    position: relative;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(0, 255, 0, 0.21); /* reduced from 0.35 */
-    border-radius: 10px;
-    padding: 30px;
-    text-align: center;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.4s ease;
-    box-shadow: 0 0 12px rgba(0, 255, 0, 0.3); /* was 20px @0.5 */
-    animation: greenPulse 2s infinite;
+  min-height: 260px;  /* gives breathing room */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.investor-card img {
+  width: 120px;       /* consistent width */
+  height: 120px;      /* keeps square box */
+  object-fit: contain; /* scales logo properly without stretching */
+  border-radius: 8px; /* optional, makes logos slightly rounded */
+  margin-bottom: 10px;
 }
 
 /* Prevent investor cards from stretching too much */
@@ -707,17 +713,6 @@ body {
     color: #a0a9c0;
     font-size: 0.9rem;
     line-height: 1.6;
-}
-
-.investment-amount {
-    background: rgba(0, 212, 255, 0.1);
-    color: #00d4ff;
-    padding: 5px 12px;
-    border-radius: 12px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-top: 15px;
-    display: inline-block;
 }
 
 
@@ -1234,7 +1229,7 @@ body {
 }
 
 /* CLICK-BASED FLIP - Changed from hover to .flipped class */
-.event-card.flipped .flip-card-inner {
+.event-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
@@ -1274,7 +1269,7 @@ body {
 
 /* Front side logo - BIGGER */
 .flip-card-front .event-logo {
-  height: 450px; /* Increased from 250px */
+  height: 400px; /* Increased from 250px */
   width: auto;
   max-width: 100%; /* Increased from 90% */
   object-fit: contain;
@@ -1522,9 +1517,6 @@ body {
   max-width: 400px;
 }
 
-
-
-
 /* ===========================================
    OTHER EVENTS - Smaller Cards Section
    =========================================== */
@@ -1537,8 +1529,8 @@ body {
   font-weight: 600;
   text-align: center;
   margin-bottom: 40px;
-  color: #00d4ff;
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+  color: #023E8A; /* dark blue title */
+  text-shadow: none;
 }
 
 /* Small Events Grid */
@@ -1552,14 +1544,13 @@ body {
 }
 
 /* ===========================================
-   SMALL EVENT CARDS - Compact Flip Design
+   SMALL EVENT CARDS - Light Gradient Glass
    =========================================== */
 .small-event-card {
-  background: transparent;
   width: 100%;
   height: 220px;
   perspective: 1000px;
-  border-radius: 12px;
+  border-radius: 14px;
   position: relative;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -1574,7 +1565,7 @@ body {
   text-align: center;
   transition: transform 0.6s ease-in-out;
   transform-style: preserve-3d;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 /* Shared front/back styles */
@@ -1584,100 +1575,133 @@ body {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 12px;
+  border-radius: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 15px;
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.03);
+
+  /* New light gradient */
+  background: linear-gradient(
+    135deg,
+    rgba(254, 248, 221, 0.85), /* cream */
+    rgba(173, 232, 244, 0.75)  /* light sky blue */
+  );
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(15px);
 }
 
 /* Front */
-.small-flip-card-front {
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 100, 150, 0.15));
-  border-color: rgba(0, 212, 255, 0.3);
-}
 .small-flip-card-front .small-event-logo {
-  height: 80px;
+  height: 300px;
   max-width: 80%;
   object-fit: contain;
-  filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.4));
   background-color: transparent;
+  filter: none !important;
+  box-shadow: none !important;
   transition: transform 0.3s ease;
 }
-.small-event-card:hover .small-flip-card-front .small-event-logo {
-  transform: scale(1.05);
+.small-event-card:hover .small-flip-card-inner {
+  transform: rotateY(180deg);
 }
+
 
 /* Back */
 .small-flip-card-back {
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.12), rgba(0, 150, 200, 0.18));
-  border-color: rgba(0, 212, 255, 0.4);
   transform: rotateY(180deg);
 }
 .small-flip-card-back h4 {
   font-family: 'Orbitron', sans-serif;
-  color: #00d4ff;
+  color: #03045E;  /* dark navy */
   font-size: 1rem;
   margin-bottom: 6px;
   font-weight: 600;
-  text-shadow: 0 0 6px rgba(0, 212, 255, 0.4);
+  text-shadow: none;
   text-align: center;
 }
 .small-flip-card-back .small-event-caption {
   font-style: italic;
-  color: #66e0ff;
-  font-size: 0.8rem;
+  color: #0077B6;  /* medium blue */
+  font-size: 0.85rem;
   margin-bottom: 8px;
   text-align: center;
 }
 .small-flip-card-back .small-event-description {
-  color: #b8f5ff;
-  font-size: 0.7rem;
+  color: #333333;   /* dark text for readability */
+  font-size: 0.75rem;
   line-height: 1.3;
   text-align: center;
   overflow-y: auto;
-  max-height: 60px;
+  max-height: 60px; /* desktop keeps limit */
   padding: 0 5px;
 }
+/* Responsive tweak for small screens */
+@media (max-width: 600px) {
+  .small-flip-card-back .small-event-description {
+    max-height: none;     /* allow full description */
+    overflow-y: visible;  /* no cut-off */
+    font-size: 0.8rem;    /* easier to read on mobile */
+    padding: 0 8px;
+  }
+
+  .small-event-card {
+    height: auto;         /* let card grow with content */
+    min-height: 260px;    /* still ensure consistent size */
+  }
+}
+
+
 
 /* ===========================================
-   CYAN GLOW + PULSE ANIMATION
+   CLEAN HOVER EFFECT
    =========================================== */
-.small-event-card.glow-cyan {
-  border: 1px solid rgba(0, 212, 255, 0.4);
-  background: rgba(0, 212, 255, 0.03);
-  animation: cyanSmallPulse 4s ease-in-out infinite;
-}
-.small-event-card.glow-cyan .small-flip-card-front,
-.small-event-card.glow-cyan .small-flip-card-back {
-  border: 1px solid rgba(0, 212, 255, 0.35);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25),
-              0 0 14px rgba(0, 212, 255, 0.2);
-}
-@keyframes cyanSmallPulse {
-  0%, 100% {
-    box-shadow: 0 0 14px rgba(0, 212, 255, 0.2),
-                0 0 28px rgba(0, 212, 255, 0.1);
-  }
-  50% {
-    box-shadow: 0 0 22px rgba(0, 212, 255, 0.35),
-                0 0 40px rgba(0, 212, 255, 0.18);
-  }
-}
-
-/* Hover lift */
-.small-event-card.glow-cyan:hover {
+.small-event-card:hover {
   transform: translateY(-4px);
 }
 
+/* Responsive Register Button */
+.small-event-register-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 0.4em 1em;
+  background-color: #023E8A; /* same as event heading */
+  color: #fff;
+  font-size: clamp(0.7rem, 2.5vw, 0.9rem); /* scales with screen */
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
+/* Hover effect */
+.small-event-register-btn:hover {
+  background-color: #0353A4;
+  transform: scale(1.05);
+}
 
+/* Mobile-specific tweaks */
+@media (max-width: 480px) {
+  .small-event-register-btn {
+    width: 80%;           /* full-width-ish on small screens */
+    padding: 0.5em 0;      /* taller tap target */
+    font-size: 0.8rem;     /* keep readable */
+    display: block;
+    margin: 12px auto 0;   /* center align */
+  }
+}
+
+.small-flip-card-inner,
+.small-flip-card-front,
+.small-flip-card-back {
+  height: 100%; /* let them adapt */
+}
+
+/*------------------------------------- */
 
 
 .home-timeline-preview {
@@ -1715,4 +1739,18 @@ body {
 .timeline-link-button:hover {
   background: #00a3cc;
   color: white;
+}
+
+
+/* Light cyan glow effect (60% reduced) */
+.logo-cyan-glow {
+  filter: drop-shadow(0 0 3px rgba(0, 212, 255, 0.4))
+          drop-shadow(0 0 6px rgba(0, 212, 255, 0.25));
+  transition: filter 0.3s ease;
+}
+
+/* Slightly stronger on hover */
+.logo-cyan-glow:hover {
+  filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.55))
+          drop-shadow(0 0 10px rgba(0, 212, 255, 0.35));
 }
