@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team - Sprout'IT</title>
+    <title>Our Team - SproutIT</title>
+    <link rel="icon" type="image/png" href="../logos/browser-logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Base styles from roadmap.css */
+        /* Base styles */
         body {
             background-color: #000000 !important;
             color: #ffffff;
@@ -23,12 +24,74 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1; /* Pushed to the back */
+            z-index: -1;
         }
 
-        /* Header styles from roadmap.css */
+        /* --- UPDATED LOADER STYLES --- */
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .loader-container.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        
+        .loader {
+            width: 50px;
+            aspect-ratio: 1.154;
+            position: relative;
+            /* Changed color to deep blue */
+            background: conic-gradient(from 120deg at 50% 64%,#0000, #00529B 1deg 120deg,#0000 121deg);
+            animation: l27-0 1.5s infinite cubic-bezier(0.3,1,0,1);
+        }
+        .loader:before,
+        .loader:after {
+            content:'';
+            position: absolute;
+            inset:0;
+            background:inherit;
+            transform-origin: 50% 66%;
+            animation: l27-1 1.5s infinite;
+        }
+        .loader:after {
+            --s:-1;
+        }
+        @keyframes l27-0 {
+            0%,30% {transform: rotate(0)}
+            70% {transform: rotate(120deg)}
+            70.01%,100% {transform: rotate(360deg)}
+        }
+        @keyframes l27-1 {
+            0% {transform: rotate(calc(var(--s,1)*120deg)) translate(0)}
+            30%,70% {transform: rotate(calc(var(--s,1)*120deg)) translate(calc(var(--s,1)*-5px),10px)}
+            100% {transform: rotate(calc(var(--s,1)*120deg)) translate(0)}
+        }
+
+        /* --- Main Content Visibility --- */
+        #main-content {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        #main-content.visible {
+            opacity: 1;
+        }
+
+        /* Header styles */
         .roadmap-header {
-            position: sticky; /* Changed from fixed to sticky */
+            position: sticky;
             top: 0;
             left: 0;
             right: 0;
@@ -39,8 +102,8 @@
             z-index: 100;
             display: flex;
             align-items: center;
-            justify-content: space-between; /* Changed to space-between */
-            padding: 0 30px;
+            justify-content: space-between;
+            padding: 0 20px; /* Adjusted padding for mobile */
         }
 
         .header-logo {
@@ -58,7 +121,6 @@
             display: block;
         }
         
-        /* New Back to Home Button Style */
         .back-to-home-btn {
             background: linear-gradient(90deg, #00c4ff, #0082ff);
             color: white;
@@ -77,7 +139,7 @@
             box-shadow: 0 6px 20px rgba(0, 196, 255, 0.5);
         }
         
-        /* Footer styles from roadmap.css */
+        /* Footer styles */
         .site-footer {
             background: linear-gradient(178deg, #01030d 0%, #05070d 50%, #04203c 100%);
             padding: 60px 20px 30px;
@@ -107,118 +169,19 @@
             gap: 40px;
         }
 
-        .footer-about {
-            flex: 2;
-            min-width: 300px;
-        }
+        .footer-about { flex: 2; min-width: 300px; }
+        .footer-links, .footer-contact { flex: 1; min-width: 220px; }
+        .footer-about h3 { font-family: 'Orbitron', sans-serif; color: #00d4ff; font-size: 1.5rem; margin-bottom: 8px; font-weight: 700; }
+        .footer-contact h4 { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; color: #00d4ff; margin-bottom: 15px; font-weight: 600; }
+        .footer-social { display: flex; gap: 12px; margin-top: 20px; }
+        .footer-social a { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; font-size: 1.1rem; color: #a0a9c0; transition: all 0.3s ease; }
+        .footer-social a:hover { color: #00d4ff; background: rgba(0, 212, 255, 0.1); transform: translateY(-2px); }
+        .contact-info { display: flex; flex-direction: column; gap: 12px; }
+        .contact-item { display: flex; align-items: flex-start; gap: 10px; }
+        .contact-item i { color: #00d4ff; margin-top: 3px; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; padding-top: 30px; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.85rem; }
 
-        .footer-links,
-        .footer-contact {
-            flex: 1;
-            min-width: 220px;
-        }
-
-        .footer-about h3 {
-            font-family: 'Orbitron', sans-serif;
-            color: #00d4ff;
-            font-size: 1.5rem;
-            margin-bottom: 8px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .footer-social a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 38px;
-            height: 38px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            font-size: 1.1rem;
-            color: #a0a9c0;
-            transition: all 0.3s ease;
-        }
-
-        .footer-social a:hover {
-            color: #00d4ff;
-            background: rgba(0, 212, 255, 0.1);
-            transform: translateY(-2px);
-        }
-        
-        .footer-contact h4 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.1rem;
-            color: #00d4ff;
-            margin-bottom: 15px;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-
-        .contact-item i {
-            color: #00d4ff;
-            margin-top: 3px;
-        }
-        
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            padding-top: 30px;
-            margin-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.85rem;
-        }
-
-        /* Team Card styles */
-        .team-card {
-            background: rgba(10, 14, 39, 0.8);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            aspect-ratio: 1 / 1; /* Enforces a square shape */
-        }
-
-        .team-card:hover {
-            transform: translateY(-8px) scale(1.03);
-            box-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
-            border-color: rgba(0, 212, 255, 0.3);
-        }
-
-        .team-card h3 {
-            font-family: 'Orbitron', sans-serif;
-            color: #00d4ff;
-        }
-
-        .social-icon {
-            transition: all 0.2s ease-in-out;
-        }
-
-        .social-icon:hover {
-            color: #00d4ff;
-            transform: scale(1.2);
-        }
-        
-        /* New styles for section titles */
+        /* Section titles */
         .team-section-title {
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5rem;
@@ -230,121 +193,195 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
+        /* Team Card Styles */
+        .team-card {
+            background: rgba(10, 14, 39, 0.8);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1.5rem;
+            border-radius: 1rem;
+            text-align: center;
+            height: 100%;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .team-card-image-container {
+            width: 144px;
+            height: 144px;
+            border-radius: 9999px;
+            overflow: hidden;
+            border: 4px solid #00d4ff;
+            flex-shrink: 0;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .team-card-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-card-text {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ffffff;
+            font-size: 1.25rem;
+        }
+
+        .team-card p {
+            color: #00d4ff;
+        }
+
+        .social-icon {
+            color: #a0a9c0;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .social-icon:hover {
+            color: #00d4ff;
+            transform: scale(1.2);
+        }
     </style>
 </head>
 <body class="bg-black text-white">
 
-    <div id="particles-js"></div>
-
-    <header class="roadmap-header">
-        <a href="/SPROUTIT/" class="back-to-home-btn">
-            <i class="fas fa-arrow-left"></i>
-            <span>Back to Home</span>
-        </a>
-        <div class="header-logo right-logo">
-            <!-- Make sure the path to your logo is correct -->
-            <img src="../logos/iTELF-logo.png" alt="ITELF Logo">
-        </div>
-    </header>
-
-    <div class="container mx-auto px-4 py-16">
-        <header class="text-center mb-8">
-            <h1 class="text-4xl md:text-6xl font-bold font-[Orbitron] bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-white">
-                Meet The Team
-            </h1>
-            <p class="text-lg md:text-xl text-gray-400 mt-4">The masterminds behind Sprout'IT</p>
-        </header>
-
-        <main id="team-sections-container">
-            <!-- Team sections will be injected here by JavaScript -->
-        </main>
+    <!-- NEW LOADER HTML -->
+    <div class="loader-container" id="loader">
+        <div class="loader"></div>
     </div>
 
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-about">
-                <h3>Sprout IT</h3>
-                <p class="footer-description">
-                    Symcreidea unites entrepreneurial minds, harmonizing creativity and collaboration to spark transformative ventures.
-                </p>
-                <div class="footer-social">
-                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" target="_blank" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-                </div>
+    <div id="main-content">
+        <div id="particles-js"></div>
+
+        <header class="roadmap-header">
+            <a href="/sproutit.scit.edu/" class="back-to-home-btn">
+                <i class="fas fa-arrow-left"></i>
+                <span class="hidden sm:inline">Back to Home</span>
+            </a>
+            <div class="header-logo right-logo">
+                <img src="../logos/iTELF-logo.png" alt="ITELF Logo">
             </div>
-            <div class="footer-contact">
-                <h4>Contact</h4>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>SCIT Campus, Pune</span>
+        </header>
+
+        <div class="container mx-auto px-4 py-16">
+            <header class="text-center mb-12">
+                <h1 class="text-4xl md:text-6xl font-bold font-[Orbitron] bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-white">
+                    Meet The Team
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 mt-4">The masterminds behind SproutIT</p>
+            </header>
+
+            <main id="team-sections-container">
+                <!-- Team sections will be injected here by JavaScript -->
+            </main>
+        </div>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <h3>Sprout IT</h3>
+                    <p class="footer-description">
+                        Symcreidea unites entrepreneurial minds, harmonizing creativity and collaboration to spark transformative ventures.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>itelf@scit.edu</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div class="contact-text flex flex-col">
-                            <span>Karthik: +91 8879902242</span>
-                            <span>Harsh: +91 9884319849</span>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a href="https://maps.app.goo.gl/cvwzMaV5Yw2YTiSx8" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">
+                                SCIT Campus, Pune
+                            </a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>itelf@scit.edu</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-text flex flex-col">
+                                <span>Karthik: +91 8879902242</span>
+                                <span>Harsh: +91 9884319849</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Sprout'IT - Symcreidea. All Rights Reserved.</p>
-        </div>
-    </footer>
+            <div class="footer-bottom">
+                <p>© 2025 SproutIT - Symcreidea. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // --- PARTICLES.JS INITIALIZATION ---
-        document.addEventListener('DOMContentLoaded', function() {
-            particlesJS("particles-js", {
-                "particles": {
-                    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                    "color": { "value": "#ffffff" },
-                    "shape": { "type": "circle" },
-                    "opacity": { "value": 0.5, "random": true },
-                    "size": { "value": 3, "random": true },
-                    "line_linked": { "enable": true, "distance": 150, "color": "#00d4ff", "opacity": 0.4, "width": 1 },
-                    "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "out" }
-                },
-                "interactivity": {
-                    "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" } },
-                    "modes": { "repulse": { "distance": 100 }, "push": { "particles_nb": 4 } }
-                }
-            });
+        // --- LOADER SCRIPT ---
+        window.addEventListener('load', function () {
+            const loader = document.getElementById('loader');
+            const mainContent = document.getElementById('main-content');
+
+            setTimeout(() => {
+                loader.classList.add('hidden');
+                setTimeout(() => {
+                    mainContent.classList.add('visible');
+                    particlesJS("particles-js", {
+                        "particles": { "number": { "value": 80, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": true }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#00d4ff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "out" } },
+                        "interactivity": { "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "repulse": { "distance": 100 }, "push": { "particles_nb": 4 } } }
+                    });
+                }, 300);
+            }, 1500); // Adjusted timing for new loader
         });
 
-        // --- YOUR TEAM DATA GOES HERE ---
+        // --- TEAM DATA ---
         const defaultImage = "../logos/alt-user-logo.png";
         
         const teamData = {
             mentors: [
                 { name: "Dr. Guide", role: "Chief Mentor", image: "", social: { linkedin: "#" } },
-                { name: "Prof. Advisor", role: "Technical Mentor", image: "https://placehold.co/400x400/000000/FFFFFF?text=PA", social: { linkedin: "#" } }
+                { name: "Prof. Advisor", role: "Technical Mentor", image: "", social: { linkedin: "#" } }
             ],
             spocs: [
-                { name: "Sam Pointman", role: "Single Point of Contact", image: "https://placehold.co/400x400/000000/FFFFFF?text=SP", social: { linkedin: "#", instagram: "#" } },
+                { name: "Sam Pointman", role: "Single Point of Contact", image: "", social: { linkedin: "#", instagram: "#" } },
                 { name: "Liaison Larry", role: "Industry Connect", image: "", social: { linkedin: "#", instagram: "#" } },
-                { name: "Rachel Relay", role: "Communications SPOC", image: "https://placehold.co/400x400/000000/FFFFFF?text=RR", social: { linkedin: "#", instagram: "#" } }
+                { name: "Rachel Relay", role: "Communications SPOC", image: "", social: { linkedin: "#", instagram: "#" } }
             ],
             seniors: [
-                { name: "Alex Johnson", role: "Lead Developer", image: "https://placehold.co/400x400/000000/FFFFFF?text=AJ", social: { linkedin: "#", instagram: "#" } },
-                { name: "Maria Garcia", role: "Project Manager", image: "https://placehold.co/400x400/000000/FFFFFF?text=MG", social: { linkedin: "#", instagram: "#" } },
-                { name: "James Smith", role: "UI/UX Designer", image: "https://placehold.co/400x400/000000/FFFFFF?text=JS", social: { linkedin: "#", instagram: "#" } },
+                { name: "Alex Johnson", role: "Lead Developer", image: "", social: { linkedin: "#", instagram: "#" } },
+                { name: "Maria Garcia", role: "Project Manager", image: "", social: { linkedin: "#", instagram: "#" } },
+                { name: "James Smith", role: "UI/UX Designer", image: "", social: { linkedin: "#", instagram: "#" } },
                 { name: "Senior Sarah", role: "QA Lead", image: "", social: { linkedin: "#", instagram: "#" } }
             ],
             juniors: [
-                { name: "Patricia Rodriguez", role: "Marketing Intern", image: "https://placehold.co/400x400/000000/FFFFFF?text=PR", social: { linkedin: "#", instagram: "#" } },
-                { name: "Robert Brown", role: "Backend Intern", image: "https://placehold.co/400x400/000000/FFFFFF?text=RB", social: { linkedin: "#", instagram: "#" } },
-                { name: "Jennifer Lee", role: "Frontend Intern", image: "https://placehold.co/400x400/000000/FFFFFF?text=JL", social: { linkedin: "#", instagram: "#" } },
+                { name: "Patricia Rodriguez", role: "Marketing Intern", image: "", social: { linkedin: "#", instagram: "#" } },
+                { name: "Robert Brown", role: "Backend Intern", image: "", social: { linkedin: "#", instagram: "#" } },
+                { name: "Jennifer Lee", role: "Frontend Intern", image: "", social: { linkedin: "#", instagram: "#" } },
                 { name: "Michael Williams", role: "DevOps Intern", image: "", social: { linkedin: "#", instagram: "#" } },
-                { name: "Linda Davis", role: "Content Intern", image: "https://placehold.co/400x400/000000/FFFFFF?text=LD", social: { linkedin: "#", instagram: "#" } }
+                { name: "Linda Davis", role: "Content Intern", image: "", social: { linkedin: "#", instagram: "#" } }
             ]
         };
 
@@ -371,36 +408,27 @@
                 allSectionsHTML += `<h2 class="team-section-title">Our ${title}</h2>`;
                 
                 const gridClass = gridConfig[category] || 'md:grid-cols-4';
-                
                 allSectionsHTML += `<div class="grid ${gridClass} gap-8 md:gap-12 mx-auto">`;
 
                 let membersHTML = '';
                 members.forEach(member => {
                     let socialLinksHTML = '';
                     if (member.social) {
-                        if (member.social.linkedin) socialLinksHTML += `<a href="${member.social.linkedin}" target="_blank" class="social-icon text-gray-400"><i class="fab fa-linkedin fa-lg"></i></a>`;
-                        if (member.social.instagram) socialLinksHTML += `<a href="${member.social.instagram}" target="_blank" class="social-icon text-gray-400"><i class="fab fa-instagram fa-lg"></i></a>`;
+                        if (member.social.linkedin) socialLinksHTML += `<a href="${member.social.linkedin}" target="_blank" class="social-icon"><i class="fab fa-linkedin fa-2x"></i></a>`;
+                        if (member.social.instagram) socialLinksHTML += `<a href="${member.social.instagram}" target="_blank" class="social-icon"><i class="fab fa-instagram fa-2x"></i></a>`;
                     }
 
                     const imageUrl = member.image || defaultImage;
-                    
-                    // Conditionally render image or placeholder SVG
-                    const imageContent = member.image 
-                        ? `<img src="${imageUrl}" alt="${member.name}" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='${defaultImage}';">`
-                        : `<div class="w-full h-full flex items-center justify-center">
-                                <svg class="w-2/3 h-2/3 text-cyan-400" viewBox="0 0 200 100" preserveAspectRatio="xMidYMid meet">
-                                    <path d="M 10 100 A 90 90 0 0 1 190 100" stroke="currentColor" stroke-width="8" fill="none" style="filter: drop-shadow(0 0 10px currentColor);"></path>
-                                </svg>
-                           </div>`;
+                    const imageElement = `<img data-src="${imageUrl}" src="${defaultImage}" alt="${member.name}" class="lazy-image object-cover w-full h-full" loading="lazy" onerror="this.onerror=null;this.src='${defaultImage}';">`;
 
                     membersHTML += `
-                        <div class="team-card rounded-2xl p-6 flex flex-col items-center justify-between">
-                            <div class="w-full h-2/5 flex items-center justify-center">
-                                ${imageContent}
+                        <div class="team-card">
+                            <div class="team-card-image-container">
+                                ${imageElement}
                             </div>
-                            <div class="text-center">
-                                <h3 class="text-xl lg:text-2xl font-bold">${member.name}</h3>
-                                <p class="text-cyan-400 text-base lg:text-lg">${member.role}</p>
+                            <div class="team-card-text">
+                                <h3 class="font-bold">${member.name}</h3>
+                                <p>${member.role}</p>
                             </div>
                             <div class="flex space-x-6">
                                 ${socialLinksHTML}
@@ -410,10 +438,27 @@
                 });
                 
                 allSectionsHTML += membersHTML;
-                allSectionsHTML += `</div>`; // End grid
+                allSectionsHTML += `</div>`;
             }
 
             container.innerHTML = allSectionsHTML;
+
+            // --- Lazy Loading Logic ---
+            const lazyImages = document.querySelectorAll('.lazy-image');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const image = entry.target;
+                        image.src = image.dataset.src;
+                        image.classList.remove('lazy-image');
+                        observer.unobserve(image);
+                    }
+                });
+            });
+
+            lazyImages.forEach(image => {
+                imageObserver.observe(image);
+            });
         });
     </script>
 </body>
