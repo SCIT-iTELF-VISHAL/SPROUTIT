@@ -96,6 +96,22 @@
   .event-card {
     height: 380px;
   }
+
+  /* FIX: Use vertical logo for tablets as well */
+  .biznovator-layout {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .biznovator-logo-horizontal {
+      display: none;
+  }
+  .biznovator-logo-vertical {
+      display: block;
+      max-height: 250px; /* Adjusted size for tablet */
+      width: auto;
+  }
   
   /* Small events grid */
   .small-events-grid {
@@ -105,7 +121,7 @@
   }
   
   .small-event-card {
-    height: 200px;
+    height: 300px; /* Scaled up by 50% */
   }
   
   /* Footer adjustments */
@@ -131,9 +147,9 @@
 }
 
 /* ===========================================
-   TABLET PORTRAIT (481px - 767px)
+   TABLET & MOBILE (up to 767px)
    =========================================== */
-@media (max-width: 767px) and (min-width: 481px) {
+@media (max-width: 767px) {
   /* Container */
   .container {
     padding: 0 20px;
@@ -225,7 +241,9 @@
   
   /* Events section */
   .featured-event .event-card {
-    max-width: 320px;
+    max-width: 100%; /* Allow full width */
+    height: auto; /* Auto height */
+    min-height: 420px; 
   }
   
   .event-card {
@@ -236,6 +254,33 @@
     height: 180px;
   }
   
+  /* ===== BIZNOVATOR CARD FIX (VERTICAL ON MOBILE) ===== */
+  .biznovator-layout {
+    flex-direction: column; /* Switch to vertical layout */
+    gap: 15px;
+    padding: 20px;
+  }
+
+  /* Hide horizontal logo, show vertical */
+  .biznovator-logo-horizontal {
+      display: none;
+  }
+  .biznovator-logo-vertical {
+      display: block;
+      max-height: 280px; /* Adjust size as needed */
+      width: auto;
+  }
+  
+  .association-group .association-text {
+    font-size: 1.2rem; 
+    margin: 10px 0;
+  }
+  
+  .biznovator-layout .biznovator-logo-partner {
+    max-height: 160px; /* Still larger, but sized for mobile */
+  }
+  /* ===== END BIZNOVATOR FIX ===== */
+
   /* Small events - 2x2 grid */
   .small-events-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -244,11 +289,11 @@
   }
   
   .small-event-card {
-    height: 180px;
+    height: 315px; /* Scaled up by 50% */
   }
   
   .small-flip-card-front .small-event-logo {
-    height: 60px;
+    height: 120px; /* Scaled up by 50% */
   }
   
   /* Investors - Stack in single column */
@@ -417,16 +462,6 @@
     font-size: 1.3rem;
   }
   
-  /* Events - Mobile */
-  .featured-event .event-card {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  
-  .event-card {
-    height: 320px;
-  }
-  
   .flip-card-front .event-logo {
     height: 140px;
     max-width: 95%;
@@ -466,11 +501,11 @@
   }
   
   .small-event-card {
-    height: 160px;
+    height: 315px; /* Scaled up by 50% */
   }
   
   .small-flip-card-front .small-event-logo {
-    height: 110px;
+    height: 150px; /* Scaled up by 50% */
   }
   
   .small-flip-card-back h4 {
@@ -482,8 +517,8 @@
   }
   
   .small-flip-card-back .small-event-description {
-    font-size: 0.65rem;
-    max-height: 50px;
+    font-size: 0.75rem; /* FIX: Increased font size */
+    max-height: none; /* FIX: Removed height limit */
   }
   
   /* Investors - Mobile */
@@ -707,11 +742,11 @@
   }
   
   .small-event-card {
-    height: 140px;
+    height: 300px; /* Scaled up by 50% */
   }
   
   .small-flip-card-front .small-event-logo {
-    height: 130px;
+    height: 150px; /* Scaled up by 50% */
   }
   
   /* Sponsors - Single column, compact */
@@ -835,7 +870,7 @@ body, html {
   .nav-links a {
     padding: 10px 15px;
     border-radius: 6px;
-    transition: background-color 0.3s ease;
+    transition: background-color: 0.3s ease;
   }
   
   .nav-links a:hover {
@@ -1059,12 +1094,6 @@ body, html {
     max-width: 45;
   }
 }
-/* responsive.css */
-
-/* ===========================================
-   NEW MOBILE HEADER & FOOTER FIXES
-   =========================================== */
-/* responsive.css */
 
 /* === NEW FOOTER STYLES FOR MOBILE === */
 @media (max-width: 768px) {
@@ -1095,8 +1124,6 @@ body, html {
       justify-content: center; /* Centers the bottom links */
   }
 }
-
-/* responsive.css */
 
 /* --- Mobile Header Fix (Hamburger Menu) --- */
 @media (max-width: 768px) {
@@ -1140,3 +1167,4 @@ body, html {
     padding-right: 0; 
   }
 }
+

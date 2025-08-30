@@ -1,3 +1,6 @@
+/* Import the new font at the top of your CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -178,24 +181,12 @@ body {
     100% { transform: translateX(100%); }
 }
 
-
-
-
 @keyframes logoGlow {
   from { filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3)); }
   to   { filter: drop-shadow(0 0 25px rgba(0, 212, 255, 0.7)); }
 }
 
-
-
-
-
-
-
-
-
 /* Updated iTELF Logo on Top-Right */
-
 .itelf-logo {
   position: fixed;
   top: 12px;
@@ -217,7 +208,6 @@ body {
 .itelf-logo:hover {
   transform: scale(1.05);
 }
-
 
 /* Fix: Hero Logo Size Without Breaking Grid */
 .hero-logo {
@@ -248,7 +238,6 @@ body {
   50% { transform: translateY(-8px); }
 }
 
-
 /* main */
 .main-content {
     opacity: 0;
@@ -258,7 +247,6 @@ body {
 .main-content.visible {
     opacity: 1;
 }
-
 
 /* 🚀 SCIT Neon Glass Card */
 .glow-scit {
@@ -383,10 +371,6 @@ body {
   text-shadow: 0 0 10px rgba(255, 60, 60, 0.8);
   text-align: center;
 }
-
-
-
-
 
 /* Animated Background */
 #particles-js {
@@ -549,9 +533,7 @@ body {
     font-weight: 400;
 }
 
-
 /* Navigation */
-
 .nav {
     position: fixed;
     top: 0;
@@ -579,7 +561,6 @@ body {
 
 }
 
-
 .nav-logo {
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
@@ -594,7 +575,6 @@ body {
   margin-right: auto; /* PUSHES nav items as far right as possible */
 }
 
-
 .nav-links a {
     color: #a0a9c0;
     text-decoration: none;
@@ -606,10 +586,7 @@ body {
     color: #00d4ff;
 }
 
-
-
 /* Investors Section */
-
 .investor-card {
   min-height: 260px;  /* gives breathing room */
   display: flex;
@@ -639,9 +616,7 @@ body {
     justify-content: center;
 }
 
-
-
-.investor-card::before {
+/* .investor-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -655,7 +630,7 @@ body {
 
 .investor-card:hover::before {
     transform: scaleX(1);
-}
+} */
 
 .investor-card:hover {
     transform: translateY(-10px);
@@ -708,13 +683,11 @@ body {
     background-color: transparent;
 }
 
-
 .investor-card p {
     color: #a0a9c0;
     font-size: 0.9rem;
     line-height: 1.6;
 }
-
 
 .investor-logo img {
     width: 100%;
@@ -732,7 +705,6 @@ body {
     box-shadow: 0 0 15px rgba(0, 212, 255, 0.2); /* subtle glow */
 }
 
-/* Hover Glow Animation */
 /* Consistent Size */
 .investor-card {
     max-width: 350px;
@@ -774,7 +746,6 @@ body {
         border-color: rgba(0, 255, 0, 0.3);
     }
 }
-
 
 /* ===========================================
    FIXED SPONSORS SECTION - HORIZONTAL LAYOUT
@@ -948,12 +919,6 @@ body {
 }
 
 /* Footer */
-
-
-/* style.css */
-
-/* === REPLACEMENT FOOTER CSS - PASTE THIS IN style.css === */
-
 .site-footer {
   background: linear-gradient(178deg, #01030d 0%, #05070d 50%, #04203c 100%);
   padding: 60px 20px 30px; /* Increased top padding */
@@ -1139,14 +1104,9 @@ body {
   color: #00d4ff;
 }
 
-
 /* ===========================================
    UPDATED SYMCREIDEA SECTION (Button Removed)
    =========================================== */
-
-
-
-/* symcredia*/
 /* 🌟 Symcreidea Special Card */
 .symcreidea-card {
   border: 1px solid rgba(0, 212, 255, 0.4);
@@ -1188,10 +1148,6 @@ body {
                 inset 0 0 25px rgba(0, 212, 255, 0.15);
   }
 }
-
-
-/* Event card glow */
-
 
 /* ===========================================
    COMPLETE UPDATED FLIP CARD EVENTS SECTION
@@ -1267,48 +1223,44 @@ body {
   transform: rotateY(180deg);
 }
 
-/* --- NEW BIZNOVATOR DUAL LOGO STYLES --- */
-.biznovator-logos {
+/* --- BIZNOVATOR CARD STYLES --- */
+.biznovator-layout {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 30px;
+    justify-content: center; /* FIX: Changed to center */
+    gap: 1rem;
     width: 100%;
     height: 100%;
-    padding: 20px;
-}
-
-.biznovator-logos img {
-    object-fit: contain;
-    max-width: 80%;
-    height: auto;
-    /* Added a pop effect directly to the logos */
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
-    transition: filter 0.3s ease;
-}
-
-.biznovator-logos img:hover {
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1));
+    padding: 1rem;
 }
 
 .biznovator-logo-main {
-    max-height: 250px;
+    object-fit: contain;
 }
 
-.biznovator-logo-partner {
-    max-height: 160px;
+.biznovator-logo-horizontal {
+    display: block; /* Show by default */
+    max-height: 300px;
 }
 
-.association-text {
-    font-family: 'Inter', sans-serif;
-    font-style: italic;
-    font-size: 1rem;
+.biznovator-logo-vertical {
+    display: none; /* Hide by default */
+}
+
+
+.association-group .association-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6rem;
     color: #ffde7a;
-    font-weight: 500;
-    text-shadow: 0 0 5px rgba(0,0,0,0.5); /* Added for readability */
+    text-shadow: 0 0 8px rgba(0,0,0,0.6);
+    white-space: nowrap;
 }
-/* --- END OF NEW BIZNOVATOR STYLES --- */
+
+.biznovator-layout .biznovator-logo-partner {
+    max-height: 100px; /* 100% larger */
+    object-fit: contain;
+}
+/* --- END OF BIZNOVATOR STYLES --- */
 
 /* Back side content */
 .flip-card-back h4 {
@@ -1420,22 +1372,24 @@ body {
   opacity: 1;
 }
 
-/* --- REFINED BIZNOVATOR CARD GLOW --- */
+/* --- REFINED BIZNOVATOR CARD GLOW (HORIZONTAL) --- */
+.featured-event .event-card {
+  max-width: 650px; /* Wider card */
+}
+
 .glow-gold {
-  border: none !important; /* Remove the solid border */
+  border: none !important;
   background: transparent !important;
   box-shadow: none !important;
-  animation: none; /* Remove the pulse animation from the container */
+  animation: none;
   position: relative;
 }
 
 .glow-gold .flip-card-front,
 .glow-gold .flip-card-back {
-  /* Darkened background for contrast */
   background: rgba(10, 10, 10, 0.5) !important;
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 215, 0, 0.3);
-  /* The new edge glow */
   box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
   transition: box-shadow 0.4s ease, border-color 0.4s ease;
 }
@@ -1446,9 +1400,8 @@ body {
   box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
 }
 
-/* Remove overrides that are no longer needed */
 .event-card.glow-gold:hover {
-  transform: translateY(-5px) !important; /* Allow hover lift effect */
+  transform: translateY(-5px) !important;
 }
 .glow-gold::before,
 .glow-gold .flip-card-front::before,
@@ -1470,8 +1423,6 @@ body {
   text-shadow: 0 0 5px rgba(255, 204, 51, 0.3) !important;
 }
 
-
-/* normal event cards */
 /* ===========================================
    FEATURED EVENT (Biznovator) - Centered
    =========================================== */
@@ -1479,9 +1430,6 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 60px;
-}
-.featured-event .event-card {
-  max-width: 400px;
 }
 
 /* ===========================================
@@ -1503,12 +1451,9 @@ body {
 /* Small Events Grid - UPDATED FOR 2x2 LAYOUT */
 .small-events-grid {
   display: grid;
-  /* This creates two columns of equal width */
   grid-template-columns: repeat(2, 1fr);
-  /* You can adjust the gap as needed */
   gap: 30px;
   justify-content: center;
-  /* Set a max-width to control the overall size of the grid */
   max-width: 600px;
   margin: 0 auto;
 }
@@ -1518,8 +1463,7 @@ body {
    =========================================== */
 .small-event-card {
   width: 100%;
-  /* Scaled down from 375px */
-  height: 260px;
+  height: 390px; /* Scaled up by 50% from 260px */
   perspective: 1000px;
   border-radius: 14px;
   position: relative;
@@ -1551,11 +1495,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* Reduced padding from 25px */
   padding: 18px;
   box-sizing: border-box;
-
-  /* New light gradient */
   background: linear-gradient(
     135deg,
     rgba(254, 248, 221, 0.85), /* cream */
@@ -1570,8 +1511,7 @@ body {
 /* Front - SCALED DOWN LOGO */
 .small-flip-card-front .small-event-logo {
   height: auto;
-  /* Reduced max-height from 180px */
-  max-height: 130px;
+  max-height: 195px; /* Scaled up by 50% from 130px */
   max-width: 85%;
   object-fit: contain;
   background-color: transparent;
@@ -1583,7 +1523,6 @@ body {
   transform: rotateY(180deg);
 }
 
-
 /* Back - SCALED DOWN */
 .small-flip-card-back {
   transform: rotateY(180deg);
@@ -1591,7 +1530,6 @@ body {
 .small-flip-card-back h4 {
   font-family: 'Orbitron', sans-serif;
   color: #03045E;  /* dark navy */
-  /* Reduced font size and margin */
   font-size: 1.1rem;
   margin-bottom: 8px;
   font-weight: 600;
@@ -1601,14 +1539,12 @@ body {
 .small-flip-card-back .small-event-caption {
   font-style: italic;
   color: #0077B6;  /* medium blue */
-  /* Reduced font size and margin */
   font-size: 0.85rem;
   margin-bottom: 10px;
   text-align: center;
 }
 .small-flip-card-back .small-event-description {
   color: #333333;   /* dark text for readability */
-  /* Reduced font size and max-height */
   font-size: 0.8rem;
   line-height: 1.4;
   text-align: center;
@@ -1616,22 +1552,6 @@ body {
   max-height: 70px; /* Reduced from 100px */
   padding: 0 5px;
 }
-/* Responsive tweak for small screens */
-@media (max-width: 600px) {
-  .small-flip-card-back .small-event-description {
-    max-height: none;     /* allow full description */
-    overflow-y: visible;  /* no cut-off */
-    font-size: 0.8rem;    /* easier to read on mobile */
-    padding: 0 8px;
-  }
-
-  .small-event-card {
-    height: auto;         /* let card grow with content */
-    min-height: 260px;    /* still ensure consistent size */
-  }
-}
-
-
 
 /* ===========================================
    CLEAN HOVER EFFECT
@@ -1643,12 +1563,10 @@ body {
 /* Responsive Register Button - SCALED DOWN */
 .small-event-register-btn {
   display: inline-block;
-  /* Reduced margin and padding */
   margin-top: 12px;
   padding: 0.4em 1.1em;
   background-color: #023E8A; /* same as event heading */
   color: #fff;
-  /* Adjusted font size clamp */
   font-size: clamp(0.7rem, 2.5vw, 0.9rem);
   font-weight: 600;
   border-radius: 6px;
@@ -1663,17 +1581,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Mobile-specific tweaks */
-@media (max-width: 480px) {
-  .small-event-register-btn {
-    width: 80%;           /* full-width-ish on small screens */
-    padding: 0.5em 0;      /* taller tap target */
-    font-size: 0.8rem;     /* keep readable */
-    display: block;
-    margin: 12px auto 0;   /* center align */
-  }
-}
-
 .small-flip-card-inner,
 .small-flip-card-front,
 .small-flip-card-back {
@@ -1681,8 +1588,6 @@ body {
 }
 
 /*------------------------------------- */
-
-
 .home-timeline-preview {
   padding: 50px 20px;
   text-align: center;
@@ -1720,7 +1625,6 @@ body {
   color: white;
 }
 
-
 /* Light cyan glow effect (60% reduced) */
 .logo-cyan-glow {
   filter: drop-shadow(0 0 3px rgba(0, 212, 255, 0.4))
@@ -1733,3 +1637,4 @@ body {
   filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.55))
           drop-shadow(0 0 10px rgba(0, 212, 255, 0.35));
 }
+
