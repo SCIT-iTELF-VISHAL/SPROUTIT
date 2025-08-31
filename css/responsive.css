@@ -149,7 +149,7 @@
 /* ===========================================
    TABLET & MOBILE (up to 767px)
    =========================================== */
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   /* Container */
   .container {
     padding: 0 20px;
@@ -296,11 +296,9 @@
     height: 120px; /* Scaled up by 50% */
   }
   
-  /* Investors - Stack in single column */
-  .investors-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
+  /* --- INVESTORS SECTION FIX (TABLET) --- */
+  .investor-card {
+     flex-basis: calc(50% - 30px); /* Two cards per row on tablet */
   }
   
   /* Sponsors - 2 per row */
@@ -337,9 +335,9 @@
 }
 
 /* ===========================================
-   MOBILE DEVICES (320px - 480px)
+   MOBILE DEVICES (320px - 576px)
    =========================================== */
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   /* Base adjustments */
   body {
     font-size: 14px;
@@ -521,16 +519,9 @@
     max-height: none; /* FIX: Removed height limit */
   }
   
-  /* Investors - Mobile */
-  .investors-grid {
-    grid-template-columns: 1fr;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  
+  /* --- INVESTORS SECTION FIX (MOBILE) --- */
   .investor-card {
-    padding: 25px;
-    max-width: 100%;
+      flex-basis: 90%; /* One card per row on mobile */
   }
   
   .investor-logo {

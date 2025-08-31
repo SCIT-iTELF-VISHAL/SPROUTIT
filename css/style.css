@@ -586,9 +586,21 @@ body {
     color: #00d4ff;
 }
 
-/* Investors Section */
+/* --- INVESTORS SECTION FIX --- */
+.investors-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+#investors .investors-grid:last-of-type {
+    margin-bottom: 0;
+}
+
 .investor-card {
-  min-height: 260px;  /* gives breathing room */
+  min-height: 260px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -598,39 +610,16 @@ body {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   text-align: center;
+  flex: 0 0 350px; /* Base width, prevents shrinking/growing */
 }
 
 .investor-card img {
-  width: 120px;       /* consistent width */
-  height: 120px;      /* keeps square box */
-  object-fit: contain; /* scales logo properly without stretching */
-  border-radius: 8px; /* optional, makes logos slightly rounded */
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 8px;
   margin-bottom: 10px;
 }
-
-/* Prevent investor cards from stretching too much */
-.investors-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    justify-content: center;
-}
-
-/* .investor-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #00d4ff, #091a7a);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.investor-card:hover::before {
-    transform: scaleX(1);
-} */
 
 .investor-card:hover {
     transform: translateY(-10px);
@@ -661,21 +650,6 @@ body {
     font-weight: 600;
 }
 
-/* Standard Investor Logo Size */
-.investor-logo {
-    width: 120px; /* display size inside card */
-    height: 120px;
-    border-radius: 16px;
-    overflow: hidden;
-    margin: 0 auto 20px;
-    background: linear-gradient(135deg, #00d4ff 0%, #091a7a 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
-}
-
-/* For Images (maintains 600x600 ratio) */
 .investor-logo img {
     width: 100%;
     height: 100%;
@@ -696,19 +670,9 @@ body {
     border-radius: 16px;
 }
 
-/* Glow Effect + Animation */
 .investor-card {
     max-width: 350px;
-    margin: 0 auto;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.4s ease;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2); /* subtle glow */
-}
-
-/* Consistent Size */
-.investor-card {
-    max-width: 350px;
-    margin: 0 auto;
+    margin: 0; /* Let flexbox handle margin */
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.4s ease;
     background: rgba(255, 255, 255, 0.05);
@@ -718,34 +682,33 @@ body {
     border-radius: 10px;
 }
 
-/* Hover Effect */
 .investor-card:hover {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0 0 32px rgba(0, 255, 0, 0.8),
                 0 0 56px rgba(0, 255, 0, 0.6);
 }
 
-/* Pulse Animation */
 @keyframes greenPulse {
     0% {
         box-shadow:
-            0 0 7px rgba(0, 255, 0, 0.3),  /* was 12px @0.5 */
-            0 0 15px rgba(0, 255, 0, 0.18); /* was 25px @0.3 */
+            0 0 7px rgba(0, 255, 0, 0.3),
+            0 0 15px rgba(0, 255, 0, 0.18);
         border-color: rgba(0, 255, 0, 0.3);
     }
     50% {
         box-shadow:
-            0 0 13px rgba(0, 255, 0, 0.51), /* was 22px @0.85 */
-            0 0 30px rgba(0, 255, 0, 0.39); /* was 50px @0.65 */
+            0 0 13px rgba(0, 255, 0, 0.51),
+            0 0 30px rgba(0, 255, 0, 0.39);
         border-color: rgba(0, 255, 0, 0.5);
     }
     100% {
         box-shadow:
-            0 0 9px rgba(0, 255, 0, 0.3),   /* was 15px @0.5 */
-            0 0 12px rgba(0, 255, 0, 0.18); /* was 20px @0.3 */
+            0 0 9px rgba(0, 255, 0, 0.3),
+            0 0 12px rgba(0, 255, 0, 0.18);
         border-color: rgba(0, 255, 0, 0.3);
     }
 }
+/* --- END INVESTORS SECTION FIX --- */
 
 /* ===========================================
    FIXED SPONSORS SECTION - HORIZONTAL LAYOUT
@@ -758,7 +721,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 25px;
-  margin-bottom: 40px; /* Reduced margin between tiers */
+  margin-bottom: 25px;
 }
 
 /* Individual sponsor card */
