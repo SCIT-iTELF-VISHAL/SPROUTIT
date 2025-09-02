@@ -1,5 +1,5 @@
 /* Import the new font at the top of your CSS file */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('[https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap](https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap)');
 
 * {
     margin: 0;
@@ -555,10 +555,7 @@ body {
 .nav-content {
   display: flex;
   align-items: center;
-  padding: 20px 40px;
-  gap: 40px; /* add spacing between logo and links */
-  padding-right: 180px; /* leave space for iTELF logo */
-
+  padding: 10px 40px; /* Reduced vertical padding */
 }
 
 .nav-logo {
@@ -572,7 +569,7 @@ body {
   display: flex;
   gap: 30px;
   list-style: none;
-  margin-right: auto; /* PUSHES nav items as far right as possible */
+  margin-right: auto; /* Pushes nav items to the left */
 }
 
 .nav-links a {
@@ -586,7 +583,7 @@ body {
     color: #00d4ff;
 }
 
-/* --- INVESTORS SECTION FIX --- */
+/* --- INVESTORS SECTION REWORK --- */
 .investors-grid {
     display: flex;
     flex-wrap: wrap;
@@ -600,47 +597,49 @@ body {
 }
 
 .investor-card {
-  min-height: 260px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 15px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  text-align: center;
-  flex: 0 0 350px; /* Base width, prevents shrinking/growing */
+    min-height: 340px; /* Increased height for vertical shape */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 25px 20px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    text-align: center;
+    flex: 0 1 280px; /* Vertical rectangle: width < height */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .investor-card img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  border-radius: 8px;
-  margin-bottom: 10px;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    padding: 5px;
+    /* White neon border effect */
+    box-shadow: 0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 15px #fff;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .investor-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 25px 50px rgba(0, 212, 255, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(0, 212, 255, 0.5);
 }
 
-.investor-logo {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, #00d4ff 0%, #091a7a 100%);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    color: white;
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+.investor-card:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px #fff,
+                0 0 15px #fff,
+                0 0 25px #fff,
+                0 0 40px #00d4ff; /* Add theme color on hover */
 }
+
 
 .investor-card h4 {
     font-family: 'Orbitron', sans-serif;
@@ -650,235 +649,84 @@ body {
     font-weight: 600;
 }
 
-.investor-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    background-color: transparent;
-}
-
 .investor-card p {
     color: #a0a9c0;
     font-size: 0.9rem;
     line-height: 1.6;
 }
+/* --- END INVESTORS SECTION REWORK --- */
 
-.investor-logo img {
-    width: 100%;
-    height: 100%;
+/* ===========================================
+   NEW SPONSOR GRID LAYOUT
+   =========================================== */
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Base 3-column grid */
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 1100px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.sponsor-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.sponsor-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sponsor-item img {
+    max-width: 80%;
+    max-height: 100%;
     object-fit: contain;
-    border-radius: 16px;
+    /* Making logos white for consistent look */
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
 }
 
-.investor-card {
-    max-width: 350px;
-    margin: 0; /* Let flexbox handle margin */
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.4s ease;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(0, 255, 0, 0.35);
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
-    animation: greenPulse 2s infinite;
-    border-radius: 10px;
+.sponsor-item:hover img {
+    transform: scale(1.05);
 }
 
-.investor-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 0 32px rgba(0, 255, 0, 0.8),
-                0 0 56px rgba(0, 255, 0, 0.6);
+/* Tier-specific sizing */
+.sponsor-item.tier-1 {
+    grid-column: 1 / -1; /* Span all 3 columns */
+    min-height: 280px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+.sponsor-item.tier-1 img {
+    max-width: 35%;
+}
+.sponsor-item.tier-1:hover {
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
 }
 
-@keyframes greenPulse {
-    0% {
-        box-shadow:
-            0 0 7px rgba(0, 255, 0, 0.3),
-            0 0 15px rgba(0, 255, 0, 0.18);
-        border-color: rgba(0, 255, 0, 0.3);
-    }
-    50% {
-        box-shadow:
-            0 0 13px rgba(0, 255, 0, 0.51),
-            0 0 30px rgba(0, 255, 0, 0.39);
-        border-color: rgba(0, 255, 0, 0.5);
-    }
-    100% {
-        box-shadow:
-            0 0 9px rgba(0, 255, 0, 0.3),
-            0 0 12px rgba(0, 255, 0, 0.18);
-        border-color: rgba(0, 255, 0, 0.3);
-    }
+
+.sponsor-item.tier-2 {
+    min-height: 200px;
+    box-shadow: 0 0 15px rgba(0, 100, 255, 0.3);
 }
-/* --- END INVESTORS SECTION FIX --- */
-
-/* ===========================================
-   FIXED SPONSORS SECTION - HORIZONTAL LAYOUT
-   =========================================== */
-
-/* Main sponsor grid - displays all sponsors in horizontal rows */
-.sponsor-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  margin-bottom: 25px;
+.sponsor-item.tier-2 img {
+    max-width: 60%;
+}
+.sponsor-item.tier-2:hover {
+    box-shadow: 0 0 25px rgba(0, 100, 255, 0.5);
 }
 
-/* Individual sponsor card */
-.sponsor-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 12px;
-  width: 200px; /* Slightly smaller for better horizontal fit */
-  text-align: center;
-  transition: transform 0.3s ease;
-  flex-shrink: 0; /* Prevent shrinking */
+.sponsor-item.tier-3 {
+    min-height: 140px;
 }
-
-.sponsor-card:hover {
-  transform: scale(1.03);
-}
-
-/* Sponsor logo box */
-.sponsor-logo {
-  width: 80px; /* Slightly smaller for better fit */
-  height: 80px;
-  margin: 0 auto 12px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  font-size: 16px; /* Adjusted font size */
-}
-
-/* Sponsor name */
-.sponsor-card h4 {
-  font-family: 'Orbitron', sans-serif;
-  color: #ffffff;
-  font-size: 1rem;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-/* ========================
-   TIER TITLES - Better Spacing
-   ======================== */
-
-.sponsor-tier-title {
-  text-align: center;
-  font-size: 1.6rem;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  margin: 60px 0 30px 0; /* More space above, less below */
-}
-
-/* First tier title - less top margin */
-.sponsor-tier-title:first-of-type {
-  margin-top: 20px;
-}
-
-/* ========================
-   TIER-BASED COLOR STYLING
-   ======================== */
-
-/* Platinum Tier */
-.sponsor-platinum .sponsor-logo {
-  border: 2px solid #ff4d4d;
-  color: #ff4d4d;
-}
-.platinum-title {
-  color: #ff4d4d;
-}
-
-/* Gold Tier */
-.sponsor-gold .sponsor-logo {
-  border: 2px solid #FFD700;
-  color: #FFD700;
-}
-.gold-title {
-  color: #FFD700;
-}
-
-/* Silver Tier */
-.sponsor-silver .sponsor-logo {
-  border: 2px solid #c0c0c0;
-  color: #c0c0c0;
-}
-.silver-title {
-  color: #c0c0c0;
-}
-
-/* Bronze Tier */
-.sponsor-bronze .sponsor-logo {
-  border: 2px solid #cd7f32;
-  color: #cd7f32;
-}
-.bronze-title {
-  color: #cd7f32;
-}
-
-/* ===========================================
-   PULSE ANIMATIONS (Optimized)
-   =========================================== */
-
-/* Platinum Pulse (Red) */
-.sponsor-platinum {
-  animation: sponsorPulseRed 3s infinite ease-in-out;
-}
-
-@keyframes sponsorPulseRed {
-  0%, 100% {
-    box-shadow: 0 0 12px rgba(255, 77, 77, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 24px rgba(255, 77, 77, 0.6);
-  }
-}
-
-/* Gold Pulse */
-.sponsor-gold {
-  animation: sponsorPulseGold 3s infinite ease-in-out;
-}
-
-@keyframes sponsorPulseGold {
-  0%, 100% {
-    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 24px rgba(255, 215, 0, 0.6);
-  }
-}
-
-/* Silver Pulse */
-.sponsor-silver {
-  animation: sponsorPulseSilver 3s infinite ease-in-out;
-}
-
-@keyframes sponsorPulseSilver {
-  0%, 100% {
-    box-shadow: 0 0 12px rgba(192, 192, 192, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 24px rgba(192, 192, 192, 0.6);
-  }
-}
-
-/* Bronze Pulse */
-.sponsor-bronze {
-  animation: sponsorPulseBronze 3s infinite ease-in-out;
-}
-
-@keyframes sponsorPulseBronze {
-  0%, 100% {
-    box-shadow: 0 0 12px rgba(205, 127, 50, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 24px rgba(205, 127, 50, 0.6);
-  }
+.sponsor-item.tier-3 img {
+    max-width: 55%;
 }
 
 /* Footer */
@@ -1199,6 +1047,7 @@ body {
 
 .biznovator-logo-main {
     object-fit: contain;
+    max-width: 100%; /* FIX: Prevents image from overflowing its container */
 }
 
 .biznovator-logo-horizontal {
@@ -1599,5 +1448,100 @@ body {
 .logo-cyan-glow:hover {
   filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.55))
           drop-shadow(0 0 10px rgba(0, 212, 255, 0.35));
+}
+
+/* ===========================================
+   GUEST SPEAKER SECTION
+   =========================================== */
+
+.guest-speaker-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.guest-speaker-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 350px; /* A good size for a single card */
+    background-color: rgba(0, 0, 0, 0.65); /* Black background with transparency */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    overflow: hidden; /* Hide anything that goes outside the border-radius */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.guest-speaker-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255,255,255,0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.guest-speaker-card img {
+    width: 100%; /* Make image take full width */
+    height: 300px; /* Give it a substantial height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 20px 20px 0 0;
+}
+
+/* Container for the text content */
+.guest-speaker-info {
+    padding: 25px;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.guest-speaker-card h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff; /* White text */
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    /* Subtle white glow */
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.7),
+                 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.guest-speaker-card p {
+    color: #e0e0e0; /* Lighter grey for paragraph */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    /* Subtle white glow */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* ===========================================
+   GUEST SPEAKER SECTION - RESPONSIVE
+   =========================================== */
+
+/* Desktop & Tablet Layout */
+@media (min-width: 768px) {
+    .guest-speaker-card {
+        flex-direction: row; /* Change to horizontal layout */
+        max-width: 700px; /* Wider card for horizontal layout */
+        align-items: stretch; /* Make children stretch to full height */
+    }
+
+    .guest-speaker-card img {
+        width: 280px; /* Fixed width for the image */
+        height: auto; /* Auto height to maintain aspect ratio within the stretched container */
+        border-radius: 20px 0 0 20px; /* Match card curvature */
+    }
+
+    .guest-speaker-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left; /* Align text to the left */
+        padding: 30px;
+        flex: 1; /* Allow info section to take remaining space */
+        border-top: none; /* Remove the top border from mobile view */
+        border-left: 1px solid rgba(255, 255, 255, 0.2); /* Add separator line here */
+    }
 }
 

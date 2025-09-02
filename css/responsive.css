@@ -129,25 +129,10 @@
     grid-template-columns: 1.8fr 1fr 1fr;
     gap: 30px;
   }
-  
-  /* Sponsors */
-  .sponsor-grid {
-    gap: 20px;
-  }
-  
-  .sponsor-card {
-    width: 180px;
-    padding: 18px;
-  }
-  
-  .sponsor-logo {
-    width: 70px;
-    height: 70px;
-  }
 }
 
 /* ===========================================
-   TABLET & MOBILE (up to 767px)
+   TABLET & MOBILE (up to 991px)
    =========================================== */
 @media (max-width: 991px) {
   /* Container */
@@ -296,30 +281,17 @@
     height: 120px; /* Scaled up by 50% */
   }
   
-  /* --- INVESTORS SECTION FIX (TABLET) --- */
-  .investor-card {
-     flex-basis: calc(50% - 30px); /* Two cards per row on tablet */
+  /* --- SPONSORS RESPONSIVE (TABLET) --- */
+  .sponsors-grid {
+      grid-template-columns: repeat(2, 1fr);
   }
-  
-  /* Sponsors - 2 per row */
-  .sponsor-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    max-width: 450px;
-    margin: 0 auto 30px;
+  .sponsor-item.tier-1 {
+      grid-column: 1 / -1; /* This tier always spans full width */
   }
-  
-  .sponsor-card {
-    width: 100%;
-    padding: 15px;
+  .sponsor-item.tier-2:last-of-type {
+      grid-column: 1 / -1; /* Makes the 3rd tier-2 item full-width to avoid an empty cell */
   }
-  
-  .sponsor-logo {
-    width: 60px;
-    height: 60px;
-    font-size: 14px;
-  }
-  
+
   /* Footer - Stack vertically */
   .footer-container {
     grid-template-columns: 1fr;
@@ -519,38 +491,24 @@
     max-height: none; /* FIX: Removed height limit */
   }
   
-  /* --- INVESTORS SECTION FIX (MOBILE) --- */
-  .investor-card {
-      flex-basis: 90%; /* One card per row on mobile */
-  }
-  
   .investor-logo {
     width: 80px;
     height: 80px;
   }
   
-  /* Sponsors - Single column */
-  .sponsor-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    max-width: 220px;
-    margin: 0 auto 25px;
+  /* --- SPONSORS RESPONSIVE (MOBILE) --- */
+  .sponsors-grid {
+      grid-template-columns: 1fr; /* Stack all sponsors in a single column */
   }
-  
-  .sponsor-card {
-    width: 100%;
-    padding: 12px;
+  .sponsor-item,
+  .sponsor-item.tier-1,
+  .sponsor-item.tier-2,
+  .sponsor-item.tier-3,
+  .sponsor-item.tier-2:last-of-type {
+      grid-column: auto; /* Reset all column spans */
   }
-  
-  .sponsor-logo {
-    width: 50px;
-    height: 50px;
-    font-size: 12px;
-  }
-  
-  .sponsor-tier-title {
-    font-size: 1.3rem;
-    margin: 40px 0 20px 0;
+  .sponsor-item {
+      min-height: 150px !important; /* Uniform height for all sponsors on mobile */
   }
   
   /* Footer - Mobile stack */
@@ -740,21 +698,6 @@
     height: 150px; /* Scaled up by 50% */
   }
   
-  /* Sponsors - Single column, compact */
-  .sponsor-grid {
-    max-width: 180px;
-  }
-  
-  .sponsor-card {
-    padding: 10px;
-  }
-  
-  .sponsor-logo {
-    width: 45px;
-    height: 45px;
-    font-size: 10px;
-  }
-  
   .sponsor-tier-title {
     font-size: 1.1rem;
     margin: 30px 0 15px 0;
@@ -861,7 +804,7 @@ body, html {
   .nav-links a {
     padding: 10px 15px;
     border-radius: 6px;
-    transition: background-color: 0.3s ease;
+    transition: background-color 0.3s ease;
   }
   
   .nav-links a:hover {
@@ -1066,9 +1009,7 @@ body, html {
 
   /* Make cards take full width */
   .content-card,
-  .glow-scit,
-  .investor-card,
-  .sponsor-card {
+  .glow-scit {
     max-width: 90%;
   }
 }
