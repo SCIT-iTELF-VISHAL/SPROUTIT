@@ -654,6 +654,9 @@ body {
     font-size: 0.9rem;
     line-height: 1.6;
 }
+.investor-link {
+  text-decoration: none;
+}
 /* --- END INVESTORS SECTION REWORK --- */
 
 /* ===========================================
