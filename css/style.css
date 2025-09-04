@@ -1566,3 +1566,48 @@ body {
 .event-button:hover {
   background-color: #ffc700; /* Slightly darker gold on hover */
 }
+
+/* --- TEMPORARY SPONSOR "COMING SOON" STYLES --- */
+
+/* This class activates all the temporary styles below */
+.temp-sponsors-active .sponsors-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  background-color: #111; /* Dark background for the grid area */
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Hides the original sponsor items if they exist */
+.temp-sponsors-active .sponsor-item {
+  display: none;
+}
+
+.temp-sponsors-active .coming-soon-message {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5em;
+  font-weight: 900;
+  color: #1e90ff; /* Blue color (Dodger Blue) */
+  text-shadow: none; /* Removed the glow effect */
+  font-style: italic; /* Made the font italic */
+  animation: none; /* Removed the animation */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .temp-sponsors-active .coming-soon-message {
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .temp-sponsors-active .coming-soon-message {
+    font-size: 1.2em;
+    white-space: normal; /* Allow text to wrap on small screens */
+  }
+}
