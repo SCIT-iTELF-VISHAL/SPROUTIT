@@ -38,7 +38,7 @@
     <div class="timeline-container">
       <div class="timeline-line"></div>
 
-      <!-- ROUND 1 - RESTORED -->
+      <!-- ROUND 1 -->
       <div class="timeline-item" data-status="upcoming">
         <div class="timeline-marker">
           <span class="timeline-dot"></span>
@@ -57,7 +57,8 @@
           </div>
         </div>
       </div>
-
+      
+      <!-- ROUND 2 -->
       <div class="timeline-item" data-status="upcoming">
         <div class="timeline-marker">
           <span class="timeline-dot"></span>
@@ -76,7 +77,8 @@
           </div>
         </div>
       </div>
-
+      
+      <!-- ROUND 3 -->
       <div class="timeline-item" data-status="upcoming">
         <div class="timeline-marker">
           <span class="timeline-dot"></span>
@@ -95,7 +97,8 @@
           </div>
         </div>
       </div>
-
+      
+      <!-- ROUND 4 - UPDATED -->
       <div class="timeline-item" data-status="upcoming">
         <div class="timeline-marker">
           <span class="timeline-dot"></span>
@@ -103,7 +106,7 @@
         </div>
         <div class="timeline-content">
           <div class="timeline-card">
-            <div class="event-time">Round 4 – Sep 8 to Sep 13, 2025</div>
+            <div class="event-time">Round 4 – Sep 13, 2025</div>
             <h3 class="event-title">Round 4 – Grand Finale (Live Pitch Day)</h3>
             <p class="event-description">
               Top teams will pitch their validated startup idea live in front of industry experts and investors.
@@ -178,28 +181,46 @@
   </footer>
 
   <script>
+    // UPDATED SCRIPT to handle single dates and date ranges
     document.addEventListener('DOMContentLoaded', function () {
       const isTesting = false;
-      const testDate = 'September 1, 2025';
+      const testDate = 'September 1, 2025'; // Change this to test different dates e.g. 'September 14, 2025'
 
       const now = isTesting ? new Date(testDate) : new Date();
 
       function parseEventDates(eventTimeText) {
         try {
-          const parts = eventTimeText.split('–')[1].trim();
-          const dateParts = parts.split(' to ');
-          const year = parts.match(/\d{4}/)[0];
-          const startDateStr = dateParts[0].includes(year) ? dateParts[0] : `${dateParts[0]}, ${year}`;
-          const endDateStr = dateParts[1];
-          const startDate = new Date(startDateStr);
-          const endDate = new Date(endDateStr);
+          // Extract the date string part after the "–"
+          const dateString = eventTimeText.split('–')[1].trim();
+          let startDate, endDate;
+
+          // Check if the date string contains "to", indicating a range
+          if (dateString.includes(' to ')) {
+            const dateParts = dateString.split(' to ');
+            const year = dateString.match(/\d{4}/)[0];
+            // Handle cases where the year is only in the second part of the date
+            const startDateStr = dateParts[0].includes(year) ? dateParts[0] : `${dateParts[0]}, ${year}`;
+            const endDateStr = dateParts[1];
+            startDate = new Date(startDateStr);
+            endDate = new Date(endDateStr);
+          } else {
+            // Handle a single date
+            startDate = new Date(dateString);
+            endDate = new Date(dateString); // Start and end date are the same
+          }
           
+          // Set time to cover the full day(s)
           startDate.setHours(0, 0, 0, 0);
           endDate.setHours(23, 59, 59, 999);
 
+          // Check for invalid dates
+          if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+            throw new Error("Invalid date created");
+          }
+
           return { start: startDate, end: endDate };
         } catch (e) {
-          console.error("Could not parse date:", eventTimeText);
+          console.error("Could not parse date:", eventTimeText, e);
           return null;
         }
       }
@@ -236,27 +257,30 @@
   </script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
+    // This script creates the animated background
     function initializeParticles() {
-      particlesJS("particles-js", {
-        "particles": {
-          "number": { "value": 120, "density": { "enable": true, "value_area": 800 } },
-          "color": { "value": ["#ffffff", "#888888", "#333333"] },
-          "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" } },
-          "opacity": { "value": 0.6, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
-          "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 0.1, "sync": false } },
-          "line_linked": { "enable": true, "distance": 150, "color": "#00d4ff", "opacity": 0.4, "width": 1 },
-          "move": { "enable": true, "speed": 1.5, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } }
-        },
-        "interactivity": {
-          "detect_on": "canvas",
-          "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
-          "modes": {
-            "grab": { "distance": 200, "line_linked": { "opacity": 0.8 } },
-            "push": { "particles_nb": 4 }
-          }
-        },
-        "retina_detect": true
-      });
+      if (typeof particlesJS !== 'undefined') {
+          particlesJS("particles-js", {
+            "particles": {
+              "number": { "value": 120, "density": { "enable": true, "value_area": 800 } },
+              "color": { "value": ["#ffffff", "#888888", "#333333"] },
+              "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" } },
+              "opacity": { "value": 0.6, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+              "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 0.1, "sync": false } },
+              "line_linked": { "enable": true, "distance": 150, "color": "#00d4ff", "opacity": 0.4, "width": 1 },
+              "move": { "enable": true, "speed": 1.5, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } }
+            },
+            "interactivity": {
+              "detect_on": "canvas",
+              "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
+              "modes": {
+                "grab": { "distance": 200, "line_linked": { "opacity": 0.8 } },
+                "push": { "particles_nb": 4 }
+              }
+            },
+            "retina_detect": true
+          });
+      }
     }
     initializeParticles();
   </script>
