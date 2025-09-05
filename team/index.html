@@ -3,7 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team - SproutIT</title>
+
+    <!-- SEO Optimized Title -->
+    <title>Meet the SproutIT Team - iTELF Committee & Organizers</title>
+
+    <!-- Standard SEO Meta Tags -->
+    <meta name="description" content="Meet the dedicated mentors, SPOCs, and student organizers from the iTELF committee who are bringing the SproutIT entrepreneurship event to life at SCIT.">
+    <meta name="keywords" content="SproutIT team, iTELF committee, SproutIT organizers, SCIT student committee, event leadership, tech event team">
+    <meta name="author" content="iTELF Committee">
+    <link rel="canonical" href="https://sproutit.scit.edu/team/">
+
+    <!-- Open Graph Meta Tags (for Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="Meet the SproutIT Team - iTELF Committee & Organizers">
+    <meta property="og:description" content="Get to know the passionate team of students and mentors behind the SproutIT event.">
+    <meta property="og:image" content="https://sproutit.scit.edu/logos/sproutit-social-banner.png">
+    <meta property="og:url" content="https://sproutit.scit.edu/team/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SproutIT by iTELF">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Meet the SproutIT Team - iTELF Committee & Organizers">
+    <meta name="twitter:description" content="Get to know the passionate team of students and mentors behind the SproutIT event.">
+    <meta name="twitter:image" content="https://sproutit.scit.edu/logos/sproutit-social-banner.png">
+    <meta name="twitter:site" content="@ItelfScit">
+
+    <!-- Favicon and Existing Styles -->
     <link rel="icon" type="image/png" href="../logos/browser-logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -217,6 +242,38 @@
             border-color: rgba(0, 212, 255, 0.3);
         }
 
+        /* Custom styles for Mentor cards */
+        .team-card-mentor {
+            background: rgba(43, 39, 23, 0.8); /* Dark gold background */
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .team-card-mentor:hover {
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.5); /* Gold shadow */
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .team-card-mentor .team-card-image-container {
+            border-color: #FFD700; /* Gold border for image */
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Custom styles for SPOC cards */
+        .team-card-spoc {
+            background: rgba(48, 52, 56, 0.8); /* Dark silver background */
+            border-color: rgba(192, 192, 192, 0.3);
+        }
+
+        .team-card-spoc:hover {
+            box-shadow: 0 0 40px rgba(192, 192, 192, 0.5); /* Silver shadow */
+            border-color: rgba(192, 192, 192, 0.5);
+        }
+
+        .team-card-spoc .team-card-image-container {
+            border-color: #C0C0C0; /* Silver border for image */
+            box-shadow: 0 0 20px rgba(192, 192, 192, 0.4);
+        }
+
         .team-card-image-container {
             width: 144px;
             height: 144px;
@@ -274,7 +331,7 @@
         <div id="particles-js"></div>
 
         <header class="roadmap-header">
-            <a href="/sproutit.scit.edu/" class="back-to-home-btn">
+            <a href="../" class="back-to-home-btn">
                 <i class="fas fa-arrow-left"></i>
                 <span class="hidden sm:inline">Back to Home</span>
             </a>
@@ -377,7 +434,7 @@
                 { name: "Senior Sarah", role: "QA Lead", image: "", social: { linkedin: "#", instagram: "#" } }
             ],
             juniors: [
-                { name: "Patricia Rodriguez", role: "Marketing Intern", image: "", social: { linkedin: "#", instagram: "#" } },
+                { name: "Patricia Rodriguez", role: "Marketing Intern", image: "images/Vishal_R.jpg", social: { linkedin: "#", instagram: "#" } },
                 { name: "Robert Brown", role: "Backend Intern", image: "", social: { linkedin: "#", instagram: "#" } },
                 { name: "Jennifer Lee", role: "Frontend Intern", image: "", social: { linkedin: "#", instagram: "#" } },
                 { name: "Michael Williams", role: "DevOps Intern", image: "", social: { linkedin: "#", instagram: "#" } },
@@ -421,8 +478,15 @@
                     const imageUrl = member.image || defaultImage;
                     const imageElement = `<img data-src="${imageUrl}" src="${defaultImage}" alt="${member.name}" class="lazy-image object-cover w-full h-full" loading="lazy" onerror="this.onerror=null;this.src='${defaultImage}';">`;
 
+                    let cardCategoryClass = '';
+                    if (category === 'mentors') {
+                        cardCategoryClass = 'team-card-mentor';
+                    } else if (category === 'spocs') {
+                        cardCategoryClass = 'team-card-spoc';
+                    }
+
                     membersHTML += `
-                        <div class="team-card">
+                        <div class="team-card ${cardCategoryClass}">
                             <div class="team-card-image-container">
                                 ${imageElement}
                             </div>

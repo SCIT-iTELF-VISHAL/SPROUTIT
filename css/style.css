@@ -741,6 +741,10 @@ body {
   position: relative;
 }
 
+.footer-social a {
+    text-decoration: none;
+}
+
 .site-footer::before {
   content: '';
   position: absolute;
