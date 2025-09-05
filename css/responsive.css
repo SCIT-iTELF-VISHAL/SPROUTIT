@@ -1099,3 +1099,36 @@ body, html {
     padding-right: 0; 
   }
 }
+
+/* --- Responsive Dropdown Styles (for Hamburger Menu) --- */
+
+/* This should go inside your @media (max-width: 768px) block */
+
+.nav-links .dropdown .dropdown-menu {
+  position: static; /* Removes the absolute positioning from desktop */
+  display: none; /* Crucially, keep it hidden by default */
+  background-color: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+  border: none;
+  padding-left: 20px; /* Indent the sub-menu items */
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* WHEN THE HAMBURGER MENU IS ACTIVE, show the dropdown menu */
+.nav-links.active .dropdown-menu {
+  display: block;
+}
+
+/* Style the sub-menu links to look nested */
+.nav-links.active .dropdown-menu li a {
+  font-size: 0.9em; /* Make text slightly smaller */
+  color: #ccc; /* Dim the color to show it's a sub-item */
+  padding: 10px 15px;
+}
+
+/* We don't need the arrow to rotate on mobile */
+.dropdown:hover .fa-caret-down {
+  transform: none;
+}

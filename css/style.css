@@ -1573,3 +1573,79 @@ body {
 }
 
 
+/* ===========================================
+   Dropdown Menu
+   =========================================== */
+/* --- REVISED Dropdown Menu Styles (Desktop) --- */
+/* This code REPLACES the previous dropdown CSS in your style.css */
+
+/* 1. Set the positioning context for the dropdown */
+.nav-links .dropdown {
+  position: relative;
+}
+
+/* 2. Style the dropdown menu to float OVER other content */
+.nav-links .dropdown-menu {
+  display: block; /* We will control visibility with opacity */
+  visibility: hidden;
+  opacity: 0;
+
+  position: absolute;   /* IMPORTANT: This takes the menu out of the page flow, so it floats on top. */
+  top: 100%;            /* Positions it right below the parent link. */
+  left: 0;
+  z-index: 1000;        /* Ensures it appears above other elements. */
+  
+  /* Visual Styling (to match your theme) */
+  min-width: 180px;
+  background: rgba(10, 14, 39, 0.95); /* A slightly more solid version of your nav bg */
+  backdrop-filter: blur(15px);
+  list-style: none;
+  padding: 10px 0;
+  margin: 0; /* Remove any default margin that could cause spacing issues */
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+  /* Smooth transition for appearing */
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+/* 3. Show the dropdown on hover */
+.nav-links .dropdown:hover > .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 4. Styling for the links inside the dropdown */
+.dropdown-menu li a {
+  color: #a0a9c0;
+  padding: 12px 20px;
+  display: block;
+  text-decoration: none;
+  white-space: nowrap; /* Prevents links from wrapping to a new line */
+}
+
+.dropdown-menu li a:hover {
+  color: #00d4ff;
+  background-color: rgba(0, 212, 255, 0.1);
+}
+
+/* 5. Arrow Icon Styling */
+.dropdown-toggle .fa-caret-down {
+  margin-left: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ... existing CSS ... */
+
+.dropdown:hover .fa-caret-down {
+  transform: rotate(180deg);
+}
+
+
+/* FIX: HIDE BOOTSTRAP'S DEFAULT DROPDOWN ARROW */
+.dropdown-toggle::after {
+    display: none !important;
+}

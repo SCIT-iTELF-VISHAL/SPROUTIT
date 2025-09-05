@@ -82,7 +82,15 @@
           <li><a href="#guestspeaker">Speaker</a></li>
           <li><a href="#investors">Investors</a></li>
           <li><a href="#sponsors">Sponsors</a></li>
-
+          <!-- ===== START: NEW DROPDOWN MENU ===== -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">iTELF Community <i class="fas fa-caret-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="team.html">Team</a></li> <!-- TODO: Replace with your actual team page link -->
+              <li><a href="alumni.html">Alumni</a></li> <!-- TODO: Replace with your actual alumni page link -->
+            </ul>
+          </li>
+          <!-- ===== END: NEW DROPDOWN MENU ===== -->
         </ul>
       </div>
     </nav>
@@ -643,12 +651,28 @@
     document.addEventListener('DOMContentLoaded', function () {
       const hamburgerMenu = document.querySelector('.hamburger-menu');
       const navLinks = document.querySelector('.nav-links');
+      const dropdownToggle = document.querySelector('.dropdown-toggle');
 
+      // 1. Logic for the Hamburger Menu icon
       hamburgerMenu.addEventListener('click', function () {
         navLinks.classList.toggle('active');
       });
+
+      // 2. NEW: Logic for the Dropdown Link itself
+      dropdownToggle.addEventListener('click', function (e) {
+        // Only run this logic on mobile screens
+        if (window.innerWidth <= 768) {
+          // Prevent the link from navigating away
+          e.preventDefault(); 
+          
+          // Toggle a new 'open' class on the parent <li> element
+          const dropdown = this.parentElement;
+          dropdown.classList.toggle('open');
+        }
+      });
     });
   </script>
+
 
 </body>
 
